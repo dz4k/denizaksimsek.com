@@ -6,7 +6,9 @@ import postcss from "https://deno.land/x/lume/plugins/postcss.ts";
 import basePath from "https://deno.land/x/lume/plugins/base_path.ts";
 import resolveUrls from "https://deno.land/x/lume/plugins/resolve_urls.ts";
 import eta from "https://deno.land/x/lume/plugins/eta.ts";
-import codeHighlight from "https://deno.land/x/lume/plugins/code_highlight.ts";
+import prismHighlight from "https://raw.githubusercontent.com/lumeland/experimental-plugins/main/prism/mod.ts"
+import Prism from "https://raw.githubusercontent.com/lumeland/experimental-plugins/main/prism/deps.ts"
+import prismHyperscript from "https://unpkg.com/prism-hyperscript@1.1.0/prism-hyperscript.mjs"
 
 import { exec } from "./_build/util.ts"
 
@@ -30,10 +32,12 @@ site
       "M_DATETIME": "dd MMM ‘yy hh:mm",
     },
   }))
-  // .use(codeHighlight())
+  .use(prismHighlight())
   .use(basePath())
   .use(resolveUrls())
   .use(eta())
+
+prismHyperscript(Prism)
 
 site.preprocess("*", async (page) => {
   const gitLog = await exec(["git", "log", "--follow", "--format=%aI", "." + page.src.path + page.src.ext])
