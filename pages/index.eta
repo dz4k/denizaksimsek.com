@@ -10,16 +10,31 @@ url: /
     <link class="u-url u-uid" href="https://denizaksimsek.com">
 
     <p class="list-of-links">
-        <a rel="me" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
         <a rel="me" class="u-email" href="mailto:deniz_website@denizaksimsek.com">Email</a> &middot;
-        <a rel="me" href="https://github.com/dz4k">GitHub</a> &middot;
-        <a rel="me" href="https://dev.to/dz4k">DEV</a> &middot;
-        <a href="https://linkedin.com/in/deniz-akşimşek-044651211/" rel="me">LinkedIn</a> &middot;
-        <a rel="me" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
+        <a rel="me noopener noreferrer" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
+        <a rel="me noopener noreferrer" href="https://github.com/dz4k">GitHub</a> &middot;
+        <a rel="me noopener noreferrer" href="https://dev.to/dz4k">DEV</a> &middot;
+        <a rel="me noopener noreferrer" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a> &middot;
+        <a rel="me noopener noreferrer" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a> &middot;
+        <span class="p-x-pronoun-nominative">he</span>
+    </p>
+
+    <p class="list-of-links">
+        <a href="/feed">Feeds</a> &middot;
+        <a href="https://indieweb.org">
+            <img style="all: initial" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15">
+        </a> &middot;
+        <a href="https://www.w3.org/TR/webmention/">
+            <img style="all: initial" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15">
+        </a>
     </p>
 
     <p>
         <img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule">
+    </p>
+
+    <p class="p-note">
+        Despite the rumors, I am very much imitable.
     </p>
 </div>
 
@@ -50,4 +65,4 @@ url: /
 
 <h2>Blog</h2>
 
-<% entryList(search.pages("post", "date=desc")) %> 
+<% entryList(search.pages("blog", "date=desc")) %> 

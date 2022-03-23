@@ -1,0 +1,68 @@
+---
+tags: blog
+title: Event Delegation in _hyperscript
+date: 2021-05-20 12:43:49
+---
+
+<p>This is how you do it:
+
+<pre class="language-hyperscript">
+on click
+	tell the closest <li/> to the target
+		remove yourself
+		-- do more stuff...
+		-- "you" refers to the clicked list item
+</pre>
+
+<p>Or more concisely:
+
+<pre class="language-hyperscript">
+on click tell closest <li/> to target
+	remove yourself
+</pre>
+
+<pre><code class="lang-hyperscript"
+>on click tell closest &lt;li/> to target
+	remove yourself
+</code></pre>
+
+<hr>
+
+<p>I've seen some people use a pattern like this:
+
+<pre class="language-jinja2">
+&lt;ul>
+	{% for item in items %}
+		&lt;li _="on click remove me">{{ item }}</li>
+	{% endfor %}
+&lt;/ul>
+</pre>
+
+<p>This is convenient to write if you have a server-side templating system, but
+has a few issues:
+
+<ul>
+<li>The code needs to be parsed N times where N is the number of items.
+<li>The resulting HTML is bloated.
+<li>If you add more items client-side, you need to repeat the code there.
+</ul>
+
+<p>The pattern for resolving this is called <dfn>event delegation</dfn>. Here's
+how you might do it in JavaScript:
+
+<pre class="language-javascript">
+ul.addEventListener('click', e => {
+	const li = e.target.closest('li')
+	if (!li) return
+	li.remove()
+})
+</pre>
+
+<p>We add a single event listener to the enclosing list, which finds the item
+that was clicked and manipulates it.
+
+<p>In _hyperscript, the <code>tell</code> command allows us to manipulate an
+element other  than <code>me</code> conveniently, by changing the implicit
+target from <code>me</code> to <code>you</code>,  which refers to the "element
+being told".
+

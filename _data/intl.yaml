@@ -1,10 +1,14 @@
+Home:
+  en: Home
+  tr: Ana sayfa
+  tok: lipu open
 Published:
   en: Published
   tr: Eklenme
   tok: tenpo pana
-Last modified:
-  en: Last modified
-  tr: Son değişiklik
+last modified:
+  en: last modified
+  tr: son değişiklik
   tok: ante nanpa sin
 Also on:
   en: Also on
@@ -14,3 +18,39 @@ Notes:
   en: Notes
   tr: Notlar
   tok: toki lili
+Elsewhere:
+  en: Elsewhere
+  tr: Başka yerlerde
+  tok: lon lipu ante
+Tags:
+  en: Tags
+  tr: Etiketler
+  tok: kulupu
+repost of: &repostof
+  en: Repost of
+  tr: Paylaşma
+  tok: pana sin
+repost-of (reflexive):
+  en: Reposted by
+  tr: Paylaşanlar
+  tok: jan ni li pana sin e lipu ni
+like of: &likeof
+  en: Like of
+  tr: Beğeni
+  tok: pona tawa mi
+like-of (reflexive):
+  en: Liked by
+  tr: Beğenenler
+  tok: jan ni la lipu ni li pona
+blog (tag):
+  en: blog
+  tr: blog
+  tok: lipu tenpo
+project (tag):
+  en: project
+  tr: proje
+  tok: pali suli
+link (tag):
+  en: link
+  tr: link
+  tok: linja lipu

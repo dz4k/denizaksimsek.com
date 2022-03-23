@@ -1,0 +1,14 @@
+---
+title: Feeds
+url: /feed/
+layout: layouts/page.eta
+---
+
+<h1><%= title %></h1>
+
+<dl>
+    <dt>Atom</dt>
+    <dd><a href="/feed.xml"><code>https://denizaksimsek.com/feed.xml</code></a></dd>
+    <dt>JSONFeed</dt>
+    <dd><a href="/feed.json"><code>https://denizaksimsek.com/feed.json</code></a></dd>
+</dl>

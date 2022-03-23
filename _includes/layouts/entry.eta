@@ -16,40 +16,42 @@
 </head>
 <body>
 <nav class="container">
-    <p><a href="/">&larr; Home</a></p>
+    <p><a href="/">&larr; <%= intl["Home"][lang] %> </a></p>
 </nav>
 <article class="container h-entry">
-    <header class="italic">
+    <header>
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
-        <dl class="metadata-block">
-            <dt><%= intl["Published"][it.lang] %></dt>
-            <dd><time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
-                <%~ filters.date(it.date, "M_DATE") %>
-            </time></dd>
-    
-            <% if ("last modified" in it) { %>
-                <dt><%= intl["Last modified"][it.lang] %></dt>
-                <dd><time class="dt-last-modified" datetime="<%= filters.date(it.date, "ATOM") %>">
-                    <%= filters.date(it.date, "M_DATETIME") %>
-                </time></dd>
-            <% } %>
+        <p>
+            <% repeat(tags, (tag, loop) => { %>
+                <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
+                    <%= intl[tag + " (tag)"][lang] %></data></a><%~ loop.last ? " &middot; " : ", " %> 
+            <% }) %>
+
+            <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
+                <%~ filters.date(it.date, "M_DATE") %></time>
             
-            <% if ("syndication" in it) { %>
-                <dt><%= intl["Also on"][it.lang] %></dt>
-                <dd>
-                    <% for (const syndicate in it.syndication) { %>
-                        <a rel="syndication" href="<%= it.syndication[syndicate] %>"><%= syndicate %></a>
-                    <% } %>
-                </dd>
+            <%_ if ("last modified" in it) { _%>
+                , <em><%= intl["last modified"][it.lang] %></em>
+                <time class="dt-last-modified" datetime="<%= filters.date(it.date, "ATOM") %>">
+                    <%= filters.date(it.date, "M_DATETIME") %></time> 
             <% } %>
-    
-            <% if ("..." in it) { %>
-                <dt><%= intl["Notes"][it.lang] %></dt>
-                <dd><%~ it["..."] %> </dd>
+        </p>
+        <% for (const prop of ["repost of", "like of"]) { %>
+            <% if (prop in it) { %>
+                <p>
+                    <a class="u-<%= prop.replace(" ", "-") %>" href="<%= it[prop].url %>">
+                        <%= it[prop].name %>
+                    </a>
+                </p>
             <% } %>
+        <% } %>
+
         </dl>        
+        <% if ("..." in it) { %>
+            <p><%~ it["..."] %></p>
+        <% } %>
     </header>
 
     <% if ("bookmark of" in it) { %>
@@ -66,6 +68,34 @@
     <div class="e-content">
         <%~ it.content %>
     </div>
+    
+    <footer class="missing-card">
+        <% if ("syndication" in it) { %>
+                <p>
+                    <strong><%= intl["Elsewhere"][lang] %>:</strong> 
+                    <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
+                        <a rel="syndication" href="<%= it.syndication[syn] %>">
+                            <%= syn %></a><%= loop.last ? "" : ", " %> 
+                    <% }) %>
+                </p>
+        <% } %>
+
+        <% if (url in webmentions) { %>
+            <section id="interactions">
+                <% for (const prop of ["repost-of", "like-of"]) { %>
+                    <% if (prop in webmentions[url]) { %>
+                        <p class="list-of-links">
+                            <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
+                            <% const wms = webmentions[url][prop] %>
+                            <% for (let i = 0; i < wms.length; i++) { %>
+                                <a href="<%= wms[i].url %>"><%= wms[i].author.name %></a><%
+                                = i === wms.length-1 ? "" : ", " %>
+                            <% } %>
+                        </p>
+                    <% } %>
+                <% }%>
+        <% } %>
+    </footer>
 </article>
 <%~ await includeFile("footer.html") %>
 </body>

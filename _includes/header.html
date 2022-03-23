@@ -16,10 +16,10 @@
 <link rel="stylesheet" href="/assets/css/coldark-prism.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
 <style>
 :root {
-    --main-font: "Atkinson Hyperlegible", sans-serif;
+    --main-font: "Source Serif 4", serif;
     /* --main-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; */
     --line-length: 70ch;
     --accent: #be2300;
@@ -27,7 +27,12 @@
     --bg-2: #fff8f8;
     --bg-3: #e1dfdf;
     font-size: 110%;
+    --rhythm: 1.6rem;
     font-variant-numeric: oldstyle-nums;
+}
+
+a {
+    text-underline-offset: .4em;
 }
 
 time {
@@ -51,5 +56,11 @@ time {
 
 span > small:only-child {
     --sidenote-width: min(20ch, 40vw);
+}
+
+.p-category {
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: .1em;
 }
 </style>

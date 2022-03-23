@@ -1,6 +1,6 @@
 ---
 layout: false
-permalink: '/feed.xml'
+url: '/feed.xml'
 ---
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -14,7 +14,7 @@ permalink: '/feed.xml'
     <name>Deniz Akşimşek</name>
     <email>deniz@denizaksimsek.com</email>
   </author>
-  {%- for post in search.pages("type=posts", "date=desc") %}
+  {%- for post in search.pages("post", "date=desc") %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ post.data.url | url(true) }}"/>
