@@ -1,0 +1,3 @@
+layout: layouts/entry.eta
+lang: en
+templateEngine: eta,md

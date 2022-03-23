@@ -1,0 +1,53 @@
+---
+title: 'Deniz Akşimşek'
+layout: layouts/page.eta
+url: /
+---
+
+<div class="h-card">
+    <h1 lang="tr">Deniz Akşimşek</h1>
+    
+    <link class="u-url u-uid" href="https://denizaksimsek.com">
+
+    <p class="list-of-links">
+        <a rel="me" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
+        <a rel="me" class="u-email" href="mailto:deniz_website@denizaksimsek.com">Email</a> &middot;
+        <a rel="me" href="https://github.com/dz4k">GitHub</a> &middot;
+        <a rel="me" href="https://dev.to/dz4k">DEV</a> &middot;
+        <a href="https://linkedin.com/in/deniz-akşimşek-044651211/" rel="me">LinkedIn</a> &middot;
+        <a rel="me" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
+    </p>
+
+    <p>
+        <img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule">
+    </p>
+</div>
+
+<% function entryList(entries, { dates = true } = {}) { %>
+    <ul role="list" class="list-of-links">
+        <% for (const post of entries) { %>
+            <li class="h-entry"><p>
+                <a class="p-name u-url <%= post.data.name||post.data.title?"":"italic" %> " href="<%= post.data.url %>">
+                    <%= post.data.name ?? post.data.title
+                        ?? filters.peekHtml(filters.md(post.data.content))%></a>
+                <% if (dates) { %>
+                    <time class="dt-published"
+                        datetime="<%= filters.date(post.data.date, "ATOM") %>">
+                        <%= filters.date(post.data.date, "dd MMM ’yy") %>
+                    </time>
+                <% } %>
+                <% if (post.data.summary) { %>
+                    &mdash; <span class="p-summary"><%= post.data.summary %></span>
+                <% } %>
+            </p></li>
+        <% } %>
+    </ul>
+<% } %>
+
+<h2>Projects</h2>
+
+<% entryList(search.pages("project"), { dates: false }) %> 
+
+<h2>Blog</h2>
+
+<% entryList(search.pages("post", "date=desc")) %> 

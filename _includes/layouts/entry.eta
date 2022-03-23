@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="<%= it.lang ?? "en" %>">
+<head>
+<%~ await includeFile("header.html") %>
+<!-- Social embeds -->
+<meta property="og:title" content="<%= it.title %>">
+<meta property="og:url" content="<%= it.url %>">
+<meta property="og:type" content="article">
+<% if (it.photo) { %>
+    <meta property="og:image" content="<%= it.photo.src %>">
+<% } %>
+<meta name="twitter:card" content="<%= it.photo ? 'summary_large_image' : 'summary' %>">
+<meta name="twitter:site" content=@DenizAksimsek>
+<meta name="twitter:creator" content=@DenizAksimsek> 
+
+</head>
+<body>
+<nav class="container">
+    <p><a href="/">&larr; Home</a></p>
+</nav>
+<article class="container h-entry">
+    <header class="italic">
+        <% if ("title" in it) { %>
+            <h1 class="p-name"><%= it.title %></h1>
+        <% } %>
+        <dl class="metadata-block">
+            <dt><%= intl["Published"][it.lang] %></dt>
+            <dd><time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
+                <%~ filters.date(it.date, "M_DATE") %>
+            </time></dd>
+    
+            <% if ("last modified" in it) { %>
+                <dt><%= intl["Last modified"][it.lang] %></dt>
+                <dd><time class="dt-last-modified" datetime="<%= filters.date(it.date, "ATOM") %>">
+                    <%= filters.date(it.date, "M_DATETIME") %>
+                </time></dd>
+            <% } %>
+            
+            <% if ("syndication" in it) { %>
+                <dt><%= intl["Also on"][it.lang] %></dt>
+                <dd>
+                    <% for (const syndicate in it.syndication) { %>
+                        <a rel="syndication" href="<%= it.syndication[syndicate] %>"><%= syndicate %></a>
+                    <% } %>
+                </dd>
+            <% } %>
+    
+            <% if ("..." in it) { %>
+                <dt><%= intl["Notes"][it.lang] %></dt>
+                <dd><%~ it["..."] %> </dd>
+            <% } %>
+        </dl>        
+    </header>
+
+    <% if ("bookmark of" in it) { %>
+        <missing-card class="crowded" onclick="this.querySelector('a').click()">
+            <p>
+                &rarr;
+                <a class="u-bookmark-of" href="<%= it["bookmark of"].url %>">
+                    <%= it["bookmark of"].name %>
+                </a>
+            </p>
+        </missing-card>
+    <% } %>
+    
+    <div class="e-content">
+        <%~ it.content %>
+    </div>
+</article>
+<%~ await includeFile("footer.html") %>
+</body>
