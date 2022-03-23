@@ -1,0 +1,16 @@
+
+Features
+ * posts
+ * feeds (atom, json)
+ * webmentions (through webmention.io)
+ * pinned posts
+ * last-modified date (manual)
+ * syndication links
+
+Want:
+ * static-rendered custom elements
+     * more html-based in general
+ * git-based content dates (unless specified!)
+ * garden
+ * missing.css
+ * cms?
