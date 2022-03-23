@@ -34,8 +34,8 @@
             
             <%_ if ("last modified" in it) { _%>
                 , <em><%= intl["last modified"][it.lang] %></em>
-                <time class="dt-last-modified" datetime="<%= filters.date(it.date, "ATOM") %>">
-                    <%= filters.date(it.date, "M_DATETIME") %></time> 
+                <time class="dt-last-modified" datetime="<%= filters.date(it["last modified"], "ATOM") %>">
+                    <%= filters.date(it["last modified"], "M_DATETIME") %></time> 
             <% } %>
         </p>
         <% for (const prop of ["repost of", "like of"]) { %>

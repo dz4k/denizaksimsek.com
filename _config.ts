@@ -8,6 +8,8 @@ import resolveUrls from "https://deno.land/x/lume/plugins/resolve_urls.ts";
 import eta from "https://deno.land/x/lume/plugins/eta.ts";
 import codeHighlight from "https://deno.land/x/lume/plugins/code_highlight.ts";
 
+import { exec } from "./_build/util.ts"
+
 const site = lume({
   location: new URL("https://denizaksimsek.com/"),
 }, {
@@ -32,6 +34,16 @@ site
   .use(basePath())
   .use(resolveUrls())
   .use(eta())
+
+site.preprocess("*", async (page) => {
+  const gitLog = await exec(["git", "log", "--follow", "--format=%aI", "." + page.src.path + page.src.ext])
+  const dates = gitLog.split("\n")
+  dates.pop() // remove trailing newline
+  if ("last modified" in page.data) return
+  if (dates.length > 0) page.data["last modified"] = new Date(dates[0])
+  if (page.data.date !== page.src.created) return
+  page.data.date ??= new Date(dates[dates.length - 1])
+})
 
 site.process(['.md'], page => {
   page.document.querySelectorAll('blockquote > p:last-child')
