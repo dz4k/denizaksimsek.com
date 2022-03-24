@@ -2,6 +2,8 @@
 
 import lume from "https://deno.land/x/lume/mod.ts";
 import date from "https://deno.land/x/lume/plugins/date.ts";
+import tr    from "https://deno.land/x/date_fns/locale/tr/index.js"
+import en_US from "https://deno.land/x/date_fns/locale/en-US/index.js"
 import postcss from "https://deno.land/x/lume/plugins/postcss.ts";
 import basePath from "https://deno.land/x/lume/plugins/base_path.ts";
 import resolveUrls from "https://deno.land/x/lume/plugins/resolve_urls.ts";
@@ -37,6 +39,7 @@ export default lume(
       "M_DATE": "dd MMM \u2018yy",
       "M_DATETIME": "dd MMM \u2018yy hh:mm",
     },
+    locales: { tr, en_US },
   }))
   .use(prismHighlight())
   .use(basePath())

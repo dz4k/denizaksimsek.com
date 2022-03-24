@@ -40,8 +40,8 @@ url: /
 
 <h2>Projects</h2>
 
-<%~ comp.entryList({ entries: search.pages("project"), dates: false }) %> 
+<%~ comp.entryList({ entries: search.pages("project"), dates: false, lang: "en" }) %> 
 
 <h2>Blog</h2>
 
-<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true }) %> 
+<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang: "en" }) %> 

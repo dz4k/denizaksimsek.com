@@ -4,22 +4,29 @@
 <%~ await includeFile("header.html", it) %>
 </head>
 <body>
+
 <nav class="container">
     <p><a href="/">&larr; <%= intl["Home"][lang] %> </a></p>
 </nav>
+
 <article class="container h-entry">
+
     <header>
+
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
+
         <% if ("..." in it) { %>
             <p class="italic"><%~ it["..."] %></p>
         <% } %>
+
     </header>
     
     <%~ it.content %>
     
     <footer class="missing-card">
+
         <% if ("syndication" in it) { %>
                 <p>
                     <strong><%= intl["Elsewhere"][lang] %>:</strong> 
@@ -34,6 +41,7 @@
             <section id="interactions">
                 <% for (const prop of ["repost-of", "like-of"]) { %>
                     <% if (prop in webmentions[url]) { %>
+
                         <p class="list-of-links">
                             <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                             <% const wms = webmentions[url][prop] %>
@@ -41,10 +49,12 @@
                                 <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                             <% }) %>
                         </p>
+
                     <% } %>
                 <% }%>
         <% } %>
     </footer>
 </article>
+
 <%~ await includeFile("footer.html", it) %>
 </body>

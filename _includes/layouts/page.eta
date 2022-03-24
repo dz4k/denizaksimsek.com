@@ -2,7 +2,7 @@
 <html lang="<%= it.lang ?? "en" %>">
 <head>
     <%~ await includeFile("header.html", it) %>
-    <title><%= title %></title>
+    <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
 <body>
 <div class="container">

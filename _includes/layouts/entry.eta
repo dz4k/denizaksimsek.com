@@ -19,12 +19,12 @@
             <% }) %>
 
             <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
-                <%~ filters.date(it.date, "M_DATE") %></time>
+                <%~ filters.date(it.date, "M_DATE", it.lang) %></time>
             
             <%_ if ("last modified" in it) { _%>
                 , <em><%= intl["last modified"][it.lang] %></em>
                 <time class="dt-last-modified" datetime="<%= filters.date(it["last modified"], "ATOM") %>">
-                    <%= filters.date(it["last modified"], "M_DATETIME") %></time> 
+                    <%= filters.date(it["last modified"], "M_DATETIME", it.lang) %></time> 
             <% } %>
         </p>
         <% for (const prop of ["repost of", "like of"]) { %>
@@ -91,7 +91,7 @@
                                     <%= wm.author.name %></a></b> &middot;
                             <% } %>
                             <a href="<%= wm.url %>">
-                                <%= filters.date(wm.published ?? wm["wm-received"], "M_DATETIME") %></a>
+                                <%= filters.date(wm.published ?? wm["wm-received"], "M_DATETIME", it.lang) %></a>
                             <div class="e-content">
                                 <%= wm.content.text %>
                             </div>

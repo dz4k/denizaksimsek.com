@@ -10,7 +10,6 @@ export default function repeat<T>(
     root: Iterable<T>,
     cb: (t: T, loop: LoopContext) => void
 ): void {
-
     let i = 0
     
     for (const t of root) {
@@ -21,9 +20,11 @@ export default function repeat<T>(
                 return this.last ? "" : s
             }
         }
+    
         if (hasLength(root)) {
             ctx.last = i === root.length - 1
         }
+    
         cb(t, ctx)
         i++
     }
