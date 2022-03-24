@@ -1,4 +1,8 @@
 
+<% if (entries.length === 0) { %>
+    <p><i>No entries</i></p>
+<% } %>
+
 <ul role="list" class="list-of-links">
     <% for (const post of it.entries) { %>
         <li><%~ comp.miniEntry({ post, dates }) %></li>

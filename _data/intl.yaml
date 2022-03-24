@@ -26,6 +26,10 @@ Tags:
   en: Tags
   tr: Etiketler
   tok: kulupu
+Tag:
+  en: Tag
+  tr: Etiket
+  tok: kulupu
 repost of: &repostof
   en: Repost of
   tr: Paylaşma
@@ -43,14 +47,34 @@ like-of (reflexive):
   tr: Beğenenler
   tok: jan ni la lipu ni li pona
 blog (tag):
-  en: blog
-  tr: blog
+  en: Blog
+  tr: Blog
   tok: lipu tenpo
 project (tag):
-  en: project
-  tr: proje
+  en: Project
+  tr: Proje
   tok: pali suli
 link (tag):
-  en: link
-  tr: link
+  en: Link
+  tr: Link
   tok: linja lipu
+collection (tag):
+  en: Collection
+  tr: Derleme
+  tok: kulupu lipu
+blog (tag plural):
+  en: Blog
+  tr: Blog
+  tok: lipu tenpo
+project (tag plural):
+  en: Projects
+  tr: Projeler
+  tok: pali suli
+link (tag plural):
+  en: Links
+  tr: Links
+  tok: linja lipu
+(lang specifier):
+  en: "[en]"
+  tr: "[tr]"
+  tok: " {lon toki pona}"

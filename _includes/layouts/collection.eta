@@ -12,51 +12,12 @@
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
-        <p>
-            <% repeat(tags, (tag, loop) => { %>
-                <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
-                    <%= intl[tag + " (tag)"][lang] %></data></a><%~ loop.sep(" &middot; ") %>
-            <% }) %>
-
-            <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
-                <%~ filters.date(it.date, "M_DATE") %></time>
-            
-            <%_ if ("last modified" in it) { _%>
-                , <em><%= intl["last modified"][it.lang] %></em>
-                <time class="dt-last-modified" datetime="<%= filters.date(it["last modified"], "ATOM") %>">
-                    <%= filters.date(it["last modified"], "M_DATETIME") %></time> 
-            <% } %>
-        </p>
-        <% for (const prop of ["repost of", "like of"]) { %>
-            <% if (prop in it) { %>
-                <p>
-                    <a class="u-<%= prop.replace(" ", "-") %>" href="<%= it[prop].url %>">
-                        <%= it[prop].name %>
-                    </a>
-                </p>
-            <% } %>
-        <% } %>
-
-        </dl>        
         <% if ("..." in it) { %>
             <p class="italic"><%~ it["..."] %></p>
         <% } %>
     </header>
-
-    <% if ("bookmark of" in it) { %>
-        <missing-card class="crowded" onclick="this.querySelector('a').click()">
-            <p>
-                &rarr;
-                <a class="u-bookmark-of" href="<%= it["bookmark of"].url %>">
-                    <%= it["bookmark of"].name %>
-                </a>
-            </p>
-        </missing-card>
-    <% } %>
     
-    <div class="e-content">
-        <%~ it.content %>
-    </div>
+    <%~ it.content %>
     
     <footer class="missing-card">
         <% if ("syndication" in it) { %>
