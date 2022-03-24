@@ -82,6 +82,22 @@
                         </p>
                     <% } %>
                 <% }%>
+
+                <% if ("in-reply-to" in webmentions[url]) { %>
+                    <% repeat(webmentions[url]["in-reply-to"], (wm, loop) => { %>
+                        <article class="h-entry margin-block">
+                            <% if (wm.author) { %>
+                                <b><a class="p-author h-card" href="<%= wm.author.url %>">
+                                    <%= wm.author.name %></a></b> &middot;
+                            <% } %>
+                            <a href="<%= wm.url %>">
+                                <%= filters.date(wm.published ?? wm["wm-received"], "M_DATETIME") %></a>
+                            <div class="e-content">
+                                <%= wm.content.text %>
+                            </div>
+                        </article>
+                    <% }) %>
+                <% } %>
         <% } %>
     </footer>
 </article>
