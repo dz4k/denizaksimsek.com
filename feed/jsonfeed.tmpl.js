@@ -19,7 +19,7 @@ export default ({ search }, filters) => {
 			url: homepage,
 			avatar: avi,
 		},
-		items: search.pages("post", "date=desc").map(post => ({
+		items: search.pages("blog", "date=desc").map(post => ({
 			id: filters.url(post.data.url),
 			title: post.data.name ?? post.data.title
 				?? filters.peekHtml(filters.md(post.data.content)),

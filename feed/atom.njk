@@ -14,7 +14,7 @@ url: '/feed.xml'
     <name>Deniz Akşimşek</name>
     <email>deniz@denizaksimsek.com</email>
   </author>
-  {%- for post in search.pages("post", "date=desc") %}
+  {%- for post in search.pages("blog", "date=desc") %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ post.data.url | url(true) }}"/>
