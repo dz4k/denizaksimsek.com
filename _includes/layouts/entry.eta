@@ -87,10 +87,9 @@
                         <p class="list-of-links">
                             <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                             <% const wms = webmentions[url][prop] %>
-                            <% for (let i = 0; i < wms.length; i++) { %>
-                                <a href="<%= wms[i].url %>"><%= wms[i].author.name %></a><%
-                                = i === wms.length-1 ? "" : ", " %>
-                            <% } %>
+                            <% repeat(wms, (wm, loop) => { %>
+                                <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.last ? "" : ", " %>
+                            <% }) %>
                         </p>
                     <% } %>
                 <% }%>
