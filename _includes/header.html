@@ -18,8 +18,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
 
-<% console.log(it) %>
-
 <% if (it.tags.length > 0) { %>
     <meta property=og:title content="<%= it.name ?? it.title
         ?? filters.peekHtml(filters.md(it.content)) %>">
