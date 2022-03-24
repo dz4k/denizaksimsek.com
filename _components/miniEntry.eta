@@ -1,6 +1,8 @@
 
 <p>
-    <a class="p-name u-url <%= post.data.name||post.data.title?"":"italic" %> " href="<%= post.data.url %>">
+    <a class="p-name u-url <%= post.data.name||post.data.title?"":"italic" %>"
+        lang="<%= post.data.lang %>" 
+        href="<%= post.data.url %>">
         <%= post.data.name ?? post.data.title
             ?? filters.peekHtml(filters.md(post.data.content))%></a>
     <% if (dates) { %>
