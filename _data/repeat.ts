@@ -3,6 +3,7 @@ interface LoopContext {
     i: number
     first: boolean
     last?: boolean
+    sep(s: string): string
 }
 
 export default function repeat<T>(
@@ -13,7 +14,13 @@ export default function repeat<T>(
     let i = 0
     
     for (const t of root) {
-        const ctx: LoopContext = { i, first: i === 0 }
+        const ctx: LoopContext = {
+            i,
+            first: i === 0,
+            sep(s) {
+                return this.last ? "" : s
+            }
+        }
         if (hasLength(root)) {
             ctx.last = i === root.length - 1
         }

@@ -26,7 +26,7 @@
         <p>
             <% repeat(tags, (tag, loop) => { %>
                 <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
-                    <%= intl[tag + " (tag)"][lang] %></data></a><%~ loop.last ? " &middot; " : ", " %> 
+                    <%= intl[tag + " (tag)"][lang] %></data></a><%~ loop.sep(" &middot; ") %>
             <% }) %>
 
             <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
@@ -75,7 +75,7 @@
                     <strong><%= intl["Elsewhere"][lang] %>:</strong> 
                     <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
                         <a rel="syndication" href="<%= it.syndication[syn] %>">
-                            <%= syn %></a><%= loop.last ? "" : ", " %> 
+                            <%= syn %></a><%= loop.sep(", ") %>
                     <% }) %>
                 </p>
         <% } %>
@@ -88,7 +88,7 @@
                             <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                             <% const wms = webmentions[url][prop] %>
                             <% repeat(wms, (wm, loop) => { %>
-                                <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.last ? "" : ", " %>
+                                <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                             <% }) %>
                         </p>
                     <% } %>
