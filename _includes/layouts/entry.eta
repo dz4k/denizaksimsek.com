@@ -96,5 +96,5 @@
         <% } %>
     </footer>
 </article>
-<%~ await includeFile("footer.html") %>
+<%~ await includeFile("footer.html", it) %>
 </body>

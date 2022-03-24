@@ -1,4 +1,9 @@
 
 <footer>
-    <p>&copy; 2021&ndash;2022 <span lang="tr">Deniz Akşimşek</span></p>
+    <p>&copy; 2021&ndash;2022
+        <% if (it.lang === "tok") { %>
+            <span lang="tok">jan [ma ante telo en lawa o]</span></p>
+        <% } else { %>
+            <span lang="tr">Deniz Akşimşek</span></p>
+        <% } %>
 </footer>

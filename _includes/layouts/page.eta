@@ -8,6 +8,6 @@
 <div class="container">
     <%~ it.content %>
 </div>
-<%~ await includeFile("footer.html") %>
+<%~ await includeFile("footer.html", it) %>
 </body>
 </html>
