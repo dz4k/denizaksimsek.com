@@ -17,7 +17,7 @@ import myFilters from "./_build/filters.ts"
 
 prismHyperscript(Prism)
 
-const site = lume(
+export default lume(
     { location: new URL("https://denizaksimsek.com/") },
     {
       markdown: {
@@ -45,6 +45,4 @@ const site = lume(
   .use(myFilters())
   .preprocess("*", getDatesFromGit)
   .process(['.md'], prose)
-  
 
-export default site;
