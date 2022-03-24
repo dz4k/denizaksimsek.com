@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="<%= it.lang ?? "en" %>">
 <head>
-<%~ await includeFile("header.html") %>
+<%~ await includeFile("header.html", it) %>
 <!-- Social embeds -->
 <meta property="og:title" content="<%= it.title %>">
 <meta property="og:url" content="<%= it.url %>">
