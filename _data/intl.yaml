@@ -58,6 +58,10 @@ link (tag):
   en: Link
   tr: Link
   tok: linja lipu
+note (tag):
+  en: Note
+  tr: Not
+  tok: sona lili
 collection (tag):
   en: Collection
   tr: Derleme
@@ -74,6 +78,10 @@ link (tag plural):
   en: Links
   tr: Links
   tok: linja lipu
+note (tag plural):
+  en: Notes
+  tr: Notlar
+  tok: sona lili
 (lang specifier):
   en: "[en]"
   tr: "[tr]"
