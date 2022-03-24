@@ -14,10 +14,10 @@ Also on:
   en: Also on
   tr: Diğer yerlerde
   tok: "ni li lon ni kin:"
-Notes:
-  en: Notes
-  tr: Notlar
-  tok: toki lili
+Wiki:
+  en: Wiki
+  tr: Wiki
+  tok: lipu [Wiki]
 Elsewhere:
   en: Elsewhere
   tr: Başka yerlerde
@@ -54,14 +54,14 @@ project (tag):
   en: Project
   tr: Proje
   tok: pali suli
-link (tag):
-  en: Link
-  tr: Link
+bookmark (tag):
+  en: Bookmark
+  tr: Yer imi
   tok: linja lipu
-note (tag):
-  en: Note
-  tr: Not
-  tok: sona lili
+wiki (tag):
+  en: Wiki
+  tr: Wiki
+  tok: lipu [Wiki]
 collection (tag):
   en: Collection
   tr: Derleme
@@ -74,14 +74,14 @@ project (tag plural):
   en: Projects
   tr: Projeler
   tok: pali suli
-link (tag plural):
-  en: Links
-  tr: Links
+bookmark (tag plural):
+  en: Bookmarks
+  tr: Yer imleri
   tok: linja lipu
-note (tag plural):
-  en: Notes
-  tr: Notlar
-  tok: sona lili
+wiki (tag plural):
+  en: Wiki
+  tr: Wiki
+  tok: lipu Wiki
 (lang specifier):
   en: "[en]"
   tr: "[tr]"

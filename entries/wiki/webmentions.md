@@ -1,5 +1,4 @@
 ---
-tags: note
 title: Webmentions
 ---
 

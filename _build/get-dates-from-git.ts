@@ -16,7 +16,7 @@ export default async (page: Page) => {
 
     // Page has no explicit last-modified set.
     if (!("last modified" in page.data) && dates.length > 0) {
-        page.data["last modified"] = new Date(dates[0])
+        if (dates.length > 1) page.data["last modified"] = new Date(dates[0])
     }
 
     // Page has not explicit date set.

@@ -1,7 +1,7 @@
 
 export default function* ({ intl, comp, search }) {
     for (const lang of ["tr", "en", "tok"]) {
-        for (const tag of ["blog", "project", "link"]) {
+        for (const tag of ["blog", "project", "bookmark"]) {
             yield {
                 url: `/tag/${lang}/${tag}/`,
                 layout: "layouts/collection.eta",

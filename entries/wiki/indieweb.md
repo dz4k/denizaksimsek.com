@@ -1,7 +1,6 @@
 ---
 tags:
-- note
-- link
+- bookmark
 bookmark of:
   name: IndieWebCamp
   url: https://indieweb.org
