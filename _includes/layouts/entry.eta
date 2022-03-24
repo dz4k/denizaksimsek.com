@@ -57,6 +57,18 @@
     <div class="e-content">
         <%~ it.content %>
     </div>
+
+    <% const backlinks = search.pages(`internalLinks*='${url}'`) %>
+    <% if (backlinks.length > 0) { %>
+        <footer class="missing-card">
+            <h3 class="block-label">Backlinks</h3>
+            <%~ comp.entryList({
+                entries: backlinks,
+                dates: false,
+                lang
+            }) %>
+        </footer>
+    <% } %>
     
     <% if (url in webmentions || "syndication" in it) { %>
         <footer class="missing-card">

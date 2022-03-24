@@ -19,4 +19,4 @@ This is useful for static websites without a server to receive and store them.
 If you don't have a website, you can send webmentions using 
 <https://commentpara.de>.
 
-[IndieWeb]: /notes/indieweb
+[IndieWeb]: /wiki/indieweb

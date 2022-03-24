@@ -14,6 +14,7 @@ import Prism from "https://raw.githubusercontent.com/lumeland/experimental-plugi
 import prismHyperscript from "https://unpkg.com/prism-hyperscript@1.1.0/prism-hyperscript.mjs"
 
 import getDatesFromGit from "./_build/get-dates-from-git.ts"
+import { getInternalLinks } from "./_build/backlinks.ts"
 import prose from "./_build/prose.ts"
 import myFilters from "./_build/filters.ts"
 
@@ -47,5 +48,6 @@ export default lume(
   .use(eta())
   .use(myFilters())
   .preprocess("*", getDatesFromGit)
+  .preprocess([".md"], getInternalLinks)
   .process(['.md'], prose)
 
