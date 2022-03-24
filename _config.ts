@@ -10,20 +10,27 @@ import prismHighlight from "https://raw.githubusercontent.com/lumeland/experimen
 import Prism from "https://raw.githubusercontent.com/lumeland/experimental-plugins/main/prism/deps.ts"
 import prismHyperscript from "https://unpkg.com/prism-hyperscript@1.1.0/prism-hyperscript.mjs"
 
-import { exec } from "./_build/util.ts"
+import getDatesFromGit from "./_build/get-dates-from-git.ts"
+import prose from "./_build/prose.ts"
+import myFilters from "./_build/filters.ts"
 
-const site = lume({
-  location: new URL("https://denizaksimsek.com/"),
-}, {
-  markdown: {
-    options: {
-      typographer: true,
+prismHyperscript(Prism)
+
+const site = lume(
+    {
+      location: new URL("https://denizaksimsek.com/"),
     },
-  },
-})
-
-site
-  .ignore("README.md")
+    {
+      markdown: {
+        options: {
+          typographer: true,
+          linkify: true,
+          html: true,
+        },
+      },
+    }
+  )
+  .ignore("README.md", "_build")
   .copy("assets")
   .use(postcss())
   .use(date({
@@ -36,43 +43,9 @@ site
   .use(basePath())
   .use(resolveUrls())
   .use(eta())
-
-prismHyperscript(Prism)
-
-site.preprocess("*", async (page) => {
-  const gitLog = await exec(["git", "log", "--follow", "--format=%aI", "." + page.src.path + page.src.ext])
-  const dates = gitLog.split("\n")
-  dates.pop() // remove trailing newline
-  if ("last modified" in page.data) return
-  if (dates.length > 0) page.data["last modified"] = new Date(dates[0])
-  if (page.data.date !== page.src.created) return
-  page.data.date ??= new Date(dates[dates.length - 1])
-})
-
-site.process(['.md'], page => {
-  page.document.querySelectorAll('blockquote > p:last-child')
-    .forEach(cap => {
-      if (!cap.textContent.startsWith('—')) return // em dash
-
-      const figure = page.document.createElement('figure')
-      cap.tagName = 'figcaption'
-      cap.parentElement.before(figure)
-      figure.appendChild(cap.parentElement)
-      figure.appendChild(cap)
-    })
-  page.document.querySelectorAll('a.cite').forEach(a => {
-    a.removeClass('cite')
-
-    const cite = document.createElement('cite');
-    a.replaceWith(cite)
-    cite.appendChild(a)
-  })
-})
-
-site.filter("peekHtml", html => {
-  const text = html.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s+/g, " ")
-  if (text.length < 50) return text
-  else return text.slice(0, 49) + "…"
-})
+  .use(myFilters())
+  .preprocess("*", getDatesFromGit)
+  .process(['.md'], prose)
+  
 
 export default site;
