@@ -1,0 +1,15 @@
+
+<p>
+    <a class="p-name u-url <%= post.data.name||post.data.title?"":"italic" %> " href="<%= post.data.url %>">
+        <%= post.data.name ?? post.data.title
+            ?? filters.peekHtml(filters.md(post.data.content))%></a>
+    <% if (dates) { %>
+        <time class="dt-published"
+            datetime="<%= filters.date(post.data.date, "ATOM") %>">
+            <%= filters.date(post.data.date, "dd MMM ’yy") %>
+        </time>
+    <% } %>
+    <% if (post.data.summary) { %>
+        &mdash; <span class="p-summary"><%= post.data.summary %></span>
+    <% } %>
+</p>
