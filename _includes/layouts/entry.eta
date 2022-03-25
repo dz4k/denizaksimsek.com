@@ -17,7 +17,7 @@ layout: ./base.eta
             <% }) %>
 
             <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
-                <%~ filters.date(it.date, "M_DATE", it.lang) %></time>
+                <%~ filters.date(it.date, "M_DATETIME", it.lang) %></time>
             
             <%_ if ("last modified" in it) { _%>
                 , <em><%= intl["last modified"][it.lang] %></em>

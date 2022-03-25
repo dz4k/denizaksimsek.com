@@ -17,15 +17,16 @@ export default () => {
             dates.pop() // remove trailing newline
 
             console.log(page.src.path, dates)
+            if (dates.length === 0) return
         
             // Page has no explicit last-modified set.
-            if (!("last modified" in page.data) && dates.length > 0) {
+            if (!("last modified" in page.data)) {
                 if (dates.length > 1) page.data["last modified"] = new Date(dates[0])
             }
         
             // Page has not explicit date set.
             if (!page.data.date || page.data.date.getTime() === page.src.created?.getTime()) {
-                console.log(page.src.path, "GOT HERE", dates[dates.length - 1])
+                console.log(page.src.path, "GOT HERE", page.data.date)
                 page.data.date = new Date(dates[dates.length - 1])
             }
         })
