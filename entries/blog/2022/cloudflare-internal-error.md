@@ -1,6 +1,6 @@
 ---
 tags:
-- website
+- webdev
 - bugfix
 title: "Cloudflare Pages: Failed: an internal error occurred"
 lang: en
