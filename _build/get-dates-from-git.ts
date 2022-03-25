@@ -24,9 +24,9 @@ export default () => {
             }
         
             // Page has not explicit date set.
-            if (!page.data.date) {
+            if (!page.data.date || page.data.date.getTime() === page.src.created?.getTime()) {
                 console.log(page.src.path, "GOT HERE", dates[dates.length - 1])
-                page.data.date ??= new Date(dates[dates.length - 1])
+                page.data.date = new Date(dates[dates.length - 1])
             }
         })
     }
