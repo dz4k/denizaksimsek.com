@@ -76,33 +76,35 @@
     <% const backlinks = search.pages(`internalLinks*='${url}'`) %>
     <% if (backlinks.length > 0) { %>
         <footer class="missing-card">
-            <h3 class="block-label">Backlinks</h3>
-            <%~ comp.entryList({
-                entries: backlinks,
-                dates: false,
-                lang
-            }) %>
+            <div>
+                <h3 class="block-label">Backlinks</h3>
+                <%~ comp.entryList({
+                    entries: backlinks,
+                    dates: false,
+                    lang
+                }) %>
+            </div>
         </footer>
     <% } %>
     
-    <% if (url in webmentions || "syndication" in it) { %>
+    <% if (webmentions.has(url) || "syndication" in it) { %>
         <footer class="missing-card" style="margin-block-start: calc(2 * var(--gap));">
             <% if ("syndication" in it) { %>
-                <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
-                    <p>
-                        <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
-                            <a rel="syndication" href="<%= it.syndication[syn] %>">
-                                <%= syn %></a><%= loop.sep(", ") %>
-                        <% }) %>
-                    </p>
+                <p>
+                    <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
+                    <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
+                        <a rel="syndication" href="<%= it.syndication[syn] %>">
+                            <%= syn %></a><%= loop.sep(", ") %>
+                    <% }) %>
+                </p>
             <% } %>
 
-            <% if (url in webmentions) { %>
+            <% let allWms, wms; %>
+            <% if (allWms = webmentions.get(url)) { %>
                     <% for (const prop of ["repost-of", "like-of"]) { %>
-                        <% if (prop in webmentions[url]) { %>
+                        <% if (wms = allWms.get(prop)) { %>
                             <p class="list-of-links" style="margin-block-start: calc(2 * var(--gap));">
                                 <strong class="block-label"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
-                                <% const wms = webmentions[url][prop] %>
                                 <% repeat(wms, (wm, loop) => { %>
                                     <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                                 <% }) %>
@@ -110,8 +112,8 @@
                         <% } %>
                     <% }%>
 
-                    <% if ("in-reply-to" in webmentions[url]) { %>
-                        <% repeat(webmentions[url]["in-reply-to"], (wm, loop) => { %>
+                    <% if (wms = allWms.get("in-reply-to")) { %>
+                        <% repeat(wms, (wm, loop) => { %>
                             <article class="h-entry margin-block">
                                 <% if (wm.author) { %>
                                     <b><a class="p-author h-card" href="<%= wm.author.url %>">

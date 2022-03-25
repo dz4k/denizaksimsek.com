@@ -24,6 +24,11 @@ function groupby<T, K>(
 export default token
 	? await fetch(url).then(res => res.json())
 		.then(data => groupby(data.children, (wm: any) => relativeUrl(wm['wm-target'])))
-		.then(data => data.forEach((val, key) => data.set(key, val.map(wm => wm["wm-property"]))))
-		.catch(e => (console.log(e), {}))
+		.then(data => {
+			const rv = new Map
+			data.forEach((val, key) => rv.set(key, groupby(val, wm => wm["wm-property"])))
+			return rv
+		})
+		.then(e => (console.log(e), e))
+		.catch(e => (console.log(e), new Map))
 	: {}
