@@ -25,6 +25,7 @@ export default () => {
         
             // Page has not explicit date set.
             if (!page.data.date || page.data.date === page.src.created) {
+                console.log(page.src.path, "GOT HERE", dates[dates.length - 1])
                 page.data.date ??= new Date(dates[dates.length - 1])
             }
         })
