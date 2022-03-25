@@ -10,7 +10,7 @@ layout: ./base.eta
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
-        <p>
+        <p class="list-of-links">
             <% repeat(tags, (tag, loop) => { %>
                 <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
                     <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
