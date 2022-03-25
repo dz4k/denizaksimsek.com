@@ -5,7 +5,7 @@
 </head>
 <body>
 <nav class="container">
-    <p><a href="/">&larr; <%= intl["Home"][lang] %> </a></p>
+    <p><a href="/<%= lang %>">&larr; <%= intl["Home"][lang] %> </a></p>
 </nav>
 <article class="container h-entry">
     <header>
