@@ -1,9 +1,6 @@
-<!doctype html>
-<html lang="<%= it.lang ?? "en" %>">
-<head>
-<%~ await includeFile("header.html", it) %>
-</head>
-<body>
+---
+layout: ./base.eta
+---
 
 <nav class="container">
     <p><a href="/">&larr; <%= intl["Home"][lang] %> </a></p>
@@ -55,6 +52,3 @@
         <% } %>
     </footer>
 </article>
-
-<%~ await includeFile("footer.html", it) %>
-</body>

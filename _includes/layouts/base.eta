@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -130,3 +132,19 @@ time {
         }
     </style>
 <% } %>
+<title><%= it.title ?? "Deniz Akşimşek" %></title>
+</head>
+
+<body>
+<%~ it.content %>
+
+<footer>
+    <p>&copy; 2021&ndash;2022
+        <% if (it.lang === "tok") { %>
+            <span lang="tok">jan [ma ante telo en lawa o]</span></p>
+        <% } else { %>
+            <span lang="tr">Deniz Akşimşek</span></p>
+        <% } %>
+</footer>
+</body>
+</html>
