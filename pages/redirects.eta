@@ -1,5 +1,5 @@
 ---
-url: /_redirects/
+url: /_redirects
 ---
 
 https://dz4k.com/* https://denizaksimsek.com/:splat 301
