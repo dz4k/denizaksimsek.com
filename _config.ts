@@ -1,5 +1,7 @@
 // @ts-nocheck lume config
 
+import "https://deno.land/x/dotenv@v3.2.0/load.ts"
+
 import lume from "https://deno.land/x/lume@v1.7.1/mod.ts";
 import date from "https://deno.land/x/lume@v1.7.1/plugins/date.ts";
 import tr    from "https://deno.land/x/date_fns@v2.22.1/locale/tr/index.js"
@@ -35,7 +37,7 @@ export default lume(
   .ignore("README.md", "_build")
   .copy("assets")
   .data("lang", "en")
-  
+
   .use(postcss())
   .use(date({
     formats: {
