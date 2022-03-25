@@ -3,7 +3,7 @@ export default function* ({ intl, comp, search }) {
     for (const lang of ["tr", "en", "tok"]) {
         for (const tag of ["blog", "project", "bookmark"]) {
             yield {
-                url: `/${lang}/[${tag}]/`,
+                url: `/${lang}/-/${tag}/`,
                 layout: "layouts/collection.eta",
                 lang,
                 tags: "collection",
