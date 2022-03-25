@@ -8,31 +8,22 @@ function relativeUrl(href: string) {
 	return new URL(href).pathname
 }
 
-function groupby<T, E>(
+function groupby<T, K>(
 	data: Iterable<T>,
-	keyFn: (t: T) => E
-): Record<E, T[]> {
-	const rv: Record<E, T[]> = {}
+	keyFn: (t: T) => K
+): Map<K, T[]> {
+	const rv = new Map
 	for (const t of data) {
 		const key = keyFn(t);
-		(rv[key] ??= []).push(t)
+		if (!rv.has(key)) rv.set(key, [])
+		rv.get(key).push(t)
 	}
-	return rv
-}
-
-function mapObject<K extends keyof any, V1, V2>(obj: Record<K, V1>, fn: (e: V1) => V2): Record<K, V2> {
-	const rv: Record<K, V2> = {}
-
-	for (const key in obj) {
-		rv[key] = fn(obj[key])
-	}
-
 	return rv
 }
 
 export default token
 	? await fetch(url).then(res => res.json())
 		.then(data => groupby(data.children, (wm: any) => relativeUrl(wm['wm-target'])))
-		.then(data => mapObject(data, arr => groupby(arr, (wm: any) => wm["wm-property"])))
+		.then(data => data.forEach((val, key) => data.set(key, val.map(wm => wm["wm-property"]))))
 		.catch(e => (console.log(e), {}))
 	: {}

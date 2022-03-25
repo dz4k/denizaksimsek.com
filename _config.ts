@@ -1,13 +1,13 @@
 // @ts-nocheck lume config
 
-import lume from "https://deno.land/x/lume/mod.ts";
-import date from "https://deno.land/x/lume/plugins/date.ts";
-import tr    from "https://deno.land/x/date_fns/locale/tr/index.js"
-import en_US from "https://deno.land/x/date_fns/locale/en-US/index.js"
-import postcss from "https://deno.land/x/lume/plugins/postcss.ts";
-import basePath from "https://deno.land/x/lume/plugins/base_path.ts";
-import resolveUrls from "https://deno.land/x/lume/plugins/resolve_urls.ts";
-import eta from "https://deno.land/x/lume/plugins/eta.ts";
+import lume from "https://deno.land/x/lume@v1.7.1/mod.ts";
+import date from "https://deno.land/x/lume@v1.7.1/plugins/date.ts";
+import tr    from "https://deno.land/x/date_fns@v2.22.1/locale/tr/index.js"
+import en_US from "https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js"
+import postcss from "https://deno.land/x/lume@v1.7.1/plugins/postcss.ts";
+import basePath from "https://deno.land/x/lume@v1.7.1/plugins/base_path.ts";
+import resolveUrls from "https://deno.land/x/lume@v1.7.1/plugins/resolve_urls.ts";
+import eta from "https://deno.land/x/lume@v1.7.1/plugins/eta.ts";
 
 import prismHighlight from "https://raw.githubusercontent.com/lumeland/experimental-plugins/main/prism/mod.ts"
 import Prism from "https://raw.githubusercontent.com/lumeland/experimental-plugins/main/prism/deps.ts"
