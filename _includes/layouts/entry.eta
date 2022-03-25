@@ -15,7 +15,7 @@
         <p>
             <% repeat(tags, (tag, loop) => { %>
                 <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
-                    <%= intl[tag + " (tag)"][lang] %></data></a><%~ loop.sep(" &middot; ") %>
+                    <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
             <% }) %>
 
             <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
