@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: "Tip: Instantly Edit Your Eleventy Site on Github"
 date: 2020-08-17 20:12:00
 syndication:

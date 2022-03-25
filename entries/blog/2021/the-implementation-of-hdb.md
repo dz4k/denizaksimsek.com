@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: "The Implementation of HDB, the _hyperscript debugger"
 date: 2021-03-17 00:00:00
 last modified: 2021-09-02T12:48+0300

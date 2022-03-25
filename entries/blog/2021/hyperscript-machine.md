@@ -1,5 +1,4 @@
 ---
-tags: blog
 date: 2021-02-26 00:03:00
 name: The Hyperscript Machine
 photo:

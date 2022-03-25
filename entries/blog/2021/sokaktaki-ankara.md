@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: "Sokaktaki Ankara: Tabela Tasarım Yarışması"
 date: 2021-08-29 19:07:59
 last updated: 2021-09-02T23:47+03

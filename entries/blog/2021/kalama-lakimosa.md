@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: kalama lakimosa
 date: 2021-08-10 01:10:17
 ---

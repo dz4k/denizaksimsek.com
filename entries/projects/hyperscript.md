@@ -1,6 +1,5 @@
 ---
 tags:
-- project
 - bookmark
 name: _hyperscript
 summary: An approachable programming language for the web.

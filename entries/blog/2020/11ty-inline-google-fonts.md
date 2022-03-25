@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Eleventy — Dynamically Inlining Google Fonts
 date: 2020-07-24 14:33:00
 syndication:

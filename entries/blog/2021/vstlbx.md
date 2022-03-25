@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: VSCode/Toolbx
 date: 2021-11-17 20:53:00
 ---

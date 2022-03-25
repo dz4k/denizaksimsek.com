@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: İstanbul'da bir sokak tabelası
 date: 2020-10-10 19:27:39
 lang: tr

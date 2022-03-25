@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: "Hypelet"
 date: 2021-05-01 14:46:00
 summary: I made a tool to make bookmarklets in _hyperscript.

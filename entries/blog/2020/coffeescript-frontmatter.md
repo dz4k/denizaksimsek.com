@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Eleventy + Markdown + CoffeeScript = ❤
 date: 2020-10-16 17:12:00
 syndication:

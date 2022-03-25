@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Intentionally Unscalable
 date: 2022-02-06 14:52:45
 ...:

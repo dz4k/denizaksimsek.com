@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Stationery I like
 date: 2020-05-22 22:10:00
 last modified: 2021-10-13T20:51:46+03:00

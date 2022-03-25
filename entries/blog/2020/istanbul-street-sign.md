@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Street sign in İstanbul
 date: 2020-10-10 19:27:39
 photo:

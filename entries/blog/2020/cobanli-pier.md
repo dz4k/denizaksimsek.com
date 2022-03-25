@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Çobanlı Pier, Samsun, Turkey
 date: 2020-09-13 19:15:08
 photo:

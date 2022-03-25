@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Eleventy — Using A Layout As A Partial (The Most Useful Things...)
 date: 2020-06-08 14:50:00
 syndication:

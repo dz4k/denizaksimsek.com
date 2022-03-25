@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Sprinkle Sharing
 date: 2021-09-02 19:41:00
 ...: >-

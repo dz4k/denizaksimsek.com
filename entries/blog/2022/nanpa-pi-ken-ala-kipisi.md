@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: nanpa pi ken ala kipisi pi mute ale li lon
 date: 2022-01-14 21:47:00
 lang: tok

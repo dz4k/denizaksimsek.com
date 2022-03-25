@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Ardeşen, Rize, Turkey
 date: 2020-09-02 22:40:22
 photo:

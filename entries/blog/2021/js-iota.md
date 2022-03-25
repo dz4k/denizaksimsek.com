@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Iota (from Golang) in JavaScript
 date: 2021-01-10 17:57:00
 syndication:

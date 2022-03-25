@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Event Delegation in _hyperscript
 date: 2021-05-20 12:43:49
 ---

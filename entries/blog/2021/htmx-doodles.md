@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: HTMX Doodles
 date: 2021-01-11 00:47:00
 photo:

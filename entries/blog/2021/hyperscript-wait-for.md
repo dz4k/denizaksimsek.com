@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: 'Repost: "hyperscript 0.0.4 beta is going to be out soon..."'
 date: 2021-02-13 17:45:11
 repost of:

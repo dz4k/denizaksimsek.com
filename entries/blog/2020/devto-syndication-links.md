@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: Add Syndication Links On Your Personal Site Using Dev.to API
 date: 2020-09-17 21:10:00
 syndication:

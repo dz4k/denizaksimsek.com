@@ -1,5 +1,4 @@
 ---
-tags: blog
 title: CSS — Adding Additional Box Shadows
 date: 2020-09-02 12:54:44
 syndication:
