@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/assets/css/coldark-prism.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
 
 <% if (it.tags.length > 0) { %>
     <meta property=og:title content="<%= it.name ?? it.title
@@ -35,16 +35,19 @@
 
 <style>
 :root {
-    --main-font: "Source Serif 4", serif;
-    /* --main-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; */
+    --main-font: "Alegreya Sans", serif;
     --line-length: 70ch;
     --accent: #be2300;
     --muted-accent: #f06a6a;
     --bg-2: #fff8f8;
     --bg-3: #e1dfdf;
-    font-size: 110%;
-    --rhythm: 1.6rem;
+    font-size: 140%;
+    --rhythm: 1.4rem;
     font-variant-numeric: oldstyle-nums;
+}
+
+pre, code, samp, kbd {
+    font-size: .9em;
 }
 
 a {
@@ -109,7 +112,7 @@ time {
         }
 
         :lang(en), :lang(tr) {
-            --main-font: "Source Serif 4", serif;
+            --main-font: "Alegreya Sans", serif;
             font-family: var(--main-font);
         }
         
