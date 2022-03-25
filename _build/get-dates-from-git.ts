@@ -3,7 +3,7 @@ import { exec } from "./util.ts";
 
 export default () => {
     return (site: Site) => {
-        site.process("*", async (page: Page) => {
+        site.preprocess("*", async (page: Page) => {
             // Pull content dates from git.
         
             const gitLog = await exec([
@@ -15,8 +15,6 @@ export default () => {
         
             const dates = gitLog.split("\n")
             dates.pop() // remove trailing newline
-
-            console.log(page.src.path, dates)
         
             // Page has no explicit last-modified set.
             if (!("last modified" in page.data) && dates.length > 0) {
@@ -25,7 +23,6 @@ export default () => {
         
             // Page has not explicit date set.
             if (!page.data.date || page.data.date === page.src.created) {
-                console.log(page.src.path, "GOT HERE", dates[dates.length - 1])
                 page.data.date ??= new Date(dates[dates.length - 1])
             }
         })
