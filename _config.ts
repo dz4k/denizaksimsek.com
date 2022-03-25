@@ -42,7 +42,7 @@ export default lume(
   .use(date({
     formats: {
       "M_DATE": "dd MMM \u2018yy",
-      "M_DATETIME": "dd MMM \u2018yy hh:mm",
+      "M_DATETIME": "dd MMM \u2018yy HH:mm",
     },
     locales: { tr, en_US },
   }))
