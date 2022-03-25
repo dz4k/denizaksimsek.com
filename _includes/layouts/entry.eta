@@ -43,6 +43,7 @@ layout: ./base.eta
         <% for (const prop of ["repost of", "like of"]) { %>
             <% if (prop in it) { %>
                 <p>
+                    <strong><%= intl[prop][lang] %></strong>
                     <a class="u-<%= prop.replace(" ", "-") %>" href="<%= it[prop].url %>">
                         <%= it[prop].name %>
                     </a>
