@@ -29,6 +29,5 @@ export default token
 			data.forEach((val, key) => rv.set(key, groupby(val, wm => wm["wm-property"])))
 			return rv
 		})
-		.then(e => (console.log(e), e))
 		.catch(e => (console.log(e), new Map))
 	: {}
