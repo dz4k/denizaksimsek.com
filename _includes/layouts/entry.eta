@@ -71,7 +71,7 @@
     <% } %>
     
     <% if (url in webmentions || "syndication" in it) { %>
-        <footer class="missing-card">
+        <footer class="missing-card" style="margin-block-start: calc(2 * var(--gap));">
             <% if ("syndication" in it) { %>
                 <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
                     <p>
@@ -85,7 +85,7 @@
             <% if (url in webmentions) { %>
                     <% for (const prop of ["repost-of", "like-of"]) { %>
                         <% if (prop in webmentions[url]) { %>
-                            <p class="list-of-links" style="margin-top: calc(2 * var(--gap));">
+                            <p class="list-of-links" style="margin-block-start: calc(2 * var(--gap));">
                                 <strong class="block-label"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                                 <% const wms = webmentions[url][prop] %>
                                 <% repeat(wms, (wm, loop) => { %>
