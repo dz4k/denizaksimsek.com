@@ -73,8 +73,8 @@
     <% if (url in webmentions || "syndication" in it) { %>
         <footer class="missing-card">
             <% if ("syndication" in it) { %>
+                <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
                     <p>
-                        <strong><%= intl["Elsewhere"][lang] %>:</strong> 
                         <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
                             <a rel="syndication" href="<%= it.syndication[syn] %>">
                                 <%= syn %></a><%= loop.sep(", ") %>
@@ -83,11 +83,10 @@
             <% } %>
 
             <% if (url in webmentions) { %>
-                <section id="interactions">
                     <% for (const prop of ["repost-of", "like-of"]) { %>
                         <% if (prop in webmentions[url]) { %>
-                            <p class="list-of-links">
-                                <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
+                            <p class="list-of-links" style="margin-top: calc(2 * var(--gap));">
+                                <strong class="block-label"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                                 <% const wms = webmentions[url][prop] %>
                                 <% repeat(wms, (wm, loop) => { %>
                                     <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
