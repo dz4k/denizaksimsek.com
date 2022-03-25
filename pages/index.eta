@@ -27,10 +27,10 @@ url: /
         <a href="/feed.json">
             <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15">
         </a>
-        <a href="https://indieweb.org">
+        <a href="/wiki/indieweb/">
             <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15">
         </a>
-        <a href="https://www.w3.org/TR/webmention/">
+        <a href="/wiki/webmentions/">
             <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15">
         </a>
     </p>
