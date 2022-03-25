@@ -13,6 +13,6 @@
     <% } %>
     
     <% if (post.data.summary) { %>
-        &mdash; <span class="p-summary"><%= post.data.summary %></span>
+        &mdash; <span class="p-summary" lang="<%= post.data.lang %>"><%= post.data.summary %></span>
     <% } %>
 </p>

@@ -5,6 +5,8 @@ url: /_redirects/
 https://dz4k.com/* https://denizaksimsek.com/:splat 301
 http://dz4k.com/* https://denizaksimsek.com/:splat 301
 
+/ /en/
+
 /2020/ankara-metro-map/ https://ankarametro.dz4k.com
 
 /archive/ /

@@ -47,6 +47,7 @@ export default lume(
   .use(resolveUrls())
   .use(eta())
   .use(myFilters())
+  .data("lang", "en")
   .preprocess("*", getDatesFromGit)
   .preprocess([".md"], getInternalLinks)
   .process(['.md'], prose)

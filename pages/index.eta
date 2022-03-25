@@ -9,39 +9,53 @@ url: /
     <link class="u-url u-uid" href="https://denizaksimsek.com">
 
     <p class="list-of-links">
-        <a rel="me" class="u-email" href="mailto:deniz_website@denizaksimsek.com">Email</a> &middot;
-        <a rel="me noopener noreferrer" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
-        <a rel="me noopener noreferrer" href="https://github.com/dz4k">GitHub</a> &middot;
-        <a rel="me noopener noreferrer" href="https://dev.to/dz4k">DEV</a> &middot;
-        <a rel="me noopener noreferrer" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a> &middot;
-        <a rel="me noopener noreferrer" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a> &middot;
-        <a class="p-x-pronoun-nominative" href="https://pronoun.is/he">he</span>
+        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a> &middot;
+        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
+        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a> &middot;
+        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a> &middot;
+        <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a> &middot;
+        <a rel="me noopener noreferrer" lang="en" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
+        <% if (lang === "en") { %>
+            &middot; <a class="p-x-pronoun-nominative" href="https://pronoun.is/he">he</a>
+        <% } %>
     </p>
 
     <p class="list-of-links">
-        <a href="/feed">Feeds</a> &middot;
-        <a href="https://indieweb.org">
-            <img style="all: initial" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15">
-        </a> &middot;
-        <a href="https://www.w3.org/TR/webmention/">
-            <img style="all: initial" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15">
+        <a href="/feed.xml">
+            <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15">
         </a>
+        <a href="/feed.json">
+            <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15">
+        </a>
+        <a href="https://indieweb.org">
+            <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15">
+        </a>
+        <a href="https://www.w3.org/TR/webmention/">
+            <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15">
+        </a>
+    </p>
+    <p class="list-of-links">
+        <% repeat(["tr", "en", "tok"], (language, loop) => { %>
+            <a 
+                href="/<%= language %>"
+                hreflang="<%= language %>"
+                rel="alternate"
+                <%~ language === lang ? "aria-current=page" : ""%>
+                ><%= language %></a>
+                <%~ loop.sep(" &middot; ") %>
+        <% }) %>
     </p>
 
     <p>
         <img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule">
     </p>
-
-    <p class="p-note">
-        Despite the rumors, I am very much imitable.
-    </p>
 </div>
 
 
-<h2>Projects</h2>
+<h2><%= intl["project (tag plural)"][lang] %></h2>
 
-<%~ comp.entryList({ entries: search.pages("project"), dates: false, lang: "en" }) %> 
+<%~ comp.entryList({ entries: search.pages("project"), dates: false, lang }) %> 
 
-<h2>Blog</h2>
+<h2><%= intl["blog (tag plural)"][lang] %></h2>
 
-<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang: "en" }) %> 
+<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 

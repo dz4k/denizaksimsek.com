@@ -3,12 +3,12 @@ export default function* ({ intl, comp, search }) {
     for (const lang of ["tr", "en", "tok"]) {
         for (const tag of ["blog", "project", "bookmark"]) {
             yield {
-                url: `/tag/${lang}/${tag}/`,
+                url: `/${lang}/[${tag}]/`,
                 layout: "layouts/collection.eta",
                 lang,
                 tags: "collection",
-                title: intl["Tag"][lang] + ": " + intl[tag + " (tag plural)"][lang] + " " + intl["(lang specifier)"][lang],
-                content: comp.entryList({ entries: search.pages(`${tag} lang=${lang}`, "date=desc"), dates: tag !== "project", lang })
+                title: intl["Tag"][lang] + ": " + intl[tag + " (tag plural)"][lang],
+                content: comp.entryList({ entries: search.pages(`${tag}`, "date=desc"), dates: tag !== "project", lang })
             }
         }
     }
