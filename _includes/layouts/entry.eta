@@ -27,6 +27,21 @@
                     <%= filters.date(it["last modified"], "M_DATETIME", it.lang) %></time> 
             <% } %>
         </p>
+        <% if ("alt" in it) { %>
+            <p>
+                🌐
+                <% repeat(Object.entries(it.alt), ([language, href], loop) => { %>
+                    <a 
+                        rel="alternate"
+                        lang="<%= language %>"
+                        hreflang="<%= language %>"
+                        href="<%= href %>">
+                        <%= intl[language][language] %></a>
+                <% }) %>
+            </p>
+        <% } %>
+
+
         <% for (const prop of ["repost of", "like of"]) { %>
             <% if (prop in it) { %>
                 <p>

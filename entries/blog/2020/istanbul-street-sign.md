@@ -14,7 +14,8 @@ photo:
     The one behind says:
     "BİL..". SOKAĞI, [on white strip] MEHMET AKİF MAHALLESİ, [on green strip]
     ÇEKMEKÖY (TN:60 )"
-türkçe: /2020/istanbul-sokak-tabelasi/
+alt:
+  tr: /2020/istanbul-sokak-tabelasi/
 templateEngineOverride: njk,md
 ---
 

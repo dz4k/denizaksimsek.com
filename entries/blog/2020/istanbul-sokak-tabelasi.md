@@ -14,7 +14,8 @@ photo:
     Arkadakinde yazan:
     "BİL... SOKAĞI, [beyaz şeritte:] MEHMET AKİF MAHALLESİ, [yeşil şeritte:]
     ÇEKMEKÖY (TN:60 )
-english: /2020/istanbul-street-sign/
+alt:
+  en: /2020/istanbul-street-sign/
 templateEngineOverride: njk,md
 ---
 

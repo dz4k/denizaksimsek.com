@@ -35,13 +35,15 @@ url: /
         </a>
     </p>
     <p class="list-of-links">
+        🌐
         <% repeat(["tr", "en", "tok"], (language, loop) => { %>
             <a 
                 href="/<%= language %>"
+                lang="<%= language %>"
                 hreflang="<%= language %>"
                 rel="alternate"
                 <%~ language === lang ? "aria-current=page" : ""%>
-                ><%= language %></a>
+                ><%= intl[language][language] %></a>
                 <%~ loop.sep(" &middot; ") %>
         <% }) %>
     </p>

@@ -86,3 +86,15 @@ wiki (tag plural):
   en: "[en]"
   tr: "[tr]"
   tok: " {lon toki pona}"
+tr:
+  tr: Türkçe
+  en: Turkish
+  tok: toki Tuki
+en:
+  tr: İngilizce
+  en: English
+  tok: toki Inli
+tok:
+  tr: Toki Pona
+  en: Toki Pona
+  tok: toki pona
