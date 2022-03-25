@@ -20,7 +20,7 @@ export default async (page: Page) => {
     }
 
     // Page has not explicit date set.
-    if (page.data.date === page.src.created) {
+    if (!page.data.date || page.data.date === page.src.created) {
         page.data.date ??= new Date(dates[dates.length - 1])
     }
 }

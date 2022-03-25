@@ -2,6 +2,7 @@
 tags: presentation
 url: /2022/missingcss-meeting/
 layout: false
+hidden: true
 ---
 
 <!doctype html>

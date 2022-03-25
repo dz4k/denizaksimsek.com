@@ -4,7 +4,7 @@
 <% } else { %>
     <ul role="list" class="list-of-links">
         <% for (const post of it.entries) { %>
-            <% if (post.data.alt?.[lang]) continue %>
+            <% if (post.data.alt?.[lang] || post.data.hidden) continue %>
             <li><%~ comp.miniEntry({ post, dates, lang: it.lang }) %></li>
         <% } %>
     </ul>
