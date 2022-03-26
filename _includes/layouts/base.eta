@@ -53,7 +53,8 @@ pre, code, samp, kbd {
 }
 
 a {
-    text-underline-offset: .4em;
+    text-underline-offset: .22em;
+    text-decoration-skip-ink: 1em;
 }
 
 time {
