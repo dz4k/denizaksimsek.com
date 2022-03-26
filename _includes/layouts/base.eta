@@ -6,7 +6,7 @@
 
 <title><%= it.title ? it.title + " Deniz Akşimşek" : "Deniz Akşimşek" %></title>
 
-<link rel="stylesheet" href="https://the.missing.style">
+<link rel="stylesheet" href="/assets/css/missing.css">
 <link rel="icon" href="/assets/me.jpeg">
 
 <!-- IndieAuth -->
