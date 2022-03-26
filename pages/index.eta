@@ -56,4 +56,4 @@ url: /
 
 <h2><%= intl["blog (tag plural)"][lang] %></h2>
 
-<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 
+<%~ comp.entryList({ entries: search.pages("blog|wiki", "date=desc"), dates: true, lang }) %> 

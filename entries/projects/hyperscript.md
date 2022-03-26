@@ -7,6 +7,8 @@ bookmark of:
   name: _hyperscript
   url: https://hyperscript.org
 date: 2022-03-21 20:47:00
+alt:
+  tr: /projects/hyperscript.tr/
 ---
 
 \_hyperscript is a programming language, created by Carson Gross of [htmx], 
