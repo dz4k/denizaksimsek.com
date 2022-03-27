@@ -12,6 +12,5 @@ alt:
   tr: /projects/hyperscript.tr/
 ---
 
-toki <span class=noliga>[_hyperscript]</span> [ante pona alasa suwi ilo] li
-toki ilo pi ma lipu. jan <span class=noliga>[Carson Gross]</span> li pali e ni.
-toki ni li kama ale mi.
+toki hyperscript [ante pona alasa suwi ilo] li toki ilo pi ma lipu. jan Carson
+Gross li pali e ni. toki ni li kama ale mi.
