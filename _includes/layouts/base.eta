@@ -65,6 +65,10 @@ time {
     font-style: italic;
 }
 
+.noliga {
+    font-feature-settings: "liga" 0;
+}
+
 .margin-block {
     margin-block: var(--gap);
 }
