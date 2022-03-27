@@ -103,18 +103,12 @@ time {
 <% if (it.lang === "tok") { %>
     <style>
         @font-face {
-            font-family: "insa pi supa lape";
-            src: url("/assets/fonts/supalape.woff");
-        }
-
-        @font-face {
-            font-family: "insa pi supa lape";
-            src: url("/assets/fonts/supalape-bold.woff");
-            font-weight: 700;
+            font-family: "sitelen pona pona";
+            src: url("/assets/fonts/sitelen-pona-pona.otf");
         }
 
         :root {
-            --main-font: "insa pi supa lape", sans-serif;
+            --main-font: "sitelen pona pona", sans-serif;
         }
 
         :not(:lang(tok)) {
