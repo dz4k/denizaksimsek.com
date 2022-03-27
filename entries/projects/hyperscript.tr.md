@@ -9,6 +9,7 @@ bookmark of:
   url: https://hyperscript.org
 alt:
   en: /projects/hyperscript.en/
+  tok: /projects/hyperscript.tok/
 ---
 
 \_hyperscript, [htmx] projesinden Carson Gross tarafından yapılıp hayatımı ele
