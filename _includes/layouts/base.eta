@@ -110,12 +110,10 @@ time {
     font-weight: bold;
 }
 
-:lang(tok) {
+:lang(tok):not(time) {
     --main-font: "insa pi supa lape", sans-serif;
     font-family: var(--main-font);
-}
 
-:lang(tok) {
     letter-spacing: 0 !important;
     text-transform: none !important;
 }
