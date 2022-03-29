@@ -16,13 +16,13 @@ layout: ./base.eta
                     <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
             <% }) %>
 
-            <time class="dt-published" datetime="<%= filters.date(it.date, "ATOM") %>">
-                <%~ filters.date(it.date, "M_DATETIME", it.lang) %></time>
+            <time class="dt-published" datetime="<%= comp.date({ date, iso: true }) %>">
+                <%~ comp.date({ date, time: true, lang }) %></time>
             
             <%_ if ("last modified" in it) { _%>
                 , <em><%= intl["last modified"][it.lang] %></em>
-                <time class="dt-last-modified" datetime="<%= filters.date(it["last modified"], "ATOM") %>">
-                    <%= filters.date(it["last modified"], "M_DATETIME", it.lang) %></time> 
+                <time class="dt-last-modified" datetime="<%= comp.date({ date: it["last modified"], iso: true }) %>">
+                    <%= comp.date({ date: it["last modified"], time: true, lang }) %></time> 
             <% } %>
         </p>
         <% if ("alt" in it) { %>

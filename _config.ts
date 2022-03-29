@@ -39,13 +39,7 @@ export default lume(
   .data("lang", "en")
 
   .use(postcss())
-  .use(date({
-    formats: {
-      "M_DATE": "dd MMM \u2018yy",
-      "M_DATETIME": "dd MMM \u2018yy HH:mm",
-    },
-    locales: { tr, en_US },
-  }))
+  .use(date({ locales: { tr, en_US } }))
   .use(prismHighlight())
   .use(basePath())
   .use(resolveUrls())

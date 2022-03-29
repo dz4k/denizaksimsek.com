@@ -7,8 +7,8 @@
             ?? filters.peekHtml(filters.md(post.data.content))%></a>
 
     <% if (dates) { %>
-        <time class="dt-published" datetime="<%= filters.date(post.data.date, "ATOM") %>">
-            <%= filters.date(post.data.date, "M_DATE", it.lang) %>
+        <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
+            <%= comp.date({ date: post.data.date, lang }) %>
         </time>
     <% } %>
     

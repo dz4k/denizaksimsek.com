@@ -28,7 +28,7 @@ export default ({ search }, filters) => {
 			url: new URL(post.url, homepage),
 			summary: post.data.summary,
 			image: new URL(post.data.photo && post.data.photo.src, homepage),
-			date_published: filters.date(post.date, "ATOM"),
+			date_published: filters.date({ date: post.date, iso: true }),
 		}))
 	})
 }
