@@ -117,6 +117,11 @@ time {
     letter-spacing: 0 !important;
     text-transform: none !important;
 }
+
+time {
+    --main-font: "Alegreya Sans", serif;
+    font-family: var(--main-font);
+}
 </style>
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
