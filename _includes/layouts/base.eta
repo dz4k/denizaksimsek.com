@@ -98,38 +98,27 @@ time {
 [aria-current] {
     font-weight: bold;
 }
+
+@font-face {
+    font-family: "insa pi supa lape";
+    src: url("/assets/fonts/supalape.otf");
+}
+
+@font-face {
+    font-family: "insa pi supa lape";
+    src: url("/assets/fonts/supalape-bold.otf");
+}
+
+:lang(tok) {
+    --main-font: "insa pi supa lape", sans-serif;
+    font-family: var(--main-font);
+}
+
+:lang(tok) {
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+}
 </style>
-
-<% if (it.lang === "tok") { %>
-    <style>
-        @font-face {
-            font-family: "sitelen pona pona";
-            src: url("/assets/fonts/sitelen-pona-pona.otf");
-        }
-
-        :root {
-            --main-font: "sitelen pona pona", sans-serif;
-        }
-
-        :not(:lang(tok)) {
-            --main-font: "Alegreya Sans", serif;
-            font-family: var(--main-font);
-        }
-        
-        * {
-            letter-spacing: 0 !important;
-            text-transform: none !important;
-        }
-        
-        time, :not(:lang(tok)) {
-            font-feature-settings: "liga" 0;
-        }
-        
-        var {
-            font-style: normal;
-        }
-    </style>
-<% } %>
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
 
