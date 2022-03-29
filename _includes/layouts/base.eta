@@ -118,7 +118,7 @@ time {
     text-transform: none !important;
 }
 
-time {
+:lang(en), :lang(tr), time {
     --main-font: "Alegreya Sans", serif;
     font-family: var(--main-font);
 }
