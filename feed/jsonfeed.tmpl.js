@@ -7,7 +7,7 @@ const
 
 export const url = '/feed.json'
 
-export default ({ search }, filters) => {
+export default ({ search, comp }) => {
 	return JSON.stringify({
 		version,
 		title: myName,
