@@ -101,12 +101,12 @@ time {
 
 @font-face {
     font-family: "insa pi supa lape";
-    src: url("/assets/fonts/supalape.otf");
+    src: url("/assets/fonts/supalape.woff");
 }
 
 @font-face {
     font-family: "insa pi supa lape";
-    src: url("/assets/fonts/supalape-bold.otf");
+    src: url("/assets/fonts/supalape-bold.woff");
 }
 
 :lang(tok) {
