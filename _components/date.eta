@@ -1,7 +1,7 @@
 <%_ 
-    const fmt = format ??
-        iso ? "ATOM"
-        : lang === "tok"
-            ? "'󱥜' yy '󱤺' MM '󱥤' dd" + (time ? " 󱥫 HH:mm" : "")
-            : "dd MMM \u2018yy" + (time ? " HH:mm" : "") _%>
+    const fmt = it.format ??
+        it.iso ? "ATOM"
+        : it.lang === "tok"
+            ? "'󱥜' yy '󱤺' MM '󱥤' dd" + (it.time ? " 󱥫 HH:mm" : "")
+            : "dd MMM \u2018yy" + (it.time ? " HH:mm" : "") _%>
 <%_= filters.date(date, fmt, lang) _%>
