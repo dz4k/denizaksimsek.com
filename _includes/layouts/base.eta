@@ -107,6 +107,7 @@ time {
 @font-face {
     font-family: "insa pi supa lape";
     src: url("/assets/fonts/supalape-bold.woff");
+    font-weight: bold;
 }
 
 :lang(tok) {
