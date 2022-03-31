@@ -30,4 +30,4 @@ export default token
 			return rv
 		})
 		.catch(e => (console.log(e), new Map))
-	: {}
+	: new Map
