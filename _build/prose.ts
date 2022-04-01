@@ -1,11 +1,13 @@
 import type { Page, Site } from "https://deno.land/x/lume@v1.7.1/core.ts";
 import { Element, HTMLDocument } from "https://deno.land/x/lume@v1.7.1/deps/dom.ts";
+import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
 
 export const markdownOptions = {
   options: {
     typographer: true,
     linkify: true,
     html: true,
+    plugins: [figureWithPCaption]
   },
 }
 
@@ -26,6 +28,17 @@ export default () => {
           caption.parentElement!.before(figure)
           figure.appendChild(caption.parentElement!)
           figure.appendChild(caption)
+        })
+
+        document.getElementsByTagName("p").forEach(p => {
+          if (/^\w+(?: \d+)?:/.test(p.textContent)) {
+            const figure = document.createElement("figure")
+            const c = p.nextElementSibling
+            p.tagName = "figcaption"
+            p.before(figure)
+            figure.appendChild(p)
+            figure.appendChild(c!)
+          }
         })
     })
   }
