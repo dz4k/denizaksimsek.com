@@ -6,7 +6,6 @@ import lume from "https://deno.land/x/lume@v1.7.1/mod.ts";
 import date from "https://deno.land/x/lume@v1.7.1/plugins/date.ts";
 import tr    from "https://deno.land/x/date_fns@v2.22.1/locale/tr/index.js"
 import en_US from "https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js"
-import postcss from "https://deno.land/x/lume@v1.7.1/plugins/postcss.ts";
 import basePath from "https://deno.land/x/lume@v1.7.1/plugins/base_path.ts";
 import resolveUrls from "https://deno.land/x/lume@v1.7.1/plugins/resolve_urls.ts";
 import eta from "https://deno.land/x/lume@v1.7.1/plugins/eta.ts";
@@ -38,7 +37,6 @@ export default lume(
   .copy("assets")
   .data("lang", "en")
 
-  .use(postcss())
   .use(date({ locales: { tr, en_US } }))
   .use(prismHighlight())
   .use(basePath())
