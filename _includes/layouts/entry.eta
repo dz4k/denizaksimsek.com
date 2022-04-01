@@ -11,7 +11,7 @@ layout: ./base.eta
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
         <p class="list-of-links">
-            <% repeat(tags, (tag, loop) => { %>
+            <% filters.repeat(tags, (tag, loop) => { %>
                 <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
                     <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
             <% }) %>
@@ -28,7 +28,7 @@ layout: ./base.eta
         <% if ("alt" in it) { %>
             <p>
                 🌐
-                <% repeat(Object.entries(it.alt), ([language, href], loop) => { %>
+                <% filters.repeat(Object.entries(it.alt), ([language, href], loop) => { %>
                     <a 
                         rel="alternate"
                         lang="<%= language %>"
@@ -91,7 +91,7 @@ layout: ./base.eta
             <% if ("syndication" in it) { %>
                 <p>
                     <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
-                    <% repeat(Object.keys(it.syndication), (syn, loop) => { %>
+                    <% filters.repeat(Object.keys(it.syndication), (syn, loop) => { %>
                         <a rel="syndication" href="<%= it.syndication[syn] %>">
                             <%= syn %></a><%= loop.sep(", ") %>
                     <% }) %>
@@ -104,7 +104,7 @@ layout: ./base.eta
                         <% if (wms = allWms.get(prop)) { %>
                             <p class="list-of-links">
                                 <strong class="block-label"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
-                                <% repeat(wms, (wm, loop) => { %>
+                                <% filters.repeat(wms, (wm, loop) => { %>
                                     <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                                 <% }) %>
                             </p>
@@ -113,7 +113,7 @@ layout: ./base.eta
 
                     <% if (wms = allWms.get("in-reply-to")) { %>
                         <h3><%= intl["Replies"][lang] %></h3>
-                        <% repeat(wms, (wm, loop) => { %>
+                        <% filters.repeat(wms, (wm, loop) => { %>
                             <article class="h-entry margin-block">
                                 <% if (wm.author) { %>
                                     <b><a class="p-author h-card" href="<%= wm.author.url %>">
