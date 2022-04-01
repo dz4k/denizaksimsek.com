@@ -45,5 +45,5 @@ export default lume(
   .use(myFilters())
   .use(getDatesFromGit())
   .use(backlinks())
-  .process(['.md'], prose)
+  .use(prose())
 
