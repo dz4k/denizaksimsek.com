@@ -3,6 +3,7 @@ import { exec } from "./util.ts";
 
 export default () => {
     return (site: Site) => {
+        exec(["git", "status"])
         site.preprocess("*", async (page: Page) => {
             // Pull content dates from git.
         
