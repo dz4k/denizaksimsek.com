@@ -1,6 +1,14 @@
 import type { Page, Site } from "https://deno.land/x/lume@v1.7.1/core.ts";
 import { Element, HTMLDocument } from "https://deno.land/x/lume@v1.7.1/deps/dom.ts";
 
+export const markdownOptions = {
+  options: {
+    typographer: true,
+    linkify: true,
+    html: true,
+  },
+}
+
 export default () => {
   return (site: Site) => {
     site.process([".md"], (page: Page) => {

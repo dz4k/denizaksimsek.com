@@ -16,23 +16,16 @@ import prismHyperscript from "https://unpkg.com/prism-hyperscript@1.1.0/prism-hy
 
 import getDatesFromGit from "./_build/get-dates-from-git.ts"
 import backlinks from "./_build/backlinks.ts"
-import prose from "./_build/prose.ts"
+import prose, { markdownOptions } from "./_build/prose.ts"
 import myFilters from "./_build/filters.ts"
 
 prismHyperscript(Prism)
 
 export default lume(
     { location: new URL("https://denizaksimsek.com/") },
-    {
-      markdown: {
-        options: {
-          typographer: true,
-          linkify: true,
-          html: true,
-        },
-      },
-    }
+    { markdown: markdownOptions }
   )
+  
   .ignore("README.md", "_build")
   .copy("assets")
   .data("lang", "en")
