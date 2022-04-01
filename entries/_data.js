@@ -1,5 +1,4 @@
 export const layout = "layouts/entry.eta"
-export const lang = "en"
 export const templateEngine = "eta,md"
 export const renderOrder = -10
 export const url = page => {
