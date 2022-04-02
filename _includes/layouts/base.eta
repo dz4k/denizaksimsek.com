@@ -39,10 +39,10 @@
 :root {
     --main-font: "Alegreya Sans", serif;
     --line-length: 70ch;
-    --accent: #0a725b;
+    --accent: #089097;
     --muted-accent: #6edaa7;
-    --bg-2: #fff8f8;
-    --bg-3: #e1dfdf;
+    --bg-2: #f8fffc;
+    --bg-3: #dfe1e1;
     font-size: 140%;
     --rhythm: 1.4rem;
     font-variant-numeric: oldstyle-nums;
