@@ -39,8 +39,8 @@
 :root {
     --main-font: "Alegreya Sans", serif;
     --line-length: 70ch;
-    --accent: #be2300;
-    --muted-accent: #f06a6a;
+    --accent: #0a725b;
+    --muted-accent: #6edaa7;
     --bg-2: #fff8f8;
     --bg-3: #e1dfdf;
     font-size: 140%;
