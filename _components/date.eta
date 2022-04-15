@@ -2,6 +2,6 @@
     const fmt = it.format ??
         it.iso ? "ATOM"
         : it.lang === "tok"
-            ? "'󱥜'yy'󱤺'MM'󱥤'dd" + (it.time ? "'󱥫'HH:mm" : "")
+            ? "'&nbsp;sike' yy 'mun' MM 'suno' dd" + (it.time ? " 'tenpo' HHmm" : "")
             : "dd MMM \u2018yy" + (it.time ? " HH:mm" : "") _%>
-<%_= filters.date(date, fmt, lang) _%>
+<%_~ filters.date(date, fmt, lang) _%>

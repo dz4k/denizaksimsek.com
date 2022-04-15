@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://davidar.github.io/linja-pona/stylesheet.css">
 
 <% if (it.tags.length > 0) { %>
     <meta property=og:title content="<%= it.name ?? it.title
@@ -99,19 +100,8 @@ time {
     font-weight: bold;
 }
 
-@font-face {
-    font-family: "insa pi supa lape";
-    src: url("/assets/fonts/supalape.woff");
-}
-
-@font-face {
-    font-family: "insa pi supa lape";
-    src: url("/assets/fonts/supalape-bold.woff");
-    font-weight: bold;
-}
-
 :lang(tok) {
-    --main-font: "insa pi supa lape", sans-serif;
+    --main-font: "linja pona", sans-serif;
     font-family: var(--main-font);
 
     letter-spacing: 0 !important;
@@ -132,7 +122,7 @@ time {
 <footer>
     <p>&copy; 2021&ndash;2022
         <% if (it.lang === "tok") { %>
-            <span lang="tok">jan [ma ante telo en lawa o]</span></p>
+            <span lang="tok">jan [_ma_ante_telo_en_lawa_o]</span></p>
         <% } else { %>
             <span lang="tr">Deniz Akşimşek</span></p>
         <% } %>

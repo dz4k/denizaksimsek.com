@@ -8,7 +8,7 @@
 
     <% if (dates) { %>
         <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
-            <%= comp.date({ date: post.data.date, lang }) %>
+            <%~ comp.date({ date: post.data.date, lang }) %>
         </time>
     <% } %>
     

@@ -5,7 +5,7 @@ url: /
 
 <div class="h-card">
     <% if (lang === "tok") { %>
-        <h1>jan [ma ante telo en lawa o]</h1>
+        <h1>jan [_ma_ante_telo_en_lawa_o]</h1>
     <% } else { %>
         <h1 lang="tr">Deniz Akşimşek</h1>
     <% } %>
@@ -56,8 +56,8 @@ url: /
 
 <h2><%= intl["project (tag plural)"][lang] %></h2>
 
-<%~ comp.entryList({ entries: search.pages("project"), dates: false, lang }) %> 
+<%~ comp.entryList({ entries: search.pages(`project`), dates: false, lang }) %> 
 
 <h2><%= intl["blog (tag plural)"][lang] %></h2>
 
-<%~ comp.entryList({ entries: search.pages("blog|wiki", "date=desc"), dates: true, lang }) %> 
+<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 
