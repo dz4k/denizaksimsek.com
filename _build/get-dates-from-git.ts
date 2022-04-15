@@ -16,7 +16,6 @@ export default () => {
             const dates = gitLog.split("\n")
             dates.pop() // remove trailing newline
 
-            console.log(page.src.path, dates)
             if (dates.length === 0) return
         
             // Page has no explicit last-modified set.
@@ -26,7 +25,6 @@ export default () => {
         
             // Page has not explicit date set.
             if (!page.data.date || page.data.date.getTime() === page.src.created?.getTime()) {
-                console.log(page.src.path, "GOT HERE", page.data.date)
                 page.data.date = new Date(dates[dates.length - 1])
             }
         })
