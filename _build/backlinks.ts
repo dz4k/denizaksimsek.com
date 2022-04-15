@@ -5,7 +5,8 @@ export default () => {
     return (site: Site) => {
         site.preprocess([".md"], (page: Page) => {
             const [newContent, links] = renderWikilinks(
-                page.data.content as string
+                page.data.content as string,
+                paga.data.lang as string
                 )
             page.data.content = newContent
             page.data.internalLinks = links.join(" ")
@@ -16,10 +17,10 @@ export default () => {
 const markdownUrlRE = /^\[[^\]]+\]: (\/[^\s]+)$/
 const wikilinkRE = /\[\[([^\]]+)\]\]/g
 
-function renderWikilinks(markdown: string): [string, string[]] {
+function renderWikilinks(markdown: string, lang: string): [string, string[]] {
     const links: string[] = []
     const markdownOut = markdown.replace(wikilinkRE, (match, text) => {
-        const url = `/wiki/${encodeURIComponent(text)}/`
+        const url = `/wiki/${lang}/${encodeURIComponent(text)}/`
         links.push(url)
         return `[${text}](${url})`
     })
