@@ -1,17 +1,28 @@
-import { Page, Site } from "https://deno.land/x/lume@v1.7.1/core.ts";
 
-const markdownUrlRE = /^\[[^\]]+\]: (\/[^\s]+)$/
+import { Page, Site } from "https://deno.land/x/lume@v1.7.1/core.ts";
 
 export default () => {
     return (site: Site) => {
         site.preprocess([".md"], (page: Page) => {
-            const content = page.data.content as string
-            page.data.internalLinks = content.split("\n").map(line => {
-                const match = markdownUrlRE.exec(line)
-                if (!match) return null
-                if (!match[1].endsWith("/")) match[1] += "/"
-                return match[1]
-            }).filter(e => e !== null).join(" ")
+            const [newContent, links] = renderWikilinks(
+                page.data.content as string, 
+                page.data.lang as string
+                )
+            page.data.content = newContent
+            page.data.internalLinks = links.join(" ")
         })
     }
+}
+
+const markdownUrlRE = /^\[[^\]]+\]: (\/[^\s]+)$/
+const wikilinkRE = /\[\[([^\]]+)\]\]/g
+
+function renderWikilinks(markdown: string): [string, string[]] {
+    const links: string[] = []
+    const markdownOut = markdown.replace(wikilinkRE, (match, text) => {
+        const url = `/wiki/${encodeURIComponent(text)}/`
+        links.push(url)
+        return `[${text}](${url})`
+    })
+    return [markdownOut, links]
 }
