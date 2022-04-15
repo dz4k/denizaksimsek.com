@@ -4,7 +4,7 @@
         lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
         href="<%= post.data.url %>">
         <%= post.data.name ?? post.data.title
-            ?? filters.peekHtml(filters.md(post.data.content))%></a>
+            ?? filters.peekHtml(filters.md(post.data.content), 80)%></a>
 
     <% if (dates) { %>
         <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">

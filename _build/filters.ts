@@ -7,10 +7,10 @@ export default () => {
     }
 }
 
-function peekHtml(html: string) {
+function peekHtml(html: string, n: number = 80) {
     const text = html.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s+/g, " ")
-    if (text.length < 50) return text
-    else return text.slice(0, 49) + "…"
+    if (text.length < n) return text
+    else return text.slice(0, n - 1) + "…"
 }
 
 interface LoopContext {
