@@ -22,7 +22,7 @@ layout: ./base.eta
             <%_ if ("last modified" in it) { _%>
                 , <em><%= intl["last modified"][it.lang] %></em>
                 <time class="dt-last-modified" datetime="<%= comp.date({ date: it["last modified"], iso: true }) %>">
-                    <%= comp.date({ date: it["last modified"], time: true, lang }) %></time> 
+                    <%~ comp.date({ date: it["last modified"], time: true, lang }) %></time> 
             <% } %>
         </p>
         <% if ("alt" in it) { %>

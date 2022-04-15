@@ -7,8 +7,10 @@ tags:
 
 Git'teki "commit" kavramının Türkçe karşılığı ne?
 
- * Tureng:
-   > commit changes, expr. (Computer)
-   > :   değişiklikleri işle
+---
 
-   &rarr; "işleme"?
+Tureng has the following definition:
+> commit changes, expr. (Computer)
+> :   değişiklikleri işle
+
+&rarr; "işleme"?
