@@ -3,7 +3,7 @@ title: Webmentions
 ---
 
 Webmentions are a way for websites to interact. Most commonly, it's used for 
-comments, likes etc. on the [IndieWeb]. It basically works like this:
+comments, likes etc. on the [[IndieWeb]]. It basically works like this:
 
  * person A has something on their website
  * person B puts something on their own website that mentions it
@@ -18,5 +18,3 @@ This is useful for static websites without a server to receive and store them.
 
 If you don't have a website, you can send webmentions using 
 <https://commentpara.de>.
-
-[IndieWeb]: /wiki/indieweb
