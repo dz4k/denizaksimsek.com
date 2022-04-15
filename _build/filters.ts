@@ -13,19 +13,17 @@ function peekHtml(html: string) {
     else return text.slice(0, 49) + "…"
 }
 
+interface LoopContext {
+    i: number
+    first: boolean
+    last?: boolean
+    sep(s: string): string
+}
 
 function repeat<T>(
     root: Iterable<T>,
     cb: (t: T, loop: LoopContext) => void
 ): void {
-    
-    interface LoopContext {
-        i: number
-        first: boolean
-        last?: boolean
-        sep(s: string): string
-    }
-
     // deno-lint-ignore no-explicit-any
     function hasLength(a: any): a is { length: number } {
         return "length" in a && typeof a.length === "number"

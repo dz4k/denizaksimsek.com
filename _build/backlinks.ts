@@ -5,8 +5,7 @@ export default () => {
     return (site: Site) => {
         site.preprocess([".md"], (page: Page) => {
             const [newContent, links] = renderWikilinks(
-                page.data.content as string, 
-                page.data.lang as string
+                page.data.content as string
                 )
             page.data.content = newContent
             page.data.internalLinks = links.join(" ")
