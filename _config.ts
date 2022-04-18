@@ -1,5 +1,7 @@
 // @ts-nocheck lume config
 
+console.log(Deno.version)
+
 import "https://deno.land/x/dotenv@v3.2.0/load.ts"
 
 import lume from "https://deno.land/x/lume@v1.7.1/mod.ts"
@@ -15,8 +17,6 @@ import getDatesFromGit from "./_build/get-dates-from-git.ts"
 import backlinks from "./_build/backlinks.ts"
 import prose, { markdownOptions } from "./_build/prose.ts"
 import myFilters from "./_build/filters.ts"
-
-console.log(Deno.version)
 
 export default lume(
     { location: new URL("https://denizaksimsek.com/") },
