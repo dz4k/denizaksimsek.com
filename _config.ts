@@ -16,6 +16,8 @@ import backlinks from "./_build/backlinks.ts"
 import prose, { markdownOptions } from "./_build/prose.ts"
 import myFilters from "./_build/filters.ts"
 
+console.log(Deno.version)
+
 export default lume(
     { location: new URL("https://denizaksimsek.com/") },
     { markdown: markdownOptions }
