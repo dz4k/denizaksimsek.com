@@ -1,7 +1,5 @@
 // @ts-nocheck lume config
 
-console.log(Deno.version)
-
 import "https://deno.land/x/dotenv@v3.2.0/load.ts"
 
 import lume from "https://deno.land/x/lume@v1.7.1/mod.ts"
