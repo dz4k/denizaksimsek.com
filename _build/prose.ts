@@ -1,5 +1,5 @@
-import type { Page, Site } from "https://deno.land/x/lume@v1.7.1/core.ts";
-import { Element, HTMLDocument } from "https://deno.land/x/lume@v1.7.1/deps/dom.ts";
+import type { Page, Site } from "lume/core.ts";
+import { Element, HTMLDocument } from "lume/deps/dom.ts";
 import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
 
 export const markdownOptions = {

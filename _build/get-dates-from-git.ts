@@ -1,4 +1,4 @@
-import type { Site, Page } from "https://deno.land/x/lume@v1.7.1/core.ts";
+import type { Site, Page } from "lume/core.ts";
 import { exec } from "./util.ts";
 
 export default () => {
