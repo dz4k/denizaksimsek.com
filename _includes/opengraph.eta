@@ -1,0 +1,17 @@
+<%
+    const { parse } = await import(`file:${Deno.cwd()}/_build/opengraph.ts`)
+    const { title, description, content } = await parse(it.url)
+%>
+
+<article class="h-entry missing-card crowded" onclick="this.querySelector('a').click()">
+    <% if (it.label) { %>
+        <p class="caption"><%= it.label %></p>
+    <% } %>
+    <b class="list-of-links"><a href="<%= it.url %>" class="p-name u-url u-uid">
+        <%= title ?? it.title ?? it.url %></a></b>
+    <% if (description) { %>
+        <p class="p-summary"><%= description %></p>
+    <% } else if (content) { %>
+        <p class="p-summary"><%= filters.peekHtml(content, 256) %></p>
+    <% } %>
+</article>
