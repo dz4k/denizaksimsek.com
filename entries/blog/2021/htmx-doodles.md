@@ -15,7 +15,7 @@ style: >
 
 ![On HTMX (see transcript)](/assets/htmx-doodles/consult-your-doctor.jpeg){data-img-color-scheme=light}
 
-<details class="-no-number-headings"><summary>Transcript</summary>
+<details><summary>Transcript</summary>
 
 ### Server-Side App
 

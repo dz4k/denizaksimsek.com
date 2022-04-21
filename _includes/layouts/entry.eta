@@ -10,7 +10,7 @@ layout: ./base.eta
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
-        <p class="list-of-links metadata-block">
+        <p class="list-of-links">
             <% filters.repeat(tags, (tag, loop) => { %>
                 <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
                     <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
@@ -26,7 +26,7 @@ layout: ./base.eta
             <% } %>
         </p>
         <% if ("alt" in it) { %>
-            <p class="metadata-block">
+            <p>
                 🌐
                 <% filters.repeat(Object.entries(it.alt), ([language, href], loop) => { %>
                     <a 
@@ -42,7 +42,7 @@ layout: ./base.eta
 
         <% for (const prop of ["repost of", "like of"]) { %>
             <% if (prop in it) { %>
-                <p class="metadata-block">
+                <p>
                     <strong><%= intl[prop][lang] %></strong>
                     <a class="u-<%= prop.replace(" ", "-") %>" href="<%= it[prop].url %>">
                         <%= it[prop].name %>
@@ -53,19 +53,12 @@ layout: ./base.eta
 
         </dl>        
         <% if ("..." in it) { %>
-            <p class="italic metadata-block"><%~ it["..."] %></p>
+            <p class="italic"><%~ it["..."] %></p>
         <% } %>
     </header>
 
     <% if ("bookmark of" in it) { %>
-        <missing-card class="crowded" onclick="this.querySelector('a').click()">
-            <p>
-                &rarr;
-                <a class="u-bookmark-of" href="<%= it["bookmark of"].url %>">
-                    <%= it["bookmark of"].name %>
-                </a>
-            </p>
-        </missing-card>
+        <%~ await includeFile("_includes/opengraph.eta", { filters, url: it["bookmark of"].url ?? it["bookmark of"] }) %>
     <% } %>
     
     <div class="e-content">
@@ -76,7 +69,7 @@ layout: ./base.eta
     <% if (backlinks.length > 0) { %>
         <footer class="missing-card">
             <div>
-                <h3 class="block-label">Backlinks</h3>
+                <h3>Backlinks</h3>
                 <%~ comp.entryList({
                     entries: backlinks,
                     dates: false,
@@ -90,7 +83,7 @@ layout: ./base.eta
         <footer class="missing-card">
             <% if ("syndication" in it) { %>
                 <p>
-                    <strong class="block-label"><%= intl["Elsewhere"][lang] %>:</strong> 
+                    <strong><%= intl["Elsewhere"][lang] %>:</strong> 
                     <% filters.repeat(Object.keys(it.syndication), (syn, loop) => { %>
                         <a rel="syndication" href="<%= it.syndication[syn] %>">
                             <%= syn %></a><%= loop.sep(", ") %>
@@ -103,7 +96,7 @@ layout: ./base.eta
                     <% for (const prop of ["repost-of", "like-of"]) { %>
                         <% if (wms = allWms.get(prop)) { %>
                             <p class="list-of-links">
-                                <strong class="block-label"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
+                                <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                                 <% filters.repeat(wms, (wm, loop) => { %>
                                     <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                                 <% }) %>

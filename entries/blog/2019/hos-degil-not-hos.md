@@ -2,7 +2,7 @@
 date: 2019-12-05 09:58:28
 ---
 
-<figure class="fitted-figure">
+<figure>
 
 ![](/assets/photos/2019-12-05_09-58-28.jpeg)
 

@@ -37,7 +37,7 @@ application development circles. Given this definition, we can see that:
 	Which system is being discussed is usually clear through context, but we
 	should be aware when "scalable" is used without such context.
 
-<figure class="-indent">
+<figure>
 
 | System   | More Work                                       | Resources       |
 |----------|-------------------------------------------------|-----------------|
