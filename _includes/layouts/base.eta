@@ -40,10 +40,10 @@
 :root {
     --main-font: "Alegreya Sans", serif;
     --line-length: 70ch;
-    --accent: #089097;
-    --muted-accent: #6edaa7;
-    --bg-2: #f8fffc;
-    --bg-3: #dfe1e1;
+    --accent: #ce5d00;
+    --muted-accent: #e6ab5e;
+    --bg-2: #ffedd6;
+    --bg-3: #e1e0df;
     font-size: 140%;
     --rhythm: 1.4rem;
     font-variant-numeric: oldstyle-nums;
