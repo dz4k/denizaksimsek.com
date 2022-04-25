@@ -3,9 +3,9 @@
     const { title, description, content } = await parse(it.url)
 %>
 
-<article class="h-entry missing-card crowded" onclick="this.querySelector('a').click()">
+<article class="h-entry missing-card crowded" onclick="this.querySelector('a').click()" lang="<%= it.lang %>">
     <% if (it.label) { %>
-        <p class="italic"><%= it.label %></p>
+        <i class="italic"><%= it.label %></i>
     <% } %>
     <b class="list-of-links"><a href="<%= it.url %>" class="p-name u-url u-uid">
         <%= title ?? it.title ?? it.url %></a></b>

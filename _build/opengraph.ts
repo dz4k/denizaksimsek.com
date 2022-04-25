@@ -20,7 +20,7 @@ export async function parse(href: string) {
 
     const content = (
         document.querySelector(".e-content")
-        ?? document.querySelector("content")
+        ?? document.querySelector(".content")
         ?? document.querySelector("p")
     )?.textContent
 

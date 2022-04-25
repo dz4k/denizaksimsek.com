@@ -46,6 +46,14 @@ like-of (reflexive):
   en: Liked by
   tr: Beğenenler
   tok: jan ni la lipu ni li pona
+bookmark-of: &bookmarkof
+  en: Bookmark of
+  tr: Yer imi
+  tok: linja lipu pi
+bookmark-of (reflexive):
+  en: Bookmarked by
+  tr: Yer imi alanlar
+  tok: jan ni li kule e ni
 blog (tag):
   en: Blog
   tr: Blog

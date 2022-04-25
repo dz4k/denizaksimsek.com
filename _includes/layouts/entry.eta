@@ -58,7 +58,13 @@ layout: ./base.eta
     </header>
 
     <% if ("bookmark of" in it) { %>
-        <%~ await includeFile("_includes/opengraph.eta", { filters, url: it["bookmark of"].url ?? it["bookmark of"] }) %>
+        <%~ await includeFile("_includes/embed.eta", {
+            filters,
+            label: intl["bookmark-of"][lang],
+            url: it["bookmark of"].url ?? it["bookmark of"],
+            title: it["bookmark of"].name,
+            lang: it["bookmark of"].lang
+        }) %>
     <% } %>
     
     <div class="e-content">
