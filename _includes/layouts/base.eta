@@ -112,6 +112,11 @@ time {
     --main-font: "Alegreya Sans", serif;
     font-family: var(--main-font);
 }
+
+.hover-state:hover {
+    outline: 1px solid var(--accent);
+    background: var(--bg) !important;
+}
 </style>
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
