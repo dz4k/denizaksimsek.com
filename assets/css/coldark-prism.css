@@ -17,7 +17,7 @@
      background: none;
      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
      text-align: left;
-     white-space: pre-wrap;
+     white-space: pre;
      word-spacing: normal;
      word-break: normal;
      word-wrap: normal;
@@ -318,4 +318,9 @@
  .command-line .command-line-prompt > span:before {
      color: #3c526dda;
  }
- 
+
+ /* --- */
+
+ .token[class*="language-"] {
+     color: #111b27;
+ }
