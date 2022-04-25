@@ -22,7 +22,7 @@ export async function parse(href: string) {
         document.querySelector(".e-content")
         ?? document.querySelector(".content")
         ?? document.querySelector("p")
-    )?.textContent
+    )?.textContent.trim()
 
     return { title, description, content }
 }
