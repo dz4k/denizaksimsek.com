@@ -5,11 +5,7 @@ syndication:
   DEV: https://dev.to/dz4k/eleventy-using-a-layout-as-a-partial-the-most-useful-things-182n
 ---
 
-<ins>
-
-**Update 2021-02-08:** This article mentions things about my website that are no longer true. The technique explained, however, still works fine.
-
-</ins>
+ <ins>**Update 2021-02-08:** This article mentions things about my website that are no longer true. The technique explained, however, still works fine.</ins>
 
 On this website, I have both a Notes page and pages for each individual note. I wanted to use the same template for both, but I ran into an issue: accessing frontmatter data.
 
@@ -17,8 +13,7 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 
 ## Solution
 
-<figure>
-
+::: fig
 > [...] the most useful things are usually cloaked in an air of nonchalance, even in documentation.
 
 <figcaption>
@@ -28,18 +23,17 @@ In Eleventy, frontmatter data for the current page is merged into the [data casc
 	<a href="https://www.youtube.com/watch?v=a6Q8Na575qc">Missing Semester: Lecture 3: Editors (vim) (2020)</a>
 	</cite>
 </figcaption>
-</figure>
+:::
 
 The solution to my problem was right there in the Eleventy docs, staring at me, its description phrased such that it couldn't possibly be of use to anyone.
 
-<figure>
-
+::: fig
 > ### Also `getCollectionItem`
 >
 > For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
 
 <figcaption>&mdash; <cite><a href="https://www.11ty.dev/docs/filters/collection-items/#also-getcollectionitem">Eleventy docs</a></cite></figcaption>
-</figure>
+:::
 
 With this filter, all my problems were solved. I prepended the following to my `note.njk` template (similarly for `post.njk`):
 

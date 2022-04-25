@@ -24,10 +24,10 @@ application development circles. Given this definition, we can see that:
 	handle a small amount, adequately, without modification.
 *   When people talk about the scalability of a tool, they are usually employing
 	metonymy. 
-	<span><small>metonymy: I was excited when looking up this word on 
+	:sidenote[metonymy: I was excited when looking up this word on 
 	[Tureng][], but "metonymy" doesn't really have the barebones simplicity of 
 	the Turkish "ad aktarması" or the weight of the Arabic loan "mecaz-ı 
-	mürsel".</small></span>
+	mürsel".]
 	They are discussing the impact of the tool on other systems'
 	scalability (will _hyperscript hinder us as we get more users/our app gets
 	more complex?) and not the scalability of the tool itself (can we get
@@ -64,16 +64,16 @@ application development circles. Given this definition, we can see that:
 	There is an assumption that we _will_ get more users. If this is true, and
 	the organization containing the team has an actual monetization
 	strategy, then it follows that we will also get more money.
-	<span><small>**monetization:** The way that the "we'll need rewriting" 
+	:sidenote[**monetization:** The way that the "we'll need rewriting" 
 	argument assumes growth, but rejects relying on it reminds me of paying 
 	people in shares. If you can't trust it enough to just pay me the money 
-	you'll <i class="sarc">definitely</i> make back, why should I?</small></span>
+	you'll <i class="sarc">definitely</i> make back, why should I?]
 	If we need to build an app that serves N users eventually, does it not make 
 	sense to do so when you have F(N-&epsilon;) dollars?
-	<span><small>**epsilon:** I originally said this much more pithily: "if you
+	:sidenote[**epsilon:** I originally said this much more pithily: "if you
 	are certain you'll grow to 1 billion users, and you need an app that can 
 	handle that, why build it now on a startup budget when you're going to have
-	the budget of a 1B-user app soon"</small></span>
+	the budget of a 1B-user app soon"]
 	My more business-savvy friend [Ben Pate][] informs me that "many 
 	million-user budgets have been wasted doing that [building a million-user 
 	system before you have any users at all]", and that "You won’t get a billion
@@ -85,9 +85,9 @@ application development circles. Given this definition, we can see that:
 
 	And what's so bad about rewriting anyway? I thought programmers liked
 	writing code.
-	<span><small>**liked writing code:** I'm aware that some people do 
+	:sidenote[**liked writing code:** I'm aware that some people do 
 	programming purely as a job. I sometimes envy the indifference I imagine 
-	they have towards our petty squabbles.</small></span>
+	they have towards our petty squabbles.]
 	We again pay lip service to how code is the easy part, and
 	how legacy code sucks... Erlang has the famous "let it crash", anticipating
 	issues and focusing on recovering from failure instead of preventing it. We

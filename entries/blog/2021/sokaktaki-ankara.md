@@ -13,7 +13,7 @@ templateEngine: eta,md
 Ankara Büyükşehir Belediyesi sokak tabelalarının yenilenmesi için [yarışma][] düzenledi. Halk oylamasına sunulmak üzere üç tasarım seçildi. Siz de Başkent Mobil uygulamasının <kbd><samp>Söz Hakkı</samp></kbd> bölümünden oy verebilirsiniz.
 
 Ben oyumu çoktan Eser A için kullandım. Büyük yazı kullanılmasını, metro, otobüs durağı gibi yerlerin gösterilmesini ve mimari eser künyelerinin çizim içermesini beğendim. Eser B'nin fazla dikkat çektiğini ve modası geçecek tasarım ögeleri kullandığını düşünüyorum. Eser C ise gereksiz öğelerle dolu: kimsenin göremeyeceği küçük haritalar ve kocaman "ankara" yazısı.
-<span><small>Eser C'deki gibi bir harita, [Legible London][] tarzı bir haritada çok daha kullanışlı olabilir.</small></span>
+:sidenote[Eser C'deki gibi bir harita, [Legible London][] tarzı bir haritada çok daha kullanışlı olabilir.]
 
 :: fig [![](<%= it.photo.src %>)] (<%= it.photo.src %> "Eser A sokak tabelası.")
 

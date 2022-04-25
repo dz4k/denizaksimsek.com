@@ -14,7 +14,8 @@ export const markdownOptions = {
     directive,
     [directiveWebComponents, {
       components: [
-        { present: "block", name: "fig", tag: "x-fig", parseInner: true }
+        { name: "fig",      present: "block",  tag: "x-fig", parseInner: true },
+        { name: "sidenote", present: "inline", tag: "x-sidenote", parseInner: true },
       ]
     }]
   ],
@@ -57,6 +58,13 @@ export default () => {
             fig.prepend(cap)
           }
           fig.tagName = "FIGURE"
+        })
+
+        document.getElementsByTagName("x-sidenote").forEach((sn: Element) => {
+          const small = document.createElement("small")
+          small.append(...sn.childNodes)
+          sn.append(small)
+          sn.tagName = "SPAN"
         })
     })
   }
