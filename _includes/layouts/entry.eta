@@ -12,7 +12,7 @@ layout: ./base.eta
         <% } %>
         <p class="list-of-links">
             <% filters.repeat(tags, (tag, loop) => { %>
-                <a href="/tag/<%= tag %>"><data class="p-category" value="<% tag %>">
+                <a href="/<%= lang %>/-/<%= tag %>"><data class="p-category" value="<% tag %>">
                     <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
             <% }) %>
 

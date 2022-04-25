@@ -22,33 +22,34 @@ layout: ./base.eta
     
     <%~ it.content %>
     
-    <footer class="missing-card">
+    
+    <% if ("syndication" in it) { %>
+        <footer class="missing-card">
+            <p>
+                <strong><%= intl["Elsewhere"][lang] %>:</strong> 
+                <% filters.repeat(Object.keys(it.syndication), (syn, loop) => { %>
+                    <a rel="syndication" href="<%= it.syndication[syn] %>">
+                        <%= syn %></a><%= loop.sep(", ") %>
+                <% }) %>
+            </p>
+        </footer>
+    <% } %>
 
-        <% if ("syndication" in it) { %>
-                <p>
-                    <strong><%= intl["Elsewhere"][lang] %>:</strong> 
-                    <% filters.repeat(Object.keys(it.syndication), (syn, loop) => { %>
-                        <a rel="syndication" href="<%= it.syndication[syn] %>">
-                            <%= syn %></a><%= loop.sep(", ") %>
-                    <% }) %>
-                </p>
-        <% } %>
+    <% if (url in webmentions) { %>
+        <footer class="missing-card">
+            <% for (const prop of ["repost-of", "like-of"]) { %>
+                <% if (prop in webmentions[url]) { %>
 
-        <% if (url in webmentions) { %>
-            <section id="interactions">
-                <% for (const prop of ["repost-of", "like-of"]) { %>
-                    <% if (prop in webmentions[url]) { %>
+                    <p class="list-of-links">
+                        <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
+                        <% const wms = webmentions[url][prop] %>
+                        <% filters.repeat(wms, (wm, loop) => { %>
+                            <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
+                        <% }) %>
+                    </p>
 
-                        <p class="list-of-links">
-                            <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
-                            <% const wms = webmentions[url][prop] %>
-                            <% filters.repeat(wms, (wm, loop) => { %>
-                                <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
-                            <% }) %>
-                        </p>
-
-                    <% } %>
-                <% }%>
-        <% } %>
-    </footer>
+                <% } %>
+            <% }%>
+        </footer>
+    <% } %>
 </article>
