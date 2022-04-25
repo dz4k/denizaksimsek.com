@@ -21,8 +21,7 @@ The 0.0.6 release of the [_hyperscript] hypertext UI scripting language introduc
 
 The `breakpoint` statement stops execution and launches the HDB UI.
 
-Demo: The breakpoint command
-
+::: fig ("Demo: The breakpoint command")
 <button type="button" _="
 on click
 	breakpoint
@@ -33,16 +32,20 @@ on click
 	transition 'background-color' to red
 	wait for mouseover -- mouse over the button after you step over this
 	transition 'background-color' to initial">Click me to try HDB</button>
+:::
 
 You can set breakpoints conditionally:
 
-Demo: Conditional breakpoints
+::: fig ("Demo: Conditional breakpoints")
 
+<tool-bar>
 <label><input type=checkbox id=debugmode checked/> Debug Mode</label>
 <button type="button" _="
 on click
 	if #debugmode.checked breakpoint end
 	put 'Nothing to see here, end user' into me">Debug, maybe</button>
+</tool-bar>
+:::
 
 ## Implementation
 
@@ -52,17 +55,16 @@ HDB lives in a [single JavaScript file][hdb-src].
 
 In the hyperscript runtime (which is a tree walking interpreter), each command has an `execute()` method which either returns the next command to be executed, or a `Promise` thereof. The execute method for the breakpoint command creates an HDB environment and assigns it to the global scope (usually `window`):
 
-Code: [hdb.js ln. 20](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L20)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L20 "hdb.js ln. 20")
 ~~~js
 var hdb = new HDB(ctx, runtime, this);
 window.hdb = hdb;
 ~~~
+:::
 
 The `HDB` object keeps hold of the current command and context as we step through. (The context is the object holding the local variables for the hyperscript code, and some other things the runtime keeps track of). We call its `break()` method:
 
-Code: [hdb.js ln. 35](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L35)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L35 "hdb.js ln. 35")
 ~~~js
 HDB.prototype.break = function(ctx) {
 	var self = this;
@@ -83,6 +85,7 @@ HDB.prototype.break = function(ctx) {
 	})
 }
 ~~~
+:::
 
 There are a few things to unpack here. We call `self.ui()` to start the UI, which we'll get to later. Remember how a command can return the next method to execute as a promise? The break method resolves after the [internal event bus][] receives a `"continue"` event, whether by the user pressing "Continue" or simply reaching the end of the debugged Code:
 
@@ -94,30 +97,29 @@ Speaking of stepping out of functions...
 
 Firstly, if self.cmd is null, then the previous command was the last one, so we just stop the debug process:
 
-Code: [hdb.js ln. 58](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L58)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L58 "hdb.js ln. 58")
 ~~~js
 HDB.prototype.stepOver = function() {
 	var self = this;
 	if (!self.cmd) return self.continueExec();
 ~~~
+:::
 
 If not, then we do a little dance to execute the current command and get the next one:
 
-Code: [hdb.js ln. 61](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L61)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L61 "hdb.js ln. 61")
 ~~~js
 var result = self.cmd && self.cmd.type === 'breakpointCommand' ?
 	self.runtime.findNext(self.cmd, self.ctx) :
 	self.runtime.unifiedEval(self.cmd, self.ctx);
 ~~~
+:::
 
 We perform a useless check that I forgot to take out (`self.cmd &&`). Then, we special-case the `breakpoint` command itself and don't execute it (nested debug sessions don't end well...), instead finding the subsequent command ourselves with the `runtime.findNext()` in hyperscript core. Otherwise, we can execute the current command.
 
 Once we have our command result, we can step onto it:
 
-Code: [hdb.js ln. 64](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L61)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L61 "hdb.js ln. 64")
 ~~~js
 if (result.type === "implicitReturn") return self.stepOut();
 if (result && result.then instanceof Function) {
@@ -134,13 +136,13 @@ if (result && result.then instanceof Function) {
 	this.logCommand();
 }
 ~~~
+:::
 
 If we returned from a function, we step out of it (discussed below). Otherwise, if the command returned a Promise, we await the next command, set `cmd` to it, notify the event bus and log it with some fancy styles. If the result was synchronous and is a [HALT][]; we stop debugging (as I write this, I'm realizing I should've called [`continueExec()`][continue-exec] here). Finally, we commit the kind of code duplication hyperscript is meant to help you avoid, to handle a synchronous result.
 
 To step out, we first get our hands on the context from which we were called:
 
-Code: [hdb.js ln. 80](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L80)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L80 "hdb.js ln. 80")
 ~~~js
 HDB.prototype.stepOut = function() {
 	var self = this;
@@ -149,45 +151,49 @@ HDB.prototype.stepOut = function() {
 	var oldMe = self.ctx.me;
 	self.ctx = self.ctx.meta.caller;
 ~~~
+:::
 
 Turns out _hyperscript function calls already keep hold of the caller context (`callingCommand` was added by me though). After we change context, we do something a little odd:
 
 
-Code: [hdb.js ln. 92](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L92)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L92 "hdb.js ln. 92")
 ~~~js
 self.cmd = self.runtime.findNext(callingCmd, self.ctx);
 self.cmd = self.runtime.findNext(self.cmd, self.ctx);
 ~~~
+:::
 
 Why do we call `findNext` twice? Consider the following hyperscript code:
 
+::: fig
 ~~~hyperscript
 transition 'color' to darkgray
 set name to getName()
 log the name
 ~~~
+:::
 
 We can't execute the command to set `name` until we have the name, so when `getName()` is called, the current command is still set to the `transition`. We call `findNext` once to find the `set`, and again to find the `log`.
 
 Finally, we're done stepping out:
 
-Code: [hdb.js ln. 95](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L95)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L95 "hdb.js ln. 95")
 ~~~js
 self.bus.dispatchEvent(new Event('step'))
 ~~~
+:::
 
 ### HDB UI
 
 What did I use to make the UI for the hyperscript debugger? Hyperscript, of course!
 
-Code: [hdb.js ln. 107](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L107)
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L107 "hdb.js ln. 107")
 ~~~html
 <div class="hdb" _="--
 	on load or step from hdb.bus send update to me
 	on continue from hdb.bus remove #hyperscript-hdb-ui-wrapper-">
 ~~~
+:::
 
 There are a lot of elements listening to `load or step from hdb.bus`, so I consolidated them under `update from .hdb`. `#hyperscript-hdb-ui-wrapper-` is the element whose Shadow DOM this UI lives in --- using shadow DOM to isolate the styling of the panel cost me later on, as you'll see.
 
@@ -195,8 +201,7 @@ There are a lot of elements listening to `load or step from hdb.bus`, so I conso
 
 We define some functions.
 
-Code: [hdb.js ln. 112](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L112)
-
+::: fig(https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L112 "hdb.js ln. 112")
 ~~~hyperscript
 def highlightDebugCode
 	set start to hdb.cmd.startToken.start
@@ -208,12 +213,12 @@ def highlightDebugCode
 	return beforeCmd+"<u class='current'>"+cmd+"</u>"+afterCmd
 end
 ~~~
+:::
 
 Now, I wasn't aware that we had [template literals][] in hyperscript at this point, so that's for the next release. The `escapeHTML` helper might disappoint some:
 
 
-Code: [hdb.js ln. 122](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L122)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L122 "hdb.js ln. 122")
 ~~~hyperscript
 def escapeHTML(unsafe)
 	js(unsafe) return unsafe
@@ -225,6 +230,7 @@ def escapeHTML(unsafe)
 	return it
 end
 ~~~
+:::
 
 Unfortunately, hyperscript's regex syntax isn't decided yet.
 
@@ -234,8 +240,7 @@ And we have the most broken part of HDB, the prettyPrint function. If you know h
 
 Having defined our functions we have a simple toolbar and then the **eval panel**:
 
-Code: [hdb.js ln. 158](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L158)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L158 "hdb.js ln. 158")
 ~~~html
 <form class="eval-form"  _="on submit
 	call event.preventDefault()
@@ -248,6 +253,7 @@ Code: [hdb.js ln. 158](https://github.com/bigskysoftware/_hyperscript/blob/7740c
 		<button type="submit">Go</button>
 		<output id="eval-output"><em>The value will show up here</em></output>
 ~~~
+:::
 
 Why do I use weird selectors like `<input/> in me` when these elements have good IDs? Because `#eval-expr` in hyperscript uses `document.querySelector`, which doesn't reach Shadow DOM.
 
@@ -255,8 +261,7 @@ Why do I use weird selectors like `<input/> in me` when these elements have good
 
 A panel to show the code being debugged:
 
-Code: [hdb.js ln. 170](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L170)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L170 "hdb.js ln. 170")
 ~~~html
 <h3 _="on update from hdbUI
 		put 'Debugging <code>'+hdb.cmd.parent.displayName+'</code>' into me"></h3>
@@ -268,13 +273,13 @@ Code: [hdb.js ln. 170](https://github.com/bigskysoftware/_hyperscript/blob/7740c
 								first .current in me"></pre>
 </div>
 ~~~
+:::
 
 ------------
 
 Finally, a context panel that shows the local variables.
 
-Code: [hdb.js ln. 106](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L186)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L186 "hdb.js ln. 106")
 ~~~html
 <dl class="context" _="--
 	on update from hdbUI
@@ -287,13 +292,13 @@ Code: [hdb.js ln. 106](https://github.com/bigskysoftware/_hyperscript/blob/7740c
 		get closest <dt/> to target
 		log hdb.ctx[its.innerText]"></dl>
 ~~~
+:::
 
 That loop could definitely be cleaner. You can see the hidden feature where you can click a variable name to log it to the console (useful if you don't want to rely on my super-buggy pretty printer).
 
 Some CSS later, we're done with the UI! To avoid CSS interference from the host page, we create a wrapper and put our UI in its shadow DOM:
 
-Code: [hdb.js ln. 350](https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L350)
-
+::: fig (https://github.com/bigskysoftware/_hyperscript/blob/7740c7eccfe3fe4f09443ec0adb961c72eb27a7b/src/lib/hdb.js#L350 "hdb.js ln. 350")
 ~~~js
 HDB.prototype.ui = function () {
 	var node = document.createElement('div');
@@ -306,6 +311,7 @@ HDB.prototype.ui = function () {
 	_hyperscript.processNode(hdbUI);
 }
 ~~~
+:::
 
 ## The End
 

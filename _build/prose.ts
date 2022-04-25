@@ -1,14 +1,24 @@
 import type { Page, Site } from "lume/core.ts";
-import { Element, HTMLDocument } from "lume/deps/dom.ts";
-import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
+import { Element, HTMLDocument,  } from "lume/deps/dom.ts";
+// import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
+import directive from "https://esm.sh/markdown-it-directive"
+import directiveWebComponents from "https://esm.sh/markdown-it-directive-webcomponents"
 
 export const markdownOptions = {
   options: {
     typographer: true,
     linkify: true,
     html: true,
-    plugins: [figureWithPCaption]
   },
+  plugins: [
+    directive,
+    [directiveWebComponents, {
+      components: [
+        { present: "block", name: "fig", tag: "x-fig", parseInner: true }
+      ]
+    }]
+  ],
+  keepDefaultPlugins: true,
 }
 
 export default () => {
@@ -30,15 +40,23 @@ export default () => {
           figure.appendChild(caption)
         })
 
-        document.getElementsByTagName("p").forEach(p => {
-          if (/^\w+(?: \d+)?:/.test(p.textContent)) {
-            const figure = document.createElement("figure")
-            const c = p.nextElementSibling
-            p.tagName = "figcaption"
-            p.before(figure)
-            figure.appendChild(p)
-            figure.appendChild(c!)
+        document.getElementsByTagName("x-fig").forEach((fig: Element) => {
+          const title = fig.getAttribute("title"), href = fig.getAttribute("src")
+          if (title) {
+            const cap = document.createElement("figcaption")
+            if (href) {
+              const a = document.createElement("a")
+              a.setAttribute("href", href)
+              a.textContent = title
+              cap.append(a)
+            } else {
+              cap.textContent = title
+            }
+            fig.removeAttribute("title")
+            fig.removeAttribute("src")
+            fig.prepend(cap)
           }
+          fig.tagName = "FIGURE"
         })
     })
   }

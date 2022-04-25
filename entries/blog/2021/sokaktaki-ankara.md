@@ -15,11 +15,7 @@ Ankara Büyükşehir Belediyesi sokak tabelalarının yenilenmesi için [yarış
 Ben oyumu çoktan Eser A için kullandım. Büyük yazı kullanılmasını, metro, otobüs durağı gibi yerlerin gösterilmesini ve mimari eser künyelerinin çizim içermesini beğendim. Eser B'nin fazla dikkat çektiğini ve modası geçecek tasarım ögeleri kullandığını düşünüyorum. Eser C ise gereksiz öğelerle dolu: kimsenin göremeyeceği küçük haritalar ve kocaman "ankara" yazısı.
 <span><small>Eser C'deki gibi bir harita, [Legible London][] tarzı bir haritada çok daha kullanışlı olabilir.</small></span>
 
-<figure><figcaption>Eser A sokak tabelası.</figcaption>
-
-![](<%= it.photo.src %>)
-
-</figure>
+:: fig [![](<%= it.photo.src %>)] (<%= it.photo.src %> "Eser A sokak tabelası.")
 
 [Yarışma şartnamesinde][şartname] tabelaların <i>İşçi Blokları Mahallesi, Gazi Mustafa Kemal Bulvarı, Balıkçı Caddesi, Alâ Sokak, 1923. Sokak</i> ile test edilmesi söylenmiş. Bence [Bangabandhu Şeyh Mucibur Rahman Bulvarı][BŞM Rahman]da eklenmeliydi.
 
