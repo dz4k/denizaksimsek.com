@@ -144,10 +144,8 @@ die and make the mosque last exactly that long.
 
 > When asked what their language is good for, many designers would say
 > “everything” which really means “nothing”.
-> <footer>
 >
 > -- Robert Nystrom, <cite>[What I Learned at the Emerging Languages Camp](http://journal.stuffwithstuff.com/2010/07/23/what-i-learned-at-the-emerging-languages-camp/)</cite>
-> </footer>
 
 Nystrom said this in the context of choosing a niche for your language, but I
 believe it applies just as well to choosing a scale.
