@@ -1,5 +1,5 @@
 
-<p>
+<span>
     <a class="p-name u-url<%= post.data.name || post.data.title ? "" : " italic" %>"
         lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
         href="<%= post.data.url %>">
@@ -15,4 +15,4 @@
     <% if (post.data.summary) { %>
         &mdash; <span class="p-summary" lang="<%= post.data.lang %>"><%= post.data.summary %></span>
     <% } %>
-</p>
+    </span>

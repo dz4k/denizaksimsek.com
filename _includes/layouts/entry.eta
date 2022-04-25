@@ -74,14 +74,12 @@ layout: ./base.eta
     <% const backlinks = search.pages(`internalLinks*='${url}'`) %>
     <% if (backlinks.length > 0) { %>
         <footer class="missing-card">
-            <div>
-                <h3>Backlinks</h3>
-                <%~ comp.entryList({
-                    entries: backlinks,
-                    dates: false,
-                    lang
-                }) %>
-            </div>
+            <h2 class="h4">Backlinks</h2>
+            <%~ comp.entryList({
+                entries: backlinks,
+                dates: false,
+                lang
+            }) %>
         </footer>
     <% } %>
     
