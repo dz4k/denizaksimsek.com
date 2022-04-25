@@ -14,8 +14,10 @@ export const markdownOptions = {
     directive,
     [directiveWebComponents, {
       components: [
-        { name: "fig",      present: "block",  tag: "x-fig", parseInner: true },
+        { name: "fig",      present: "block",  tag: "x-fig",      parseInner: true },
         { name: "sidenote", present: "inline", tag: "x-sidenote", parseInner: true },
+        { name: "warning",  present: "block",  tag: "x-warning",  parseInner: true },
+        { name: "uyarı",    present: "block",  tag: "x-warning",  parseInner: true },
       ]
     }]
   ],
@@ -65,6 +67,11 @@ export default () => {
           small.append(...sn.childNodes)
           sn.append(small)
           sn.tagName = "SPAN"
+        })
+
+        document.getElementsByTagName("x-warning").forEach((sn: Element) => {
+          sn.tagName = "missing-card"
+          sn.classList.add("warn", "crowded")
         })
     })
   }

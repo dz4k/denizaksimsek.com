@@ -5,7 +5,9 @@ syndication:
   DEV: https://dev.to/dz4k/eleventy-using-a-layout-as-a-partial-the-most-useful-things-182n
 ---
 
- <ins>**Update 2021-02-08:** This article mentions things about my website that are no longer true. The technique explained, however, still works fine.</ins>
+::: Warning ::: 
+**Update 2021-02-08:** This article mentions things about my website that are no longer true. The technique explained, however, still works fine.
+:::::::::::::::
 
 On this website, I have both a Notes page and pages for each individual note. I wanted to use the same template for both, but I ran into an issue: accessing frontmatter data.
 
