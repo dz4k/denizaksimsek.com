@@ -1,6 +1,9 @@
 
 import { Page, Site } from "lume/core.ts";
 
+/**
+ * Implement Wiki-style links and backlinks for pages under `/wiki/`.
+ */
 export default () => {
     return (site: Site) => {
         site.preprocess([".md"], (page: Page) => {

@@ -4,6 +4,9 @@ import Prism from "https://raw.githubusercontent.com/lumeland/experimental-plugi
 import prismHyperscript from "https://esm.sh/prism-hyperscript"
 import type { Site } from "lume/core.ts"
 
+/**
+ * Highlight code, including _hyperscript, with Prism.
+ */
 export default () => {
     prismHyperscript(Prism)
 

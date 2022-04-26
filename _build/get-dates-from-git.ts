@@ -1,6 +1,9 @@
 import type { Site, Page } from "lume/core.ts";
 import { exec } from "./util.ts";
 
+/**
+ * Set created and last modified dates for pages by looking at Git history.
+ */
 export default () => {
     return (site: Site) => {
         site.preprocess("*", async (page: Page) => {

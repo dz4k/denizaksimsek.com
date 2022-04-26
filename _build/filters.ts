@@ -1,5 +1,10 @@
 import type { Site } from "lume/core.ts";
 
+/**
+ * Includes the filters:
+ *   - `peekHtml` for generating a text extract from HTML
+ *   - `repeat`, a loop with extra features
+ */
 export default () => {
     return (site: Site) => {
         site.filter("peekHtml", peekHtml)

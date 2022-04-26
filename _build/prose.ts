@@ -4,6 +4,9 @@ import { Element, HTMLDocument,  } from "lume/deps/dom.ts";
 import directive from "https://esm.sh/markdown-it-directive"
 import directiveWebComponents from "https://esm.sh/markdown-it-directive-webcomponents"
 
+/**
+ * Options to pass to markdown-it.
+ */
 export const markdownOptions = {
   options: {
     typographer: true,
@@ -24,6 +27,9 @@ export const markdownOptions = {
   keepDefaultPlugins: true,
 }
 
+/**
+ * Process special Markdown syntax and HTML structures.
+ */
 export default () => {
   return (site: Site) => {
     site.process([".md"], (page: Page) => {
