@@ -1,7 +1,7 @@
 
 /// <reference lib="dom" />
 
-import m from "https://esm.sh/mithril"
+import m from "https://esm.sh/mithril/mithril.js"
 
 let theme = {
     "--fg": "",
@@ -41,7 +41,7 @@ const names = {
 	"--warn-bg": "Warning background",
 	"--accent": "Accent color (contrast)",
 	"--muted-accent": "Accent color (low contrast)",
-}
+} as const
 
 type ColorTheme = typeof theme
 
