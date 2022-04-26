@@ -36,6 +36,8 @@
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
+<script type="module" src="/client/color-theme.js"></script>
+
 <style>
 :root {
     --main-font: "Alegreya Sans", serif;
@@ -125,6 +127,7 @@ time {
 <%~ it.content %>
 
 <footer>
+    <p><button onclick="window.dispatchEvent(new Event('open-color-theme-switcher'))">Change colors</button></p>
     <p>&copy; 2021&ndash;2022
         <% if (it.lang === "tok") { %>
             <span lang="tok">jan [_ma_ante_telo_en_lawa_o]</span></p>

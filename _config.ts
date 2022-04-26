@@ -8,6 +8,7 @@ import en_US from "https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js"
 import basePath from "lume/plugins/base_path.ts"
 import resolveUrls from "lume/plugins/resolve_urls.ts"
 import eta from "lume/plugins/eta.ts"
+import bundler from "lume/plugins/bundler.ts"
 
 import highlighting from "./_build/highlighting.ts"
 import getDatesFromGit from "./_build/get-dates-from-git.ts"
@@ -33,3 +34,4 @@ export default lume(
   .use(getDatesFromGit())
   .use(backlinks())
   .use(prose())
+  .use(bundler())
