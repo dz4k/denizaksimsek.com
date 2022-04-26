@@ -3,25 +3,6 @@
 
 import m from "https://esm.sh/mithril/mithril.js"
 
-let theme = {
-    "--fg": "",
-	"--muted-fg": "",
-	"--faded-fg": "",
-	"--info-fg": "",
-	"--info-bg": "",
-	"--ok-fg": "",
-	"--ok-bg": "",
-	"--bad-fg": "",
-	"--bad-bg": "",
-	"--warn-fg": "",
-	"--warn-bg": "",
-	"--bg": "",
-	"--bg-2": "",
-	"--bg-3": "",
-	"--bg-4": "",
-	"--accent": "",
-	"--muted-accent": "",
-}
 
 const names = {
     "--fg": "Text",
@@ -43,12 +24,33 @@ const names = {
 	"--muted-accent": "Accent color (low contrast)",
 } as const
 
-type ColorTheme = typeof theme
+type ColorProp = keyof typeof names
+type ColorTheme = { [key in ColorProp]?: string }
+
+let theme: ColorTheme = {
+    "--fg": "",
+	"--muted-fg": "",
+	"--faded-fg": "",
+	"--info-fg": "",
+	"--info-bg": "",
+	"--ok-fg": "",
+	"--ok-bg": "",
+	"--bad-fg": "",
+	"--bad-bg": "",
+	"--warn-fg": "",
+	"--warn-bg": "",
+	"--bg": "",
+	"--bg-2": "",
+	"--bg-3": "",
+	"--bg-4": "",
+	"--accent": "",
+	"--muted-accent": "",
+}
 
 function updateColors(...keys: (keyof ColorTheme)[]) {
     if (keys.length === 0) keys = Object.keys(theme) as (keyof ColorTheme)[]
     for (const key of keys) {
-        document.documentElement.style.setProperty(key, theme[key])
+        document.documentElement.style.setProperty(key, theme[key] ?? null)
     }
 }
 
