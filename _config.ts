@@ -22,7 +22,7 @@ export default lume(
     { markdown: markdownOptions }
   )
   
-  .ignore("README.md", "_build")
+  .ignore("README.md")
   .copy("assets")
   .data("lang", "en")
 
