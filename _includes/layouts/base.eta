@@ -36,7 +36,12 @@
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
-<script type="module" src="/client/color-theme.js"></script>
+<script type="module" src="/client/preview.js"></script>
+<script>
+    const e = new Proxy({}, { get (o, prop) {
+        return (data = {}) => window.dispatchEvent(Object.assign(new Event(prop), data))
+    } })
+</script>
 
 <style>
 :root {
@@ -119,6 +124,17 @@ time {
     outline: 1px solid var(--accent);
     background: var(--bg) !important;
 }
+
+dialog {
+    position: fixed;
+    max-height: 80vh;
+    width: var(--line-length);
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    box-sizing: content-box;
+}
 </style>
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
@@ -127,7 +143,6 @@ time {
 <%~ it.content %>
 
 <footer>
-    <p><button onclick="window.dispatchEvent(new Event('open-color-theme-switcher'))">Change colors</button></p>
     <p>&copy; 2021&ndash;2022
         <% if (it.lang === "tok") { %>
             <span lang="tok">jan [_ma_ante_telo_en_lawa_o]</span></p>
