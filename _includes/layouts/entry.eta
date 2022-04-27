@@ -42,12 +42,13 @@ layout: ./base.eta
 
         <% for (const prop of ["repost of", "like of"]) { %>
             <% if (prop in it) { %>
-                <p>
-                    <strong><%= intl[prop][lang] %></strong>
-                    <a class="u-<%= prop.replace(" ", "-") %>" href="<%= it[prop].url %>">
-                        <%= it[prop].name %>
-                    </a>
-                </p>
+                <%~ await includeFile("_includes/embed.eta", {
+                    filters,
+                    label: intl[prop][lang],
+                    url: it[prop].url ?? it[prop],
+                    title: it[prop].name,
+                    lang: it[prop].lang
+                }) %>
             <% } %>
         <% } %>
 
