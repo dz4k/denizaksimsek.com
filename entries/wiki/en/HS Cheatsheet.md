@@ -3,26 +3,25 @@ title: _hyperscript Cheatsheet
 ---
 
 <style>
-:root {
+html {
     overflow: auto;
 }
 
 .e-content {
-    column-width: var(--line-length);
-    column-gap; var(--gap);
+    column-width: calc(var(--line-length) - var(--rhythm));
+    column-gap: var(--gap);
+    max-width: calc(2 * var(--line-length) + var(--gap));
+    padding-inline: var(--gap);
 
     /* Full bleed */
-    width: calc(100vw - 2 * var(--rhythm));
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: calc(-50vw + var(--rhythm));
-    margin-right: -50vw;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 section.missing-card {
-    display: inline-block;
-    max-width: var(--line-length);
+    display: table;
+    margin-top: 0;
     width: 100%;
 }
 
@@ -61,8 +60,11 @@ dl div {
 
 ## Property access
 
-`user.data.name` ≡ `user’s data’s name` ≡ `name of data of user` 
-≡ `data.name of user` ≡ `user’s data.name`
+ - `user.data.name`
+ - `user’s data’s name`
+ - `name of data of user` 
+ - `data.name of user`
+ - `user’s data.name`
 
 </section>
 <section class="missing-card">
