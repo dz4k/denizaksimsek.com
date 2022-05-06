@@ -1,5 +1,5 @@
 import type { Page, Site } from "lume/core.ts";
-import { Element, HTMLDocument,  } from "lume/deps/dom.ts";
+import { Element, HTMLDocument } from "lume/deps/dom.ts";
 // import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
 import directive from "https://esm.sh/markdown-it-directive"
 import directiveWebComponents from "https://esm.sh/markdown-it-directive-webcomponents"
@@ -48,6 +48,22 @@ export default () => {
           figure.appendChild(caption.parentElement!)
           figure.appendChild(caption)
         })
+      
+      document.getElementsByTagName("table").forEach((t) => {
+        const headings = t.querySelectorAll("thead th")
+        const rows     = t.querySelectorAll("tbody tr")
+
+        for (const row of rows) {
+          const cells = (row as Element).querySelectorAll("th, td")
+          for (let i = 0; i < cells.length;) {
+            const cell = cells[i] as Element
+            cell.setAttribute("data-column", headings[i].textContent)
+            i += Number(cell.getAttribute("colspan") ?? 1)
+          }
+        }
+
+        t.classList.add("responsive-table")
+      })
 
         document.getElementsByTagName("x-fig").forEach((fig: Element) => {
           const title = fig.getAttribute("title"), href = fig.getAttribute("src")

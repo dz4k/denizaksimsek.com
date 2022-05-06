@@ -102,6 +102,33 @@ time {
     image-rendering: pixelated;
 }
 
+@media screen and (max-width: 768px) {
+    .responsive-table {
+        display: block;
+    }
+    
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tr {
+        display: block;
+    }
+
+    .responsive-table tr + tr {
+        margin-top: var(--gap);
+    }
+
+    .responsive-table td {
+        display: block;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-column) ": ";
+        font-weight: bold;
+    }
+}
+
 [aria-current] {
     font-weight: bold;
 }
