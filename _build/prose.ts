@@ -3,6 +3,7 @@ import { Element, HTMLDocument } from "lume/deps/dom.ts";
 // import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
 import directive from "https://esm.sh/markdown-it-directive"
 import directiveWebComponents from "https://esm.sh/markdown-it-directive-webcomponents"
+import tableCaptions from "https://esm.sh/markdown-it-table-captions"
 
 /**
  * Options to pass to markdown-it.
@@ -14,6 +15,7 @@ export const markdownOptions = {
     html: true,
   },
   plugins: [
+    tableCaptions,
     directive,
     [directiveWebComponents, {
       components: [

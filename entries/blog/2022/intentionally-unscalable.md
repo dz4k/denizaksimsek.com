@@ -37,15 +37,12 @@ application development circles. Given this definition, we can see that:
 	Which system is being discussed is usually clear through context, but we
 	should be aware when "scalable" is used without such context.
 
-<figure>
-
-| System   | More Work                                       | Resources       |
-|----------|-------------------------------------------------|-----------------|
-| Software | Serve more users.                               | Computers.      |
-| Team     | Add complexity to the software and maintain it. | Time, money.    |
-
-<figcaption>The two main systems in a software organization.</figcaption>
-</figure>
+	| System   | More Work                                       | Resources       |
+	|----------|-------------------------------------------------|-----------------|
+	| Software | Serve more users.                               | Computers.      |
+	| Team     | Add complexity to the software and maintain it. | Time, money.    |
+	
+	: The two main systems in a software organization
 
 
 ## Why is scalability desired?
