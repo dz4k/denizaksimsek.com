@@ -1,5 +1,6 @@
 ---
 title: kalama lakimosa
+lang: tok
 date: 2021-08-10 01:10:17
 ---
 
