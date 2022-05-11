@@ -1,0 +1,31 @@
+---
+layout: layouts/page.eta
+url: /new/
+---
+
+<div class="wrapper">
+    <form id="post">
+        <p><button>Post</button></p>
+        <p><textarea id="content" rows="20"></textarea></p>
+    </form>
+    
+    <script>
+        const
+            $post = document.getElementById("post"),
+            $content = document.getElementById("content")
+        
+        $post.addEventListener("submit", e => {
+            const filename = `${new Date().toISOString()}.md`
+            const body = $content.value
+            const message = "Post: " + body.trim().slice(0, 30)
+    
+            window.open(
+                "https://github.com/dz4k/denizaksimsek.com" +
+                "/new/master/entries/micro/" +
+                "?message=" + encodeURIComponent(message) +
+                "&filename=" + encodeURIComponent(filename) +
+                "&value=" + encodeURIComponent(body)
+            )
+        })
+    </script>
+</div>
