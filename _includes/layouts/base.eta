@@ -161,8 +161,17 @@ dialog {
     overflow-y: auto;
     box-sizing: content-box;
 }
+
 </style>
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
+<script>
+    function send(e, detail) {
+        dispatchEvent(new CustomEvent(e, { detail }))
+    }
+
+    const $  = document.querySelector   .bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+</script>
 </head>
 
 <body>

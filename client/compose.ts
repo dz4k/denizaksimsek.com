@@ -1,17 +1,13 @@
 
 /// <reference lib="dom" />
 
+import on from "./lib/evt.ts";
 import { URI } from "./lib/uri.ts"
 
-const
-    $post = document.getElementById("post") as HTMLFormElement,
-    $content = document.getElementById("content") as HTMLTextAreaElement
-
-$post.addEventListener("submit", e => {
+on("composeNewPost", ({ body }: { body: string }) => {
     const date = new Date
     const folder = date.getFullYear()
     const filename = `${date.toISOString()}.md`
-    const body = $content.value
     const message = "Post: " + body.trim().slice(0, 30)
 
     window.open(URI`
