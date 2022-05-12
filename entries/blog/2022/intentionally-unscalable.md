@@ -41,6 +41,7 @@ application development circles. Given this definition, we can see that:
 	|----------|-------------------------------------------------|-----------------|
 	| Software | Serve more users.                               | Computers.      |
 	| Team     | Add complexity to the software and maintain it. | Time, money.    |
+	{.responsive-table}
 	
 	: The two main systems in a software organization
 

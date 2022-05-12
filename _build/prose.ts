@@ -51,7 +51,7 @@ export default () => {
           figure.appendChild(caption)
         })
       
-      document.getElementsByTagName("table").forEach((t) => {
+      document.getElementsByClassName("responsive-table").forEach((t) => {
         const headings = t.querySelectorAll("thead th")
         const rows     = t.querySelectorAll("tbody tr")
 
@@ -63,8 +63,6 @@ export default () => {
             i += Number(cell.getAttribute("colspan") ?? 1)
           }
         }
-
-        t.classList.add("responsive-table")
       })
 
         document.getElementsByTagName("x-fig").forEach((fig: Element) => {
