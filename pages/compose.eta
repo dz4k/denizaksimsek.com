@@ -9,25 +9,5 @@ url: /new/
         <p><textarea id="content" rows="20"></textarea></p>
     </form>
     
-    <script>
-        const
-            $post = document.getElementById("post"),
-            $content = document.getElementById("content")
-        
-        $post.addEventListener("submit", e => {
-            const date = new Date
-            const folder = date.getFullYear()
-            const filename = `${date.toISOString()}.md`
-            const body = $content.value
-            const message = "Post: " + body.trim().slice(0, 30)
-    
-            window.open(
-                "https://github.com/dz4k/denizaksimsek.com" +
-                "/new/master/entries/blog/" + encodeURIComponent(folder) + "/new" +
-                "?message=" + encodeURIComponent(message) +
-                "&filename=" + encodeURIComponent(filename) +
-                "&value=" + encodeURIComponent(body)
-            )
-        })
-    </script>
+    <script type="module" src="/client/compose.ts"></script>
 </div>

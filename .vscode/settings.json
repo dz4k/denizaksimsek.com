@@ -10,5 +10,6 @@
     },
     "peacock.darkenLightenPercentage": 1,
     "peacock.affectSashHover": false,
-    "peacock.affectSideBarBorder": false
+    "peacock.affectSideBarBorder": false,
+    "deno.unstable": true
 }
