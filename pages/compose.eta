@@ -15,13 +15,15 @@ url: /new/
             $content = document.getElementById("content")
         
         $post.addEventListener("submit", e => {
-            const filename = `${new Date().toISOString()}.md`
+            const date = new Date
+            const folder = `${date.getFullYear()}.md`
+            const filename = `${date.toISOString()}.md`
             const body = $content.value
             const message = "Post: " + body.trim().slice(0, 30)
     
             window.open(
                 "https://github.com/dz4k/denizaksimsek.com" +
-                "/new/master/entries/micro/" +
+                "/new/master/entries/blog/" + encodeURIComponent(folder) +
                 "?message=" + encodeURIComponent(message) +
                 "&filename=" + encodeURIComponent(filename) +
                 "&value=" + encodeURIComponent(body)
