@@ -1,69 +1,77 @@
 ---
-permalink: /cv/en/
-layout: null
+lang: en
+url: /cv/en/
+layout: layouts/page.eta
 ---
 
-<!doctype html>
-<html lang="en" class="h-card">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-
-<link rel="stylesheet" href="/styles/font-face.css">
-<link rel="stylesheet" href="/styles/cv.css">
+<main lang="en" class="h-card" style="column-width: 50ch;">
 
 <p class="see-also -no-print"><a href="/cv.tr.html" lang="tr" hreflang="tr" 
 	rel="alternate">Türkçesi&nearr;</a>
+
+<style>
+	:root, [lang=en], [lang=tr] {
+		--main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	:root {
+		font-size: 140%;
+	}
+	h3 {
+		text-transform: none;
+	}
+	.dates {
+		font-size: 1.1em;
+	}
+</style>
 
 <header>
 	<h1 lang="tr" class="p-name">
 		<span class="p-given-name">Deniz</span>
 		<span class="p-family-name">Akşimşek</span>
 	</h1>
-	<address>
-		<p><a class="p-tel" href="tel:+905543495329">+90 (554) 349 53 29</a>
+	<address style="--density: 0">
 		<p><a class="u-email" href="mailto:deniz@denizaksimsek.com"
 			>deniz@denizaksimsek.com</a>
 		<p><a class="u-url" href="https://denizaksimsek.com"
 			>https://denizaksimsek.com</a>
+		<p>Phone number available on request
 	</address>
 </header>
 
 <section id="egitim">
 	<h2>Education</h2>
-
-	<ul class="leftcol -flow-gap" role="list">
-		<li><p><time>2019</time>&ndash;Present</p>
-			<h3><span lang="tr">TED</span> University, 
-				<span lang="tr">Ankara</span> (%100 Scholarship)</h3>
-			<p>Faculty of Engineering, Dept. of Computer Engineering</p>
-		<li><p><time>2015</time>&ndash;<time>2019</time></p>
-			<h3><span lang="tr">TED Samsun</span> College Private High 
-				School (TED Full Education Scholarship)</h3>
-		<li><p><time>2015</time>&ndash;<time>2019</time></p>
-			<h3>Samsun R.K. Bilim ve Sanat Merkezi</h3>
-	</ul>
+	<section class="crowded">
+		<h3>
+			<span lang="tr">TED</span> University, 
+			<span lang="tr">Ankara</span>
+		</h3>
+		<p class="dates"><time>2019</time>&ndash;present
+		<p>Faculty of Engineering, Dept. of Computer Engineering, (%100 Scholarship).
+	</section>
+	<section class="crowded">
+		<h3>
+			<span lang="tr">TED Samsun</span> College Private High School 
+		</h3>
+		<p class="dates"><time>2015</time>&ndash;<time>2019</time>.
+		<p>(TED Full Education Scholarship)</p>
+	</section>	
 </section>
 
 <section id="beceriler">
 	<h2>Skills</h2>
 
-	<ul class="leftcol -flow-gap" role="list">
-		<li><h3>Language</h3>
-			<p>English: fluent and can read/write at an advanced level
-			<p>Turkish: native language</p>
-		<li><h3>Software</h3>
-			<p>Languages: HTML/CSS, JavaScript, Java, C, SQL
-			<p>Tools: Linux, Git, Bash, PowerShell
-			<p>Other: Microsoft Office</p>
-	</ul> 
+	<p><strong>Languages</strong>: English (fluent), Turkish (native), German (beginner), Toki Pona
+	<p><strong>Software</strong>: Languages: HTML/CSS, JavaScript, Java, C, SQL, Bash;
+		Tools: Linux, Git, Bash, PowerShell 
 </section>
 
 <section id="aktivite">
-	<h2>Activities</h2>
+	<h2>Curriculum Vitæ</h2>
 
 	<ul class="leftcol -flow-gap" role="list">
-		<li><p><time datetime="2021-02">February 2021</time>&ndash;Present</p>
-			<h3><i>Contributor</i>, Big Sky Software</h3>
+		<li>
+			<h3><i>Maintainer</i>, _hyperscript, Big Sky Software</h3>
+			<p class="dates"><time datetime="2021-02">February 2021</time>&ndash;present</p>
 			<ul>
 				<li>Developed new features for the <i>_hyperscript</i> 
 				programming language: Web Worker integration, inline JavaScript,
@@ -74,16 +82,18 @@ layout: null
 				<a class="print-link" href="https://hypelet.dz4k.com">Hypelet</a>)
 				<li>Worked on performance and code size optimizations
 				<li>Wrote documentation
-				<li>Redesigned _hyperscript project homepage
+				<li>Redesigned _hyperscript project website:
+					<a href="https://hyperscript.org">hyperscript.org</a>
 				<li>Wrote a weekly newsletter discussing community news, which
-					served as a promotional tool
+					served as a promotional tool:
+					<a href="https://thisweek.htmx.org">This Week in HTMX</a>
 			</ul>
 		<li>
-			<p><time datetime="2017-02">June 2017</p>
 			<h3><i>Delegate</i>, Özyeğin University National Forum</h3>
+			<p class="dates"><time datetime="2017-02">June 2017</p>
 		<li>
-			<p><time datetime="2017-02">February 2017</p>
 			<h3><i>Panelist</i>, 3<sup>rd</sup> Black Sea Book Fair</h3>
+			<p class="dates"><time datetime="2017-02">February 2017</p>
 	</ul>
 </section>
 
@@ -108,7 +118,11 @@ layout: null
 
 	<ul role="list">
 		<li>
-			<p>Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi</p>
-			<address>+90 (505) 238 21 78</address>
+			<p>
+				Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi<br>
+				Phone number available on request
+			</p>
 	</ul>
 </section>
+
+</main>
