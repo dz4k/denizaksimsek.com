@@ -35,4 +35,3 @@ export default lume(
   .use(getDatesFromGit())
   .use(backlinks())
   .use(prose())
-  .use(bundler({ options: { bundle: "module" } }))
