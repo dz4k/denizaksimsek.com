@@ -1,0 +1,19 @@
+---
+url: /asciimath/
+layout: layouts/page.eta
+---
+
+<script>
+    <%~
+    await fetch("https://raw.githubusercontent.com/asciimath/asciimathml/master/ASCIIMathML.js")
+        .then(res => res.text())
+        .then(res => res.replace(/<\/script>/g, "<\\/script>"))
+    %>
+</script> 
+
+<form>
+    <textarea name="asciimath" id="asciimath" rows="10" style="width: 100%; font-family: monospace;"
+        oninput="rendered.replaceChildren(window.asciimath.parseMath('{:('+this.value.replace(/\n/g, '),(')+'):}'))"></textarea>
+</form>
+
+<p><output id="rendered"></output></p>

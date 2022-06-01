@@ -10,20 +10,33 @@ url: /new/
     #content {
         position: fixed;
         width: var(--line-length);
-        height: calc(100% - 6em);
-        top: 4em;
+        height: calc(100% - 4em);
+        top: 3em;
         resize: none;
+    }
+    .top-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: .5em 0;
+    }
+    .top-toolbar > * {
+        margin-block: 0 !important;
+    }
+    body > footer {
+        display: none;
     }
 </style>
 
 <div class="wrapper">
-    <form id="post" onsubmit="send('composeNewPost', { body: $`#content`.value })">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <h1>New post</h1>
+    <form id="post">
+        <p class="top-toolbar">
+            <input type="file" multiple placeholder="Upload images" value="Upload images">
             <button>Post</button>
-        </div>
+        </p>
         <p><textarea id="content"></textarea></p>
     </form>
-    
-    <script type="module" src="/client/compose.ts"></script>
 </div>
+
+
+<script src="/client/compose.js"></script>
