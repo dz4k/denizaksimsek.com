@@ -135,7 +135,7 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Alegreya Sans", serif;
+    --main-font: "Rosario", serif;
     font-family: var(--main-font);
 }
 
