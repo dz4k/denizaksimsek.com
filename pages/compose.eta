@@ -29,7 +29,7 @@ url: /new/
 </style>
 
 <div class="wrapper">
-    <form id="post">
+    <form id="post" onsubmit="dispatchEvent(new CustomEvent('blog-post', { detail: { content: content.value } }))">
         <p class="top-toolbar">
             <input type="file" multiple placeholder="Upload images" value="Upload images">
             <button>Post</button>

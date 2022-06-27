@@ -12,7 +12,6 @@ function blogPost(body) {
     const date = new Date
     const folder = `blog/${date.getFullYear()}`
     const filename = date.toISOString() + ".md"
-    const body = $content.value
 
     post(filename, folder, body)
 }
@@ -28,3 +27,7 @@ async function bookmarkPost(url, content) {
         content,
     })
 }
+
+addEventListener("blog-post", e => {
+    blogPost(e.detail.content)
+})
