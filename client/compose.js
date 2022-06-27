@@ -4,7 +4,7 @@ function post(filename, folder, body) {
         `https://github.com/dz4k/denizaksimsek.com/`+
         `new/master/entries/${folder}/new`+
         `?filename=${filename}`+
-        `&value=${body}`
+        `&value=${encodeURIComponent(body)}`
     )
 }
 
