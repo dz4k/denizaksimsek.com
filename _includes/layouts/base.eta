@@ -37,17 +37,44 @@
 <style>
 :root {
     --line-length: 70ch;
-    --accent: #ce5d00;
-    --muted-accent: #e6ab5e;
-    --bg-2: #ffedd6;
-    --bg-3: #e1e0df;
+
+    --accent: #ff9a48;
+    --muted-accent: rgb(187, 92, 14);
+    
+    --fg: rgb(250, 215, 193);
+    --muted-fg: rgb(189, 129, 92);
+    
+    --bg: #241000;
+    --colorful-bg: #441b00;
+    --interactive-bg: #6e3802;
+
+    --shadow: #000;
+
+    --ok-bg: rgb(0, 59, 0);
+    --ok-fg: limegreen;
+    --bad-bg: rgb(90, 0, 0);
+    --bad-fg: rgb(255, 136, 136);
+    --warn-bg: rgb(97, 97, 4);
+    --warn-fg: rgb(243, 198, 0);
+    --info-fg: rgb(0, 225, 255);
+
     font-size: 120%;
     --rhythm: 1.4rem;
     font-variant-numeric: oldstyle-nums;
+
+    background-color: var(--bg);
+    color: var(--fg);
 }
 
-pre, code, samp, kbd {
-    font-size: .9em;
+/* move to missing.css core */
+button {
+    color: var(--fg);
+    font-weight: bold;
+}
+
+/* move to missing.css core */
+pre {
+    font-size: inherit;
 }
 
 a {

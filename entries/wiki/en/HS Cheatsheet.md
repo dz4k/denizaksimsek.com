@@ -5,11 +5,6 @@ title: _hyperscript Cheatsheet
 <style>
 :root {
     overflow: auto;
-
-    /* _hyperscript colors */
-    --accent: #3465a4 !important;
-    --muted-accent: #3d72d7 !important;
-    --bg-2: #f8f8ff !important;
 }
 
 header {
