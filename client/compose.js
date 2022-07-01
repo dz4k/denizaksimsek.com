@@ -15,18 +15,6 @@ function blogPost(body) {
 	post(filename, folder, body);
 }
 
-async function bookmarkPost(url, content) {
-	const folder = 'interact';
-	const filename = new Date().toISOString() + '.json';
-	const body = JSON.stringify({
-		'bookmark of': {
-			name: await getTitle(url),
-			url,
-		},
-		content,
-	});
-}
-
 addEventListener('blog-post', (e) => {
 	blogPost(e.detail.content);
 });

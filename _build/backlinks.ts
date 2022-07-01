@@ -16,12 +16,11 @@ export default () => {
 	};
 };
 
-const markdownUrlRE = /^\[[^\]]+\]: (\/[^\s]+)$/;
 const wikilinkRE = /\[\[([^\]]+)\]\]/g;
 
 function renderWikilinks(markdown: string, lang: string): [string, string[]] {
 	const links: string[] = [];
-	const markdownOut = markdown.replace(wikilinkRE, (match, text) => {
+	const markdownOut = markdown.replace(wikilinkRE, (_, text) => {
 		const url = `/wiki/${lang}/${encodeURIComponent(text)}/`;
 		links.push(url);
 		return `[${text}](${url})`;

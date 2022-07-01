@@ -13,3 +13,4 @@ const data = mf2(await res.text(), {
 	},
 }) as MF2;
 const entry = data.items.find((item) => item.type.includes('h-entry'));
+console.log(JSON.stringify(entry))
