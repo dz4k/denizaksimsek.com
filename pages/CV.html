@@ -1,0 +1,209 @@
+---
+layout: layouts/base.eta 
+lang: en
+---
+
+<style>
+    :root {
+        --main-font: 'Linux Biolinum';
+        --line-length: calc(210mm - 3cm);
+        --accent: #bb0000;
+        --colorful-bg: #ffeeee;
+
+        font-size: 10pt;
+
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    @media print {
+        @page {
+            margin: 1.5cm;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+    }
+
+    .packed {
+        --density: 0;
+    }
+
+    .contents {
+        display: contents;
+    }
+
+    .margin-block {
+        margin-block: var(--gap);
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .smcp {
+        font-variant-caps: all-small-caps;
+        font-size: .9em;
+        letter-spacing: .1em;
+    }
+
+    ul {
+        list-style: '\2013\2002';
+        /* en dash, en space */
+    }
+</style>
+
+<main class="h-resume">
+    <h1 class="p-name">Deniz Akşimşek</h1>
+
+    <address class="p-contact h-card dense">
+        <span hidden class="p-name">Deniz Akşimşek</span>
+        <a class="u-email" href="mailto:deniz@denizaksimsek.com">deniz@denizaksimsek.com</a> &middot;
+        <a class="u-url u-uid" href=https://denizaksimsek.com>https://denizaksimsek.com</a> &middot;
+        Phone number and address available upon request
+    </address>
+
+
+    <h2>Education</h2>
+
+    <ul role="list">
+        <li class="p-education h-event packed">
+            <h3 class="h4">
+                <span class="p-name">B.S. in Computer Engineering</span>,
+                <a class="p-location h-card" href="https://tedu.edu.tr">TED University, Ankara</a>
+                <v-h> &mdash; </v-h>
+                <span class="float>">
+                    <time class="dt-start">2019</time>&ndash;<time class="dt-end" datetime="202207">Present</time>
+                </span>
+            </h3>
+        </li>
+    </ul>
+
+
+    <h2>Experience</h2>
+
+    <ul class="dense f-col" role="list">
+        <li class="p-experience h-event packed">
+            <h3 class="h4">
+                <span class="p-name">Intern</span>,
+                <a class="p-location h-card" href="https://headspacetech.com">
+                    <span class="p-name">Headspace Technologies</span>,
+                    <span class="p-country-name">South Africa</span>
+                </a>
+                <v-h> &mdash; </v-h>
+                <span class="float>">
+                    <time class="dt-start" datetime="202206">June 2022</time>&ndash;<time class="dt-end"
+                        datetime="202207">Present</time>
+                </span>
+            </h3>
+            <div class="e-content">
+                <ul>
+                    <li>Designed and implemented a prototype system for NFC-based digital business cards, such that
+                        the cards can be sold through brick-and-mortar retail.
+                    <li>Worked on a Java web framework along with a business automation system aimed at automated
+                        end-to-end testing with Selenium.
+                </ul>
+            </div>
+        </li>
+
+        <li class="p-experience h-event packed">
+            <h3 class="h4">
+                <span class="p-name">Lead Developer</span>,
+                <a class="p-location h-card" href="https://bigsky.software">
+                    <span class="p-name">Big Sky Software</span>,
+                    <span class="p-region">Montana</span>,
+                    <span class="p-country-name">USA</span>
+                </a>
+                <v-h> &mdash; </v-h>
+                <span class="float>">
+                    <time class="dt-start" datetime="202202">Feb 2022</time>&ndash;<time class="dt-end"
+                        datetime="202207">Present</time></span>
+            </h3>
+            <div class="e-content">
+                <ul>
+                    <li>Developed a CSS library, <a href="https://missing.style">missing.css</a>, which combines
+                        multiple approaches to CSS. The library is being used for rapid development of a frontend at
+                        Headspace Technologies.
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="p-experience h-event packed">
+            <h3 class="h4">
+                <span class="p-name">Co-maintainer</span>,
+                <a href=https://hyperscript.org>_hyperscript</a>
+                <span class="float>">
+                    <time class="dt-start" datetime="202202">Feb 2021</time>&ndash;<time class="dt-end"
+                        datetime="202207">Present</time>
+                </span>
+            </h3>
+            <div class="e-content">
+                <ul class=" colwidth-l" style="column-gap: var(--rhythm);">
+                    <li>Took a leading role in an open-source project, implementing features and engaging with
+                        online user communities
+                    <li>Built an interactive debugger, which helped onboard users and was used in development of the
+                        language itself
+                    <li>Carried out large-scale refactoring, which reduced build times to 0
+                    <li>Created a <a
+                            href=https://marketplace.visualstudio.com/items?itemName=dz4k.vscode-hyperscript-org>VSCode
+                            plugin</a>
+                    <li>Wrote a <a href=https://thisweek.htmx.org>bulletin</a>
+                    <li>Redesigned project website
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+
+    <h2>Skills</h2>
+
+    <div class="tool-bar margin-block" style="column-gap: var(--gap);">
+        <h3 class="h4 packed">Languages</h3>
+        <ul class="contents" role="list">
+            <li class="p-skill">English (fluent)
+            <li class="p-skill">Turkish (native)
+            <li class="p-skill">German (beginner)
+        </ul>
+    </div>
+
+    <div class="tool-bar margin-block" style="column-gap: var(--gap);">
+        <h3 class="h4 packed">Software</h3>
+        <ul class="contents" role="list">
+            <li class="p-skill">HTML
+            <li class="p-skill">CSS
+            <li class="p-skill">JavaScript & TypeScript
+            <li class="p-skill">Java
+            <li class="p-skill">Bash
+            <li class="p-skill">Deno
+            <li class="p-skill">C
+            <li class="p-skill">SQL
+        </ul>
+    </div>
+
+    <h2>Personal</h2>
+    <table>
+        <th scope=row>Born
+        <td>2001 in Rize, Turkey
+    </table>
+
+    <h2>References</h2>
+    <ul class="f-col">
+        <li class="packed">
+            <p>Johan Vosloo, CEO, Headspace Technologies
+            <p>johan@headspacetech.com
+        </li>
+
+        <li class="packed">
+            <p>Carson Gross, CEO, Big Sky Software, & Instructor, Montana State University
+            <p>carson@bigsky.software
+        </li>
+
+        <li class="packed">
+            <p>Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi
+            <p>Phone number available on request
+        </li>
+    </ul>
+</main>
