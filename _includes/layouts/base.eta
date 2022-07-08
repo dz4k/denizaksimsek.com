@@ -18,7 +18,6 @@
 <link rel="webmention" href="https://webmention.io/www.denizaksimsek.com/webmention">
 <link rel="pingback" href="https://webmention.io/www.denizaksimsek.com/xmlrpc">
 
-<link href="https://fonts.bunny.net/css?family=inria-sans:400,700,400i,700i" rel="stylesheet" />
 <link rel="stylesheet" href="https://davidar.github.io/linja-pona/stylesheet.css">
 
 <% if (it.tags.length > 0) { %>
@@ -35,6 +34,24 @@
 <% } %>
 
 <style>
+@font-face {
+    font-family: 'Linux Biolinum';
+    src: url(/assets/fonts/LinBiolinum_R.woff) format('woff');
+}
+
+
+@font-face {
+    font-family: 'Linux Biolinum';
+    font-weight: bold;
+    src: url(/assets/fonts/LinBiolinum_RB.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Linux Biolinum';
+    font-style: italic;
+    src: url(/assets/fonts/LinBiolinum_RI.woff) format('woff');
+}
+
 :root {
     --line-length: 70ch;
 
@@ -160,7 +177,7 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Inria Sans", serif;
+    --main-font: "Lİnux Biolinum", serif;
     font-family: var(--main-font);
 }
 
