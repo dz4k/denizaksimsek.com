@@ -52,6 +52,24 @@
     src: url(/assets/fonts/LinBiolinum_RI.woff) format('woff');
 }
 
+@font-face {
+    font-family: 'Linux Libertine';
+    src: url(/assets/fonts/LinLibertine_R.woff) format('woff');
+}
+
+
+@font-face {
+    font-family: 'Linux Libertine';
+    font-weight: bold;
+    src: url(/assets/fonts/LinLibertine_RB.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Linux Libertine';
+    font-style: italic;
+    src: url(/assets/fonts/LinLibertine_RI.woff) format('woff');
+}
+
 :root {
     --line-length: 80ch;
 
@@ -75,7 +93,7 @@
     --warn-fg: rgb(243, 198, 0);
     --info-fg: rgb(0, 225, 255);
 
-    font-size: 150%;
+    font-size: 125%;
     font-variant-numeric: oldstyle-nums;
 
     background-color: var(--bg);
@@ -91,6 +109,10 @@ button {
 /* move to missing.css core */
 pre {
     font-size: inherit;
+}
+
+code {
+    font-size: .8em;
 }
 
 a {
@@ -176,7 +198,8 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Linux Biolinum", serif;
+    --main-font: "Linux Libertine", serif;
+    --display-font: "Linux Biolinum", serif;
     font-family: var(--main-font);
 }
 
