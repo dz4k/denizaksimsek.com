@@ -53,7 +53,7 @@
 }
 
 :root {
-    --line-length: 70ch;
+    --line-length: 80ch;
 
     --accent: #ff9a48;
     --muted-accent: rgb(187, 92, 14);
@@ -75,8 +75,7 @@
     --warn-fg: rgb(243, 198, 0);
     --info-fg: rgb(0, 225, 255);
 
-    font-size: 120%;
-    --rhythm: 1.4rem;
+    font-size: 150%;
     font-variant-numeric: oldstyle-nums;
 
     background-color: var(--bg);
@@ -103,8 +102,8 @@ time {
     white-space: nowrap;
 }
 
-.bold {
-    font-weight: bold;
+.italic {
+    font-style: italic;
 }
 
 .noliga {
@@ -177,7 +176,7 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Lİnux Biolinum", serif;
+    --main-font: "Linux Biolinum", serif;
     font-family: var(--main-font);
 }
 
