@@ -1,9 +1,14 @@
----
-layout: layouts/base.eta 
+--- 
 lang: en
 url: /cv/
 ---
 
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deniz Akşimşek &mdash; Résumé</title>
+<link rel="stylesheet" href="https://the.missing.style/v0.0.2/missing.min.css">
 <style>
     :root {
         --main-font: 'Linux Biolinum';
@@ -11,9 +16,8 @@ url: /cv/
         --accent: #bb0000;
         --colorful-bg: #ffeeee;
 
-        font-size: 10pt;
+        font-size: 12pt;
 
-        text-align: justify;
         hyphens: auto;
     }
 
@@ -28,28 +32,13 @@ url: /cv/
         }
     }
 
-    .packed {
-        --density: 0;
-    }
-
-    .contents {
-        display: contents;
-    }
-
-    .margin-block {
-        margin-block: var(--gap);
-    }
-
-    .inline {
-        display: inline;
-    }
-
-    .smcp {
-        font-variant-caps: all-small-caps;
-        font-size: .9em;
+    h2 {
+        font-size: 1em;
+        text-transform: uppercase;
         letter-spacing: .1em;
+        line-height: inherit;
     }
-
+    
     ul {
         list-style: '\2013\2002';
         /* en dash, en space */
@@ -101,10 +90,8 @@ url: /cv/
             </h3>
             <div class="e-content">
                 <ul>
-                    <li>Designed and implemented a prototype system for NFC-based digital business cards, such that
-                        the cards can be sold through brick-and-mortar retail.
-                    <li>Worked on a Java web framework along with a business automation system aimed at automated
-                        end-to-end testing with Selenium.
+                    <li>Designed and implemented a prototype system for NFC-based digital business cards
+                    <li>Worked on a Java web framework and business automation system for end-to-end testing with Selenium.
                 </ul>
             </div>
         </li>
@@ -144,9 +131,8 @@ url: /cv/
             <div class="e-content">
                 <ul class=" colwidth-l" style="column-gap: var(--rhythm);">
                     <li>Took a leading role in an open-source project, implementing features and engaging with
-                        online user communities
-                    <li>Built an interactive debugger, which helped onboard users and was used in development of the
-                        language itself
+                        users
+                    <li>Built an interactive debugger, helping onboard users and accelerating development
                     <li>Carried out large-scale refactoring, which reduced build times to 0
                     <li>Created a <a
                             href=https://marketplace.visualstudio.com/items?itemName=dz4k.vscode-hyperscript-org>VSCode
@@ -161,7 +147,7 @@ url: /cv/
 
     <h2>Skills</h2>
 
-    <div class="tool-bar margin-block" style="column-gap: var(--gap);">
+    <div class="tool-bar" style="column-gap: var(--gap);">
         <h3 class="h4 packed">Languages</h3>
         <ul class="contents" role="list">
             <li class="p-skill">English (fluent)
@@ -170,7 +156,7 @@ url: /cv/
         </ul>
     </div>
 
-    <div class="tool-bar margin-block" style="column-gap: var(--gap);">
+    <div class="tool-bar" style="column-gap: var(--gap);">
         <h3 class="h4 packed">Software</h3>
         <ul class="contents" role="list">
             <li class="p-skill">HTML
@@ -191,20 +177,10 @@ url: /cv/
     </table>
 
     <h2>References</h2>
-    <ul class="f-col">
-        <li class="packed">
-            <p>Johan Vosloo, CEO, Headspace Technologies
-            <p>johan@headspacetech.com
-        </li>
-
-        <li class="packed">
-            <p>Carson Gross, CEO, Big Sky Software, & Instructor, Montana State University
-            <p>carson@bigsky.software
-        </li>
-
-        <li class="packed">
-            <p>Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi
-            <p>Phone number available on request
-        </li>
+    <p><i>Contact info available on request</i></p>
+    <ul>
+        <li>Johan Vosloo, CEO, Headspace Technologies
+        <li>Carson Gross, CEO, Big Sky Software, & Instructor, Montana State University
+        <li>Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi
     </ul>
 </main>
