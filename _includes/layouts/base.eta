@@ -200,7 +200,6 @@ time {
 [lang=en], [lang=tr] {
     --main-font: "Linux Libertine", serif;
     --secondary-font: "Linux Biolinum", serif;
-    font-family: var(--main-font);
 }
 
 .hover-state:hover {
