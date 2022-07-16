@@ -1,10 +1,10 @@
 const assets = [
 	[
-		'https://missing.style/missing.min.css',
+		'https://the.missing.style/v0.0.4/missing.min.css',
 		'/assets/css/missing.css',
 	],
 	[
-		'https://missing.style/missing-prism.min.css',
+		'https://the.missing.style/v0.0.4/missing-prism.min.css',
 		'/assets/css/missing-prism.css',
 	],
 ];
