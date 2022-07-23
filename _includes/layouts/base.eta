@@ -202,6 +202,16 @@ time {
     --secondary-font: "Linux Biolinum", serif;
 }
 
+:where([lang=en], [lang=tr]) {
+    font-family: var(--main-font);
+}
+
+[aria-current="page"] {
+    background: var(--interactive-bg);
+    border-radius: .2em;
+    padding-inline: .2em;
+}
+
 .hover-state:hover {
     outline: 1px solid var(--accent);
     background: var(--bg) !important;

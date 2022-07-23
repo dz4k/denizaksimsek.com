@@ -1,4 +1,4 @@
---- 
+---
 lang: en
 url: /cv/
 ---
@@ -8,10 +8,11 @@ url: /cv/
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deniz Akşimşek &mdash; Résumé</title>
-<link rel="stylesheet" href="https://the.missing.style/v0.0.2/missing.min.css">
+<link rel="stylesheet" href="https://the.missing.style/v0.0.5/missing.min.css">
 <style>
     :root {
-        --main-font: 'Linux Biolinum';
+        --main-font: 'Linux Libertine';
+        --secondary-font: 'Linux Biolinum';
         --line-length: calc(210mm - 3cm);
         --accent: #bb0000;
         --colorful-bg: #ffeeee;
@@ -38,7 +39,11 @@ url: /cv/
         letter-spacing: .1em;
         line-height: inherit;
     }
-    
+
+    h3.h4 { font-family: var(--main-font); }
+
+    time { font-family: var(--secondary-font); }
+
     ul {
         list-style: '\2013\2002';
         /* en dash, en space */
@@ -61,7 +66,7 @@ url: /cv/
     <ul role="list">
         <li class="p-education h-event packed">
             <h3 class="h4">
-                <span class="p-name">B.S. in Computer Engineering</span>,
+                <span class="p-name">B.Sc. in Computer Engineering</span>,
                 <a class="p-location h-card" href="https://tedu.edu.tr">TED University, Ankara</a>
                 <v-h> &mdash; </v-h>
                 <span class="float>">
@@ -91,9 +96,15 @@ url: /cv/
             <div class="e-content">
                 <ul>
                     <li>Designed and implemented a prototype system for NFC-based digital business cards
-                    <li>Worked on a Java web framework and business automation system for end-to-end testing with Selenium.
+                    <li>Worked on a Java web framework and business automation system for end-to-end testing with
+                        Selenium.
                 </ul>
             </div>
+            <ul role="list" class="tool-bar dense justify-content:end">
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Deno</li>
+            </ul>
         </li>
 
         <li class="p-experience h-event packed">
@@ -117,6 +128,11 @@ url: /cv/
                     </li>
                 </ul>
             </div>
+            <ul role="list" class="tool-bar dense justify-content:end">
+                <li>CSS</li>
+                <li>Deno</li>
+                <li>TypeScript</li>
+            </ul>
         </li>
 
         <li class="p-experience h-event packed">
@@ -148,7 +164,7 @@ url: /cv/
     <h2>Skills</h2>
 
     <div class="tool-bar" style="column-gap: var(--gap);">
-        <h3 class="h4 packed">Languages</h3>
+        <h3 class="h5 packed">Languages</h3>
         <ul class="contents" role="list">
             <li class="p-skill">English (fluent)
             <li class="p-skill">Turkish (native)
@@ -157,7 +173,7 @@ url: /cv/
     </div>
 
     <div class="tool-bar" style="column-gap: var(--gap);">
-        <h3 class="h4 packed">Software</h3>
+        <h3 class="h5 packed">Software</h3>
         <ul class="contents" role="list">
             <li class="p-skill">HTML
             <li class="p-skill">CSS
@@ -165,6 +181,7 @@ url: /cv/
             <li class="p-skill">Java
             <li class="p-skill">Bash
             <li class="p-skill">Deno
+            <li class="p-skill">Node.js
             <li class="p-skill">C
             <li class="p-skill">SQL
         </ul>

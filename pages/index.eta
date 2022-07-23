@@ -1,64 +1,71 @@
 ---
-layout: layouts/page.eta
+layout: layouts/base.eta
 url: /
 ---
 
-<div class="h-card">
-    <% if (lang === "tok") { %>
-        <h1>jan [_ma_ante_telo_en_lawa_o]</h1>
-    <% } else { %>
-        <h1 lang="tr">Deniz Akşimşek</h1>
-    <% } %>
-    
+<header class="h-card">
     <link class="u-url u-uid" href="https://denizaksimsek.com">
 
-    <p class="list-of-links">
-        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a> &middot;
-        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a> &middot;
-        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a> &middot;
-        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a> &middot;
-        <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a> &middot;
-        <a rel="me noopener noreferrer" lang="en" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
-        <% if (lang === "en") { %>
-            &middot; <a class="p-x-pronoun-nominative" href="https://pronoun.is/he">he</a>
-        <% } %>
-    </p>
+    <div class="f-row align-items:start">
+        <img class="u-photo" style="margin-block: calc(1.5*var(--gap));" src="/assets/me.jpeg" alt="Me @ Atakule" width="150" height="150">
+    
+        <div class="padded">
+            <h1>
+                <% if (lang === "tok") { %>
+                    <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span> <v-h>&mdash;</v-h>
+                    <sub-title class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</sub-title>
+                <% } else { %>
+                    <span class="p-name" lang="tr" style="font:inherit">Deniz Akşimşek</span>
+                <% } %>
 
-    <p class="list-of-links">
-        <img class="badge" src="/assets/jan-matelo-sitelen-pona.png" alt="jan Matelo" width="80" height="15" lang="tok"></a>
-        <a href="/feed.xml">
-            <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15"></a>
-        <a href="/feed.json">
-            <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
-        <a href="/wiki/en/IndieWeb/">
-            <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
-        <a href="/wiki/en/Webmentions/">
-            <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15"></a>
-    </p>
-    <p class="list-of-links">
-        🌐
-        <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
-            <a 
-                href="/<%= language %>"
-                lang="<%= language %>"
-                hreflang="<%= language %>"
-                rel="alternate"
-                <%~ language === lang ? "aria-current=page" : ""%>
-                ><%= intl[language][language] %></a>
-                <%~ loop.sep(" &middot; ") %>
-        <% }) %>
-    </p>
+            </h1>
+    
+            <p class="p-summary"><%= intl["Bio"][lang] %></p>
+    
+            <p class="list-of-links tool-bar">
+                <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
+                <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
+                <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
+                <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
+                <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
+                <a rel="me noopener noreferrer" lang="en" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
+                <% if (lang === "en") { %>
+                    <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
+                <% } %>
+            </p>
+        </div>
+    </div>
+    <div class="f-row" style="flex-wrap: wrap; justify-content:space-between">
+        <p class="list-of-links tool-bar align-items:center">
+            <a href="/feed.xml">
+                <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15"></a>
+            <a href="/feed.json">
+                <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+            <a href="/wiki/en/IndieWeb/">
+                <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
+            <a href="/wiki/en/Webmentions/">
+                <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+        </p>
+        <p class="list-of-links tool-bar">
+            <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
+                <a
+                    href="/<%= language %>"
+                    lang="<%= language %>"
+                    hreflang="<%= language %>"
+                    rel="alternate"
+                    <%~ language === lang ? "aria-current=page" : ""%>
+                    ><%= intl[language][language] %></a>
+            <% }) %>
+        </p>
+    </div>
+</header>
 
-    <p>
-        <img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule">
-    </p>
-</div>
-
-
-<h2><%= intl["project (tag plural)"][lang] %></h2>
-
-<%~ comp.entryList({ entries: search.pages(`project`), dates: false, lang }) %> 
-
-<h2><%= intl["blog (tag plural)"][lang] %></h2>
-
-<%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 
+<main>
+    <h2><%= intl["project (tag plural)"][lang] %></h2>
+    
+    <%~ comp.entryList({ entries: search.pages(`project`), dates: false, lang }) %> 
+    
+    <h2><%= intl["blog (tag plural)"][lang] %></h2>
+    
+    <%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 
+</main>

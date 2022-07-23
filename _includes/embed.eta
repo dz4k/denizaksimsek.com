@@ -6,13 +6,13 @@
 
 <article class="h-entry missing-card crowded hover-state" onclick="this.querySelector('a').click()" lang="<%= it.lang %>">
     <% if (it.label) { %>
-        <i class="italic"><%= it.label %></i>
+        <%= it.label %>
     <% } %>
     <b class="list-of-links"><a href="<%= it.url %>" class="p-name u-url u-uid">
         <%= title ?? it.title ?? it.url %></a></b>
     <% if (description) { %>
         <p class="p-summary"><%= description %></p>
     <% } else if (content) { %>
-        <p class="p-summary"><%= filters.peekHtml(content, 256) %></p>
+        <blockquote class="p-summary"><%= filters.peekHtml(content, 256) %></blockquote>
     <% } %>
 </article>

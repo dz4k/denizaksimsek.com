@@ -1,9 +1,14 @@
 {
-    "importMap": "import_map.json",
-    "fmt": {
-        "options": {
-            "singleQuote": true,
-            "useTabs": true
-        }
+  "importMap": "import_map.json",
+  "fmt": {
+    "options": {
+      "singleQuote": true,
+      "useTabs": true
     }
+  },
+  "tasks": {
+    "lume": "deno eval \"import 'lume/task.ts'\" --",
+    "build": "deno task lume",
+    "serve": "deno task lume -s"
+  }
 }
