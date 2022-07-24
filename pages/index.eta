@@ -20,7 +20,7 @@ url: /
 
             </h1>
     
-            <p class="p-summary"><%= intl["Bio"][lang] %></p>
+            <p class="p-summary" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
     
             <p class="list-of-links tool-bar">
                 <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
