@@ -6,11 +6,11 @@ url: /
 <header class="h-card">
     <link class="u-url u-uid" href="https://denizaksimsek.com">
 
-    <div class="f-row align-items:start">
-        <img class="u-photo" style="margin-block: calc(1.5*var(--gap));" src="/assets/me.jpeg" alt="Me @ Atakule" width="150" height="150">
+    <div class="f-row colwidth-s align-items:start" style="flex-wrap: wrap;">
+        <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em;" alt="Me @ Atakule" width="150" height="150">
     
-        <div class="padded">
-            <h1>
+        <div class="padded" style="flex: 1 0 32ch">
+            <h1 style="margin-block: 0">
                 <% if (lang === "tok") { %>
                     <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span> <v-h>&mdash;</v-h>
                     <sub-title class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</sub-title>
