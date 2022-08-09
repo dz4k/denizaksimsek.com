@@ -6,6 +6,9 @@
 
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,700,700i" rel="stylesheet" />
+
 <link rel="stylesheet" href="/assets/css/missing.css">
 <link rel="stylesheet" href="/assets/css/missing-prism.css">
 <link rel="icon" href="/assets/me.jpeg">
@@ -34,42 +37,6 @@
 <% } %>
 
 <style>
-@font-face {
-    font-family: 'Linux Biolinum';
-    src: url(/assets/fonts/LinBiolinum_R.woff) format('woff');
-}
-
-
-@font-face {
-    font-family: 'Linux Biolinum';
-    font-weight: bold;
-    src: url(/assets/fonts/LinBiolinum_RB.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Linux Biolinum';
-    font-style: italic;
-    src: url(/assets/fonts/LinBiolinum_RI.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Linux Libertine';
-    src: url(/assets/fonts/LinLibertine_R.woff) format('woff');
-}
-
-
-@font-face {
-    font-family: 'Linux Libertine';
-    font-weight: bold;
-    src: url(/assets/fonts/LinLibertine_RB.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Linux Libertine';
-    font-style: italic;
-    src: url(/assets/fonts/LinLibertine_RI.woff) format('woff');
-}
-
 :root {
     --line-length: 80ch;
 
@@ -93,7 +60,7 @@
     --warn-fg: rgb(243, 198, 0);
     --info-fg: rgb(0, 225, 255);
 
-    font-size: 125%;
+    font-size: initial;
     font-variant-numeric: oldstyle-nums;
 
     background-color: var(--bg);
@@ -198,8 +165,7 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Linux Libertine", serif;
-    --secondary-font: "Linux Biolinum", serif;
+    --main-font: "Source Sans 3", serif;
 }
 
 :where([lang=en], [lang=tr]) {
