@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= resume.name %> &mdash; Résumé</title>
+<link rel="stylesheet" href="https://the.missing.style/v0.1.0/missing.min.css">
+<style>
+    :root {
+        --main-font: 'source sans 3';
+        --line-length: calc(210mm - 3cm);
+        --accent: #bb0000;
+        --colorful-bg: #ffeeee;
+
+        font-size: initial;
+
+        hyphens: auto;
+    }
+
+    @media print {
+        @page {
+            margin: 1.5cm;
+        }
+
+        :root {
+            font-size: 11pt;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+    }
+
+    h2 {
+        font-weight: normal;
+    }
+
+    time { font-family: var(--secondary-font); }
+
+    ul {
+        list-style: '\2013\2002'; /* en dash, en space */
+    }
+
+    .font-weight\:bold { font-weight:bold }
+</style>
+
+<main class="h-resume">
+    <h1 class="p-name"><%= resume.name %></h1>
+
+    <address class="p-contact h-card dense">
+        <span hidden class="p-name"><%= resume.name %></span>
+        <a class="u-email" href="mailto:<%= resume.email %>"><%= resume.email %></a> &middot;
+        <a class="u-url u-uid" href="<%= resume.url %>"><%= resume.url %></a> &middot;
+        Phone number and address available upon request
+    </address>
+
+
+    <h2>Education</h2>
+
+    <ul role="list">
+        <% for (const edu of resume.education) { %>
+            <li class="p-education h-event <h4> packed font-weight:bold">
+                <span class="p-name"><%= edu.degree %></span>,
+                <a class="p-location h-card" href="<%= edu.organization.url %>"><%= edu.organization.name %></a>
+                <v-h> &mdash; </v-h>
+                <span class="float:right">
+                    <time class="dt-start"><%= edu.start %></time>&ndash;
+                    <%_ if (edu.end) { _%>
+                        <time class="dt-end"><%= edu.end %></time>
+                    <%_ } else { _%>
+                        <time class="dt-end" datetime="202209">Present</time>
+                    <%_ } _%>
+                </span>
+            </li>
+        <% } %>
+    </ul>
+
+
+    <h2>Experience</h2>
+
+    <ul class="dense f-col" role="list">
+        <% for (const exp of resume.experience) { %>
+            <li class="p-experience h-event packed">
+                <h3 class="<h4>">
+                    <span class="p-name"><%= exp.position %></span>,
+                    <a class="p-location h-card" href="<%= exp.organization.url %>">
+                        <span class="p-name"><%= exp.organization.name %></span>,
+                        <span class="p-country-name"><%= exp.organization.country_name %></span>
+                    </a>
+                    <v-h> &mdash; </v-h>
+                    <span class="float:right">
+                        <time class="dt-start"><%= exp.start %></time>&ndash;
+                        <%_ if (exp.end) { _%>
+                            <time class="dt-end"><%= exp.end %></time>
+                        <%_ } else { _%>
+                            <time class="dt-end" datetime="202209">Present</time>
+                        <%_ } _%>
+                    </span>
+                </h3>
+                <div class="e-content">
+                    <ul>
+                        <% for (const c of exp.content) { %>
+                            <li><%~ c %></li>
+                        <% } %>
+                    </ul>
+                </div>
+                <ul role="list" class="tool-bar dense justify-content:end">
+                    <% for (const c of exp.skills) { %>
+                        <li><%= c %></li>
+                    <% } %>
+                </ul>
+            </li>
+        <% } %>
+    </ul>
+
+
+    <h2>Skills</h2>
+
+    <% for (const skillCat in resume.skills) { %> 
+        <div class="tool-bar" style="gap: 0 var(--gap);">
+            <h3 class="<h5> packed"><%= skillCat %></h3>
+            <ul class="contents" role="list">
+                <% for (const skill of resume.skills[skillCat]) { %>
+                    <li class="p-skill"><%= skill %>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+    <p>&dagger; No professional experience. &ddagger; Little experience.</p>
+
+    <h2>Personal</h2>
+    <dl>
+        <div class="tool-bar" style="column-gap: var(--gap);">
+            <% for (const info in resume.personal) { %>
+                <dt><%= info %></dt>
+                <dd><%= resume.personal[info] %></dd>
+            <% } %>
+        </div>
+    </dl>
+
+    <h2>References</h2>
+    <p><i>Contact info available on request</i></p>
+    <ul>
+        <% resume.references.forEach(ref => { %>
+            <li><%= ref %></li>
+        <% }) %>
+    </ul>
+</main>

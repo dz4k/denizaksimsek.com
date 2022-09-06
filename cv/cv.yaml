@@ -1,0 +1,57 @@
+lang: en
+url: /cv/
+layout: ./_layout.eta
+
+resume:
+  name: Deniz Akşimşek
+  email: deniz@denizaksimsek.com
+  url: https://denizaksimsek.com
+
+  skills:
+    Languages: [fluent English, native Turkish, learning German, fluent Toki Pona]
+    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js, C†, SQL†, PHP‡]
+
+  personal:
+    Born: 2001 in Rize, Turkey
+
+
+  education:
+
+    - degree: B.Sc. in Computer Engineering
+      organization:
+        name: TED University, Ankara
+        url: https://tedu.edu.tr
+      start: 2019
+
+
+  experience:
+
+    - position: Intern
+      organization:
+        name: Headspace Technologies
+        url: https://headspacetech.com
+        country_name: South Africa
+      start: 2022-06
+      end: 2022-08
+      content:
+        - Designed and implemented a prototype system for NFC-based digital business cards
+        - Worked on a Java web framework and business automation system for end-to-end testing with Selenium.
+      skills: [JavaScript, Java, Deno]
+
+    - position: Lead Developer
+      organization:
+        name: Big Sky Software
+        url: https://bigsky.software
+        region: Montana
+        country_name: USA
+      start: 2022-02
+      content:
+        - Developed a CSS library, <a href="https://missing.style">missing.css</a>, which combines multiple approaches to CSS. The library is being used for rapid development of a frontend at Headspace Technologies.
+      skills: [CSS, Deno, TypeScript]
+
+
+  references:
+    - Johan Vosloo, CEO, Headspace Technologies
+    - Carson Gross, CEO, Big Sky Software, & Instructor, Montana State University
+    - Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi
+
