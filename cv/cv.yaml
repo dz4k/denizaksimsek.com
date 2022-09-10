@@ -1,6 +1,6 @@
 lang: en
 url: /cv/
-layout: ./_layout.eta
+layout: ./_layout.pug
 
 resume:
   name: Deniz Akşimşek
@@ -9,7 +9,7 @@ resume:
 
   skills:
     Languages: [fluent English, native Turkish, learning German, fluent Toki Pona]
-    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js, C†, SQL†, PHP‡]
+    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js, C †, SQL †, PHP ‡]
 
   personal:
     Born: 2001 in Rize, Turkey
@@ -22,6 +22,10 @@ resume:
         name: TED University, Ankara
         url: https://tedu.edu.tr
       start: 2019
+      content:
+        - Data structures & algorithms, operating systems, relational databases,
+          programming in Java and C, digital logic design, computer networks.
+        - "Secondary field: English Language Teaching."
 
 
   experience:
@@ -34,8 +38,10 @@ resume:
       start: 2022-06
       end: 2022-08
       content:
-        - Designed and implemented a prototype system for NFC-based digital business cards
-        - Worked on a Java web framework and business automation system for end-to-end testing with Selenium.
+        - Designed and implemented a prototype system for NFC-based digital
+          business cards
+        - Worked on a Java web framework and business automation system for
+          end-to-end testing with Selenium.
       skills: [JavaScript, Java, Deno]
 
     - position: Lead Developer
@@ -46,7 +52,9 @@ resume:
         country_name: USA
       start: 2022-02
       content:
-        - Developed a CSS library, <a href="https://missing.style">missing.css</a>, which combines multiple approaches to CSS. The library is being used for rapid development of a frontend at Headspace Technologies.
+        - Developed a CSS library,
+          <a href="https://missing.style">missing.css</a>, currently used for
+          rapid frontend development at Headspace Technologies.
       skills: [CSS, Deno, TypeScript]
 
 

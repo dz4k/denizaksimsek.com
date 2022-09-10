@@ -5,6 +5,7 @@ import date from 'lume/plugins/date.ts';
 import basePath from 'lume/plugins/base_path.ts';
 import resolveUrls from 'lume/plugins/resolve_urls.ts';
 import eta from 'lume/plugins/eta.ts';
+import pug from 'lume/plugins/pug.ts';
 
 import tr from 'https://deno.land/x/date_fns@v2.22.1/locale/tr/index.js';
 import en_US from 'https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js';
@@ -28,6 +29,7 @@ export default lume(
 	.use(basePath())
 	.use(resolveUrls())
 	.use(eta())
+	.use(pug())
 	.use(myFilters())
 	.use(getDatesFromGit())
 	.use(backlinks())
