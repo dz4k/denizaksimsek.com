@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "vscodium",
+    "deno"
+  ],
+  "shell": {
+    "init_hook": "codium ."
+  }
+}
