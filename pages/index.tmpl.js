@@ -1,4 +1,4 @@
-export const layout = './index.eta';
+export const layout = './index.layout.eta';
 
 export default function* () {
 	for (const lang of ['tr', 'en', 'tok']) {

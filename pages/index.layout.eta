@@ -60,12 +60,6 @@ url: /
     </div>
 </header>
 
-<main>
-    <h2><%= intl["project (tag plural)"][lang] %></h2>
-    
-    <%~ comp.entryList({ entries: search.pages(`project`), dates: false, lang }) %> 
-    
-    <h2><%= intl["blog (tag plural)"][lang] %></h2>
-    
-    <%~ comp.entryList({ entries: search.pages("blog", "date=desc"), dates: true, lang }) %> 
+<main>    
+    <%~ comp.entryList({ entries: search.pages("blog hidden!=true", "date=desc"), dates: true, lang }) %> 
 </main>
