@@ -135,14 +135,6 @@ body.container.h-resume
                         li.p-skill= skill
         p &dagger; No professional experience. &ddagger; Little experience.
 
-    section#personal
-        h2 Personal
-        dl
-            for value, info in resume.personal
-                div.tool-bar(style="column-gap: var(--gap);")
-                    dt= info
-                    dd= value
-
     section#references
         h2 References
         p #[i Contact info available on request]
