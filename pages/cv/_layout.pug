@@ -7,7 +7,7 @@ head
     link(rel="stylesheet" href="https://the.missing.style/v0.1.0/missing.min.css")
     style.
         :root {
-            --main-font: 'iosevka aile';
+            --main-font: 'drafting mono';
             --line-length: 80ch;
             --accent: #656565;
             --bg: #ffeeee;
@@ -67,7 +67,7 @@ head
 body.container.h-resume
 
     header
-        h1.p-name.f-row= resume.name
+        h1.p-name(lang="tr")= resume.name
 
         p
             address.p-contact.h-card.dense
