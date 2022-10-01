@@ -15,6 +15,7 @@ import getDatesFromGit from './_build/get-dates-from-git.ts';
 import backlinks from './_build/backlinks.ts';
 import prose, { markdownOptions } from './_build/prose.ts';
 import myFilters from './_build/filters.ts';
+import webc from './_build/webc.ts';
 
 export default lume(
 	{ location: new URL('https://denizaksimsek.com/') },
@@ -31,6 +32,7 @@ export default lume(
 	.use(eta())
 	.use(pug())
 	.use(myFilters())
+	.use(webc())
 	.use(getDatesFromGit())
 	.use(backlinks())
 	.use(prose());

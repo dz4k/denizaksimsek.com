@@ -36,8 +36,6 @@
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
-<script src="/client/no-spoiler.js"></script>
-
 <style>
 :root {
     --line-length: 80ch;
