@@ -33,7 +33,7 @@ This means it cannot be a dumb file server anymore, but the complexity is made u
 
 Server-generated HTML that the user interacts with through links and forms has lots of tooling around it.
 After all, it's the oldest way to build an interactive web application.
-The <dfn>links-and-forms</dfn> app can then be progressively enhanced with JS, which has less tooling.
+The <dfn>links-and-forms</dfn> app can then be progressively enhanced with JS, but there is less tooling for this case.
 Effort in the JavaScript ecosystem towards tooling seems to be focused towards frameworks that assume total control over HTML generation.
 Though this might change with the _Islands Architecture_ trend[^2].
 
@@ -49,14 +49,5 @@ Though this might change with the _Islands Architecture_ trend[^2].
 but then people might ask me for examples of web apps that _don't_ serve HTML (I don't know of any) ---
 instead of posting them without anyone asking.
 The latter is less work for me and more educational for everyone.
-[^2]: In the htmx community, we use the term "sprinkles" instead of "islands", which is more fun IMO.
-"Island" also implies something isolated, which is often not the case.
-"No component is an island", as the saying goes.
-
-<details>
-<summary></summary>
-
-</details>
-
 
 [htmx]: https://htmx.org
