@@ -9,8 +9,10 @@ resume:
 
 
   skills:
-    Languages: [fluent English, native Turkish, learning German, fluent Toki Pona]
-    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js, C †, SQL †, PHP ‡]
+    Languages: [fluent English, native Turkish, learning German, 
+      fluent Toki Pona]
+    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js,
+      C †, SQL †, PHP ‡]
 
 
   education:
@@ -28,16 +30,23 @@ resume:
 
   experience:
 
-    - position: Intern
-      organization:
+    - position: Developer (part-time)
+      organization: &headspacetech
         name: Headspace Technologies
         url: https://headspacetech.com
         country_name: South Africa
+      start: 2022-09
+      content:
+        - Worked on a scripting language for browser automation.
+      skills: [Java, JavaScript, HTML/CSS]
+
+    - position: Intern
+      organization: *headspacetech
       start: 2022-06
       end: 2022-08
       content:
         - Designed and implemented a prototype system for NFC-based digital
-          business cards
+          business cards.
         - Worked on a Java web framework and business automation system for
           end-to-end testing with Selenium.
       skills: [JavaScript, Java, Deno]
@@ -59,5 +68,3 @@ resume:
   references:
     - Johan Vosloo, CEO, Headspace Technologies
     - Carson Gross, CEO, Big Sky Software, & Instructor, Montana State University
-    - Zekai Kaya, Asst. Director, Samsun R.K. Bilim ve Sanat Merkezi
-
