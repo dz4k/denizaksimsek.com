@@ -1,12 +1,14 @@
 import * as path from 'https://deno.land/std@0.158.0/path/mod.ts';
 import type { Page, Site } from 'lume/core.ts';
-import { WebC } from 'https://github.com/11ty/webc/raw/main/webc.js';
+
+import "https://deno.land/std@0.158.0/node/global.ts";
+import { WebC } from 'npm:@11ty/webc@0.4.5';
 
 export default () => {
 	return (site: Site) => {
 		site.process('*', async (page: Page) => {
-            console.log(page.dest.ext)
-			if (page.dest.ext === '.html') return;
+			if (page.dest.ext !== '.html') return;
+            console.log(page.dest.path);
 
 			const webc = new WebC();
 			

@@ -1,14 +1,13 @@
 
-<template shadowroot="open">
-    <button class="reveal">
-        <span class="vh">Reveal spoiler</span>
-        <slot aria-hidden="true" class="content">
-    </button>
-</template>
-
+<button class="reveal">
+    <span class="vh">Reveal spoiler</span>
+    <slot aria-hidden="true" class="content">
+</button>
 <style webc:scoped>
     :host { display: contents }
     .reveal {
+        all: initial;
+        font: inherit;
         display: inline;
         color: transparent;
         border: none;
@@ -32,11 +31,13 @@ customElements.define("no-spoiler", class extends HTMLElement {
         super();
 
         const
-        slot = shadow.querySelector(".content"),
-        reveal = shadow.querySelector(".reveal");
+        slot = this.querySelector(":scope .content"),
+        reveal = this.querySelector(":scope .reveal"),
+        vh = this.querySelector(":scope .vh");
 
         reveal.addEventListener("click", _ => {
-            reveal.insertAdjacentElement("beforebegin", slot);
+            vh.remove();
+            reveal.before(...reveal.childNodes);
             reveal.remove();
             slot.animate({
                 background: ["black", "none"],
@@ -47,3 +48,6 @@ customElements.define("no-spoiler", class extends HTMLElement {
         })
     }
 })
+</script>    
+</template>
+

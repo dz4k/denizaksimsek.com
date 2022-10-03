@@ -1,6 +1,6 @@
 ---
 title: CDNs can run code now
-draft: true
+#draft: true
 ---
 
 One area where htmx apps lag behind SPAs is interaction delay.
