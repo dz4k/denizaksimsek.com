@@ -1,5 +1,9 @@
+---
+lang: en
+templateEngine: [eta, webc]
+---
 <!DOCTYPE html>
-<html lang="<%= it.lang ?? "en" %>">
+<html lang="<%= it.lang %>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,10 +11,10 @@
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
 <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,700,700i" rel="stylesheet" />
+<link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,700,700i" rel="stylesheet" webc:keep />
 
-<link rel="stylesheet" href="/assets/css/missing.css">
-<link rel="stylesheet" href="/assets/css/missing-prism.css">
+<link rel="stylesheet" href="/assets/css/missing.css" webc:keep>
+<link rel="stylesheet" href="/assets/css/missing-prism.css" webc:keep>
 <link rel="icon" href="/assets/me.jpeg">
 
 <!-- IndieAuth -->
@@ -21,7 +25,7 @@
 <link rel="webmention" href="https://webmention.io/www.denizaksimsek.com/webmention">
 <link rel="pingback" href="https://webmention.io/www.denizaksimsek.com/xmlrpc">
 
-<link rel="stylesheet" href="https://davidar.github.io/linja-pona/stylesheet.css">
+<link rel="stylesheet" href="https://davidar.github.io/linja-pona/stylesheet.css" webc:keep>
 
 <% if (it.tags.length > 0) { %>
     <meta property=og:title content="<%= it.name ?? it.title
@@ -36,7 +40,7 @@
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
-<style>
+<style webc:keep>
 :root {
     --line-length: 80ch;
 
@@ -193,13 +197,17 @@ dialog {
     overflow-y: auto;
     box-sizing: content-box;
 }
-
 </style>
+
+<style @html="this.getCSS(this.page.src.path + this.page.src.ext)"></style>
+
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
 
 <body>
-<%~ it.content %>
+<div webc:raw>
+    <%~ it.content %>
+</div>
 
 <footer>
     <p>&copy; 2021&ndash;2022
@@ -209,5 +217,7 @@ dialog {
             <span lang="tr">Deniz Akşimşek</span></p>
         <% } %>
 </footer>
+
+<script @html="this.getJS(this.page.src.path + this.page.src.ext)"></script>
 </body>
 </html>
