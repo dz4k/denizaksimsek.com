@@ -26,14 +26,6 @@ export default () => {
 			if (!('last modified' in page.data)) {
 				if (dates.length > 1) page.data['last modified'] = new Date(dates[0]);
 			}
-
-			// Page has not explicit date set.
-			if (
-				!page.data.date ||
-				page.data.date.getTime() === page.src.created?.getTime()
-			) {
-				page.data.date = new Date(dates[dates.length - 1]);
-			}
 		});
 	};
 };
