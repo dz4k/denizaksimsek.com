@@ -11,7 +11,6 @@ import tr from 'https://deno.land/x/date_fns@v2.22.1/locale/tr/index.js';
 import en_US from 'https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js';
 
 import highlighting from './_build/highlighting.ts';
-import getDatesFromGit from './_build/get-dates-from-git.ts';
 import backlinks from './_build/backlinks.ts';
 import prose, { markdownOptions } from './_build/prose.ts';
 import myFilters from './_build/filters.ts';
@@ -31,6 +30,5 @@ export default lume(
 	.use(eta())
 	.use(pug())
 	.use(myFilters())
-	.use(getDatesFromGit())
 	.use(backlinks())
 	.use(prose());
