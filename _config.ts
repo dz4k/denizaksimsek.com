@@ -17,7 +17,7 @@ import prose, { markdownOptions } from './_build/prose.ts';
 import myFilters from './_build/filters.ts';
 import webc from './_build/webc.ts';
 
-const site = lume(
+export default lume(
 	{ location: new URL('https://denizaksimsek.com/') },
 	{ markdown: markdownOptions },
 )
@@ -36,6 +36,3 @@ const site = lume(
 	.use(getDatesFromGit())
 	.use(backlinks())
 	.use(prose());
-
-export default site;
-site.build()
