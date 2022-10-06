@@ -13,6 +13,7 @@ import en_US from 'https://deno.land/x/date_fns@v2.22.1/locale/en-US/index.js';
 import highlighting from './_build/highlighting.ts';
 import prose, { markdownOptions } from './_build/prose.ts';
 import myFilters from './_build/filters.ts';
+import webc from './_build/webc.ts';
 
 export default lume(
 	{ location: new URL('https://denizaksimsek.com/') },
@@ -32,4 +33,5 @@ export default lume(
 	.use(eta())
 	.use(pug())
 	.use(myFilters())
+	.use(webc())
 	.use(prose());

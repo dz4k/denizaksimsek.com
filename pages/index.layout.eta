@@ -3,7 +3,7 @@ layout: layouts/base.eta
 url: /
 ---
 
-<header class="h-card" style="border-bottom: none;">
+<header class="h-card">
     <link class="u-url u-uid" href="https://denizaksimsek.com">
 
     <div class="f-row colwidth-s align-items:start" style="flex-wrap: wrap;">
