@@ -61,5 +61,5 @@ url: /
 </header>
 
 <main>    
-    <%~ comp.entryList({ entries: search.pages("blog hidden!=true", "date=desc"), dates: true, lang }) %> 
+    <%~ comp.entryList({ entries: search.pages("page.src.path^=/entries", "date=desc"), dates: true, lang }) %> 
 </main>

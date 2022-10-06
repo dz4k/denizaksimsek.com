@@ -104,8 +104,8 @@ export default () => {
 			});
 
 			document.getElementsByTagName('x-warning').forEach((sn: Element) => {
-				sn.tagName = 'missing-card';
-				sn.classList.add('warn', 'crowded');
+				sn.tagName = 'div';
+				sn.classList.add('box', 'warn', 'crowded');
 			});
 		});
 	};
