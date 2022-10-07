@@ -151,6 +151,7 @@ also `random arr`, `last arr`
 | socket        | 	Create a Web Socket 	                                                |
 | worker        | 	Create a Web Worker for asynchrnous work                                |
 
+</section>
 <section class="box">
 
 ## Command index
