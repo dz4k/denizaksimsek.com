@@ -23,7 +23,7 @@ header {
     transform: translateX(-50%);
 }
 
-section.missing-card {
+section.box {
     display: table;
     margin-top: 0;
     width: 100%;
@@ -34,7 +34,7 @@ dl div {
 }
 </style>
 
-<section class="missing-card">
+<section class="box">
 
 ## Event listeners
 
@@ -60,7 +60,7 @@ dl div {
 
 
 </section>
-<section class="missing-card">
+<section class="box">
 
 ## Property access
 
@@ -71,7 +71,7 @@ dl div {
  - `user’s data.name`
 
 </section>
-<section class="missing-card">
+<section class="box">
 
 ## CSS literals
 
@@ -94,7 +94,7 @@ dl div {
 : Dynamic selector
 
 </section>
-<section class="missing-card">
+<section class="box">
 
 ## Sigils
 
@@ -111,7 +111,7 @@ dl div {
 : HTML attribute
 
 </section>
-<section class="missing-card">
+<section class="box">
 
 ## Array operations
 
@@ -121,7 +121,7 @@ dl div {
 also `random arr`, `last arr`
 
 </section>
-<section class="missing-card">
+<section class="box">
 
 ## Finding elements
 
@@ -135,7 +135,23 @@ also `random arr`, `last arr`
 : element to focus when pressing Tab in a modal dialog
 
 </section>
-<section class="missing-card">
+<section class="box">
+
+# Other top-level features
+
+| Feature       |   Description                                                             |
+|---------------|---------------------------------------------------------------------------|
+| behavior      | 	Define cross-cutting behaviors that are applied to many HTML elements   |
+| def           | 	Defines a function 	                                                    |
+| eventsource   | 	Subscribe to Server Sent Events (SSE) 	                                |
+| js            | 	Embed JavaScript code at the top level 	                                |
+| set           | 	Defines a new element-scoped variable 	                                |
+| init          | 	Initialization logic to be run when the code is first loaded 	        |
+| on            | 	Creates an event listener 	on click log "clicked!"                     |
+| socket        | 	Create a Web Socket 	                                                |
+| worker        | 	Create a Web Worker for asynchrnous work                                |
+
+<section class="box">
 
 ## Command index
 
