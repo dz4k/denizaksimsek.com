@@ -125,14 +125,15 @@ also `random arr`, `last arr`
 
 ## Finding elements
 
-`closest <section/>`
+`closest &lt;section/>`
 : nearest enclosing section
 
-`previous <section/> from #sec-2`
+`previous &lt;section/> from #sec-2`
 : last section that comes before section 2 (?? me)
 
-`next <input, button, a/> from document.activeElement within #dialog with wrapping`
+`next &lt;input, button, a/> from document.activeElement within #dialog with wrapping`
 : element to focus when pressing Tab in a modal dialog
+
 
 </section>
 <section class="box">
@@ -265,7 +266,7 @@ also `random arr`, `last arr`
 </div>
 
 <div>
-    <dt><code>make a <tag#id.class /> called <var>name</var></code>
+    <dt><code>make a &lt;tag#id.class /> called <var>name</var></code>
     <dd>creates an element with the given tag, id and classes, sets <var>name</var> (?? it) = the created element
 </div>
 
