@@ -49,9 +49,10 @@ templateEngine: [eta, webc]
     
     --fg: rgb(250, 215, 193);
     --muted-fg: rgb(189, 129, 92);
+    --faded-fg: rgb(143, 99, 71);
     
     --bg: #1a0c00;
-    --colorful-bg: #331400;
+    --box-bg: #331400;
     --interactive-bg: #6e3802;
 
     --shadow: #000;
