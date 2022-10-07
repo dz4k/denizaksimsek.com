@@ -138,7 +138,7 @@ also `random arr`, `last arr`
 </section>
 <section class="box">
 
-# Other top-level features
+## Other top-level features
 
 | Feature       |   Description                                                             |
 |---------------|---------------------------------------------------------------------------|
