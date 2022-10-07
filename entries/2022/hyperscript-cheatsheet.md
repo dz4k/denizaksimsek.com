@@ -142,15 +142,15 @@ also `random arr`, `last arr`
 
 | Feature       |   Description                                                             |
 |---------------|---------------------------------------------------------------------------|
-| behavior      | 	Define cross-cutting behaviors that are applied to many HTML elements   |
-| def           | 	Defines a function 	                                                    |
-| eventsource   | 	Subscribe to Server Sent Events (SSE) 	                                |
-| js            | 	Embed JavaScript code at the top level 	                                |
-| set           | 	Defines a new element-scoped variable 	                                |
-| init          | 	Initialization logic to be run when the code is first loaded 	        |
-| on            | 	Creates an event listener 	on click log "clicked!"                     |
-| socket        | 	Create a Web Socket 	                                                |
-| worker        | 	Create a Web Worker for asynchrnous work                                |
+| `behavior`    | 	Define cross-cutting behaviors that are applied to many HTML elements   |
+| `def`         | 	Defines a function 	                                                    |
+| `eventsource` | 	Subscribe to Server Sent Events (SSE) 	                                |
+| `js`          | 	Embed JavaScript code at the top level 	                                |
+| `set`         | 	Defines a new element-scoped variable 	                                |
+| `init`        | 	Initialization logic to be run when the code is first loaded 	        |
+| `on`          | 	Creates an event listener 	on click log "clicked!"                     |
+| `socket`      | 	Create a Web Socket 	                                                |
+| `worker`      | 	Create a Web Worker for asynchrnous work                                |
 
 </section>
 <section class="box">
