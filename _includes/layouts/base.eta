@@ -11,7 +11,6 @@ templateEngine: [eta, webc]
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
 <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,700,700i" rel="stylesheet" webc:keep />
 
 <link rel="stylesheet" webc:keep href="/assets/css/missing.css">
 <link rel="stylesheet" webc:keep href="/assets/css/missing-prism.css">
@@ -43,14 +42,16 @@ templateEngine: [eta, webc]
 :root {
     --line-length: 80ch;
 
+    --mono-font: "Drafting Mono", monospace;
+
     --accent: #ff9a48;
     --muted-accent: rgb(187, 92, 14);
     
     --fg: rgb(250, 215, 193);
     --muted-fg: rgb(189, 129, 92);
     
-    --bg: #241000;
-    --colorful-bg: #441b00;
+    --bg: #1a0c00;
+    --colorful-bg: #331400;
     --interactive-bg: #6e3802;
 
     --shadow: #000;
@@ -74,6 +75,14 @@ templateEngine: [eta, webc]
 button {
     color: var(--fg);
     font-weight: bold;
+}
+
+pre {
+    font-size: 1em;
+}
+
+code {
+    color: rgb(100, 255, 225);
 }
 
 a {
@@ -140,7 +149,7 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Source Sans 3", serif;
+    --main-font: "Drafting Mono", monospace;
 }
 
 :where([lang=en], [lang=tr]) {
