@@ -27,7 +27,6 @@
 <script>
 customElements.define("no-spoiler", class extends HTMLElement {
     connectedCallback() {
-        console.log(this.outerHTML)
         const
         slot = this.querySelector(".content"),
         reveal = this.querySelector(".reveal"),
