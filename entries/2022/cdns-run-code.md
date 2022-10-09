@@ -1,6 +1,6 @@
 ---
 title: CDNs can run code now
-draft: true
+#draft: true
 templateEngine: md,webc
 ---
 

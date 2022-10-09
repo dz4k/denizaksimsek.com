@@ -169,7 +169,7 @@ time {
 }
 </style>
 
-<style @html="this.getCSS(this.page.src.path + this.page.src.ext)"></style>
+<style @html="this.getCSS(this.page)"></style>
 
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>

@@ -18,8 +18,8 @@ interface WebCEngineOptions {
 	components: string;
 }
 export class WebCEngine implements Engine {
-	cssMap = new Map<string, string>();
-	jsMap = new Map<string, string>();
+	cssMap = new WeakMap<Page, string>();
+	jsMap = new WeakMap<Page, string>();
 	helpers = new Map<string, Helper>();
 
 	constructor(readonly options: WebCEngineOptions) {}
@@ -30,7 +30,9 @@ export class WebCEngine implements Engine {
 		filename?: string | undefined,
 	) {
 		const webc = new WebC();
-		webc.setBundlerMode(true);
+		if (data?.page) {
+			webc.setBundlerMode(true);
+		}
 		webc.defineComponents(this.options.components);
 		for (const [key, val] of this.helpers) {
 			webc.setHelper(key, val);
@@ -39,9 +41,9 @@ export class WebCEngine implements Engine {
 
 		const { html, css, js } = await webc.compile({ data });
 
-		if (filename) {
-			this.cssMap.set(filename, css);
-			this.jsMap.set(filename, js);
+		if (data?.page) {
+			this.cssMap.set(data.page, css);
+			this.jsMap.set(data.page, js);
 		}
 
 		return html;
@@ -59,9 +61,7 @@ export class WebCEngine implements Engine {
 		this.helpers.set(name, fn);
 	}
 
-	deleteCache(file: string): void {
-		this.cssMap.delete(file);
-		this.jsMap.delete(file);
+	deleteCache(_file: string): void {
 	}
 }
 
@@ -75,7 +75,7 @@ export default (options: { components?: string } = {}) => {
 
 		site.engine([".webc"], webcEngine)
 
-		site.helper("getCSS", (filename) => webcEngine.cssMap.get(filename), { type: "filter" });
-		site.helper("getJS", (filename) => webcEngine.jsMap.get(filename), { type: "filter" });
+		site.helper("getCSS", (page) => webcEngine.cssMap.get(page), { type: "filter" });
+		site.helper("getJS", (page) => webcEngine.jsMap.get(page), { type: "filter" });
 	};
 };
