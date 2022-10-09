@@ -188,6 +188,6 @@ time {
         <% } %>
 </footer>
 
-<script @html="this.getJS(this.page.src.path + this.page.src.ext)"></script>
+<script @html="this.getJS(this.page)"></script>
 </body>
 </html>
