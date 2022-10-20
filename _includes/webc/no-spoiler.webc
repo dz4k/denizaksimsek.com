@@ -3,7 +3,6 @@
     <span class="vh">Reveal spoiler</span>
     <slot aria-hidden="true" class="content" webc:keep></slot>
 </button>
-
 <style webc:scoped>
     :host { display: contents }
     .reveal, .reveal:hover, .reveal:focus, .reveal:active {
@@ -23,7 +22,6 @@
         clip: rect(0 0 0 0);
     }
 </style>
-
 <script>
 customElements.define("no-spoiler", class extends HTMLElement {
     connectedCallback() {
@@ -44,6 +42,4 @@ customElements.define("no-spoiler", class extends HTMLElement {
         })
     }
 })
-</script>    
-</template>
-
+</script>
