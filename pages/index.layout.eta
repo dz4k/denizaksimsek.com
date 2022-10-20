@@ -48,15 +48,18 @@ url: /
     </div>
     <p class="list-of-links tool-bar align-items:center justify-content:space-between">
         <a href="/feed.xml">
-            <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15"></a>
+            <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
         <a href="/feed.json">
-            <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+            <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
         <a href="/wiki/en/IndieWeb/">
-            <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
+            <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
         <a href="/wiki/en/Webmentions/">
-            <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+            <img class="badge" src="/assets/badges/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+        <img class="badge" src="/assets/badges/toki-pona.png" alt="toki pona" width="80" height="15">
+        <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15">
+        <a href="https://progressivevictory.win">
+            <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
     </p>
-    </div>
 </header>
 
 <main>    
