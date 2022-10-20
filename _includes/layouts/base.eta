@@ -44,26 +44,10 @@ templateEngine: [eta, webc]
 
     --mono-font: "Drafting Mono", monospace;
 
-    --accent: #ff9a48;
-    --muted-accent: rgb(187, 92, 14);
+    --muted-accent: #ee8733;
+    --accent: rgb(169, 67, 9);
     
-    --fg: rgb(250, 215, 193);
-    --muted-fg: rgb(189, 129, 92);
-    --faded-fg: rgb(143, 99, 71);
-    
-    --bg: #1a0c00;
-    --box-bg: #331400;
-    --interactive-bg: #6e3802;
-
     --shadow: #000;
-
-    --ok-bg: rgb(0, 59, 0);
-    --ok-fg: limegreen;
-    --bad-bg: rgb(90, 0, 0);
-    --bad-fg: rgb(255, 136, 136);
-    --warn-bg: rgb(97, 97, 4);
-    --warn-fg: rgb(243, 198, 0);
-    --info-fg: rgb(0, 225, 255);
 
     font-size: initial;
     font-variant-numeric: oldstyle-nums;
@@ -93,6 +77,14 @@ a {
 
 time {
     white-space: nowrap;
+}
+
+/* override */
+.tool-bar { column-gap: 2ch; }
+
+/* TODO move to missing.css */
+.justify-content\:space-between {
+    justify-content: space-between;
 }
 
 .italic {

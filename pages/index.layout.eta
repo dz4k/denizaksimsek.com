@@ -5,7 +5,18 @@ url: /
 
 <header class="h-card">
     <link class="u-url u-uid" href="https://denizaksimsek.com">
-
+    <p class="list-of-links tool-bar justify-content:end">
+        <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
+            <a
+                href="/<%= language %>"
+                lang="<%= language %>"
+                hreflang="<%= language %>"
+                rel="alternate"
+                <%~ language === lang ? "aria-current=page" : ""%>
+                ><%= intl[language][language] %></a>
+        <% }) %>
+    </p>
+    
     <div class="f-row colwidth-s align-items:start" style="flex-wrap: wrap;">
         <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em;" alt="Me @ Atakule" width="150" height="150">
     
@@ -35,28 +46,16 @@ url: /
             </p>
         </div>
     </div>
-    <div class="f-row" style="flex-wrap: wrap; justify-content:space-between">
-        <p class="list-of-links tool-bar align-items:center">
-            <a href="/feed.xml">
-                <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15"></a>
-            <a href="/feed.json">
-                <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
-            <a href="/wiki/en/IndieWeb/">
-                <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
-            <a href="/wiki/en/Webmentions/">
-                <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15"></a>
-        </p>
-        <p class="list-of-links tool-bar">
-            <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
-                <a
-                    href="/<%= language %>"
-                    lang="<%= language %>"
-                    hreflang="<%= language %>"
-                    rel="alternate"
-                    <%~ language === lang ? "aria-current=page" : ""%>
-                    ><%= intl[language][language] %></a>
-            <% }) %>
-        </p>
+    <p class="list-of-links tool-bar align-items:center justify-content:space-between">
+        <a href="/feed.xml">
+            <img class="badge" src="/assets/atom.png" alt="Atom" width="80" height="15"></a>
+        <a href="/feed.json">
+            <img class="badge" src="/assets/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+        <a href="/wiki/en/IndieWeb/">
+            <img class="badge" src="/assets/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
+        <a href="/wiki/en/Webmentions/">
+            <img class="badge" src="/assets/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+    </p>
     </div>
 </header>
 
