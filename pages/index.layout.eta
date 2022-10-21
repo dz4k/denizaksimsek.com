@@ -4,7 +4,6 @@ url: /
 ---
 
 <header class="h-card">
-    <link class="u-url u-uid" href="https://denizaksimsek.com">
     <p class="list-of-links tool-bar justify-content:end">
         <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
             <a
@@ -16,6 +15,8 @@ url: /
                 ><%= intl[language][language] %></a>
         <% }) %>
     </p>
+    
+    <link class="u-url u-uid" href="https://denizaksimsek.com">
     
     <div class="f-row colwidth-s align-items:start" style="flex-wrap: wrap;">
         <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em;" alt="Me @ Atakule" width="150" height="150">
