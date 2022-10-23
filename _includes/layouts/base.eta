@@ -11,6 +11,7 @@ templateEngine: [eta, webc]
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
 <link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=familjen-grotesk:400,400i,700,700i" rel="stylesheet" webc:keep>
 
 <link rel="stylesheet" webc:keep href="/assets/css/missing.css">
 <link rel="stylesheet" webc:keep href="/assets/css/missing-prism.css">
@@ -142,8 +143,8 @@ time {
 }
 
 [lang=en], [lang=tr] {
-    --main-font: "Drafting Mono", monospace;
-    --secondary-font: "Drafting Mono", monospace;
+    --main-font: "Familjen Grotesk", monospace;
+    --secondary-font: "Familjen Grotesk", monospace;
 }
 :where([lang=en], [lang=tr]) {
     font-family: var(--main-font);
