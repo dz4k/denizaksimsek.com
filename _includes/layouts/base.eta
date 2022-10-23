@@ -67,10 +67,6 @@ pre {
     font-size: 1em;
 }
 
-code {
-    color: rgb(100, 255, 225);
-}
-
 a {
     text-underline-offset: .22em;
     text-decoration-skip-ink: 1em;
