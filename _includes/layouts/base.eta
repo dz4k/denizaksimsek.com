@@ -143,6 +143,10 @@ time {
 
 [lang=en], [lang=tr] {
     --main-font: "Drafting Mono", monospace;
+    --secondary-font: "Drafting Mono", monospace;
+}
+:where([lang=en], [lang=tr]) {
+    font-family: var(--main-font);
 }
 
 :where([lang=en], [lang=tr]) {

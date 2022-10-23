@@ -18,8 +18,8 @@ url: /
     
     <link class="u-url u-uid" href="https://denizaksimsek.com">
     
-    <div class="f-row colwidth-s align-items:start" style="flex-wrap: wrap;">
-        <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em;" alt="Me @ Atakule" width="150" height="150">
+    <div class="f-row align-items:start" style="flex-wrap: wrap;">
+        <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em; flex-basis: 0px" alt="Me @ Atakule" width="150" height="150">
     
         <div class="padded" style="flex: 1 0 32ch">
             <h1 style="margin-block: 0">
@@ -47,7 +47,7 @@ url: /
             </p>
         </div>
     </div>
-    <p class="list-of-links tool-bar align-items:center justify-content:space-between">
+    <p class="list-of-links tool-bar align-items:center">
         <a href="/feed.xml">
             <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
         <a href="/feed.json">
