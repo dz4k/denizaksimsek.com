@@ -22,6 +22,7 @@ export default lume(
 	.ignore('README.md')
 	.copy('assets')
 	.copy('client')
+	.copy('fileshare')
 	.remoteFile("/assets/css/missing.css", "https://the.missing.style/v0.3.1/missing.min.css")
 	.remoteFile("/assets/css/missing-prism.css", "https://the.missing.style/v0.3.1/missing-prism.min.css")
 	.remoteFile("/assets/css/linja-pona.css", "https://davidar.github.io/linja-pona/stylesheet.css")
