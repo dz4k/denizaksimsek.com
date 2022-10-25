@@ -10,7 +10,6 @@ draft: yes
  - excerpt
  {role=list .tool-bar}
 
-Link text and `rel` are the same, except that one is for humans and the other is for machines.
 Remove rel, and you get [harder to scrape, harder to script][] resources.
 Remove text, and you get [microsyntax][] --- #yay.
 
@@ -25,6 +24,9 @@ we have a wealth of emergent conventions to guide the design of a transclusion f
  - extracts, quotes with a source link. source page has total control and can even fabricate quotes,
    but people can check the original source.
    if it's possible to comment on the source page, only one person needs to notice the misquote.
+
+the source page, if they want people not to leave the page,
+have an incentive to show as much info as possible in embeds.
 
 a truly comprehensive transclusion feature _as formulated by hypermedia thinkers_
 would likely wreak havoc with the same-origin policy.
