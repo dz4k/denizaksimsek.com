@@ -2,9 +2,13 @@
 <span>
     <a class="p-name u-url<%= post.data.name || post.data.title ? "" : " italic" %>"
         lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
-        href="<%= post.data.url %>">
+        href="<%= post.data.filetype ? post.data.content : post.data.url %>">
         <%= post.data.name ?? post.data.title
-            ?? filters.peekHtml(filters.md(post.data.content), 80)%></a>
+            ?? filters.peekHtml(filters.md(post.data.content), 80)%>
+        <% if (post.data.filetype) { %>
+            <span class="allcaps" style="font-size: .8em"><%= post.data.filetype %></span>
+        <% } %>
+    </a>
 
     <% if (dates) { %>
         <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
