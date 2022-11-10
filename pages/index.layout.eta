@@ -45,17 +45,13 @@ url: /
                 <% if (lang === "en") { %>
                     <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
                 <% } %>
-                <strong>
-                    <a href="https://biber.denizaksimsek.com" class="<button>" style="font-family: var(--mono-font);">biber &nearr;</a>
-                </strong>
             </p>
         </div>
     </div>
     <p class="list-of-links tool-bar align-items:center">
-        <a href="/feed.xml">
-            <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
-        <a href="/feed.json">
-            <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+
+        <a href="https://biber.denizaksimsek.com">
+            <img class="badge" src="/assets/badges/biber.png" alt="Biber"></a>
         <a href="/wiki/en/IndieWeb/">
             <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
         <a href="/wiki/en/Webmentions/">
@@ -68,6 +64,10 @@ url: /
             <img class="badge" src="/assets/badges/pv22.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
         <a>
             <img class="badge" src="/assets/badges/html.png" alt="Always Bet On HTML" width="80" height="15"></a>
+        <a href="/feed.xml">
+            <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
+        <a href="/feed.json">
+            <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
     </p>
 </header>
 
