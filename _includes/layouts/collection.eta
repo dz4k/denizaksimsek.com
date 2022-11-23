@@ -36,7 +36,7 @@ layout: ./base.eta
     <% } %>
 
     <% if (url in webmentions) { %>
-        <footer class="missing-card">
+        <footer class="box">
             <% for (const prop of ["repost-of", "like-of"]) { %>
                 <% if (prop in webmentions[url]) { %>
 

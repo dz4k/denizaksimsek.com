@@ -4,7 +4,7 @@
     const { title, description, content } = await parse(it.url).catch(e => ({}))
 %>
 
-<article class="h-entry missing-card crowded hover-state" onclick="this.querySelector('a').click()" lang="<%= it.lang %>">
+<article class="h-entry box crowded hover-state" onclick="this.querySelector('a').click()" lang="<%= it.lang %>">
     <% if (it.label) { %>
         <%= it.label %>
     <% } %>
