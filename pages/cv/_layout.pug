@@ -4,10 +4,10 @@ head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= resume.name
-    link(rel="stylesheet" href="https://the.missing.style/v0.1.0/missing.min.css")
+    link(rel="stylesheet" href="https://the.missing.style/v1.0.3/missing.min.css")
     style.
         :root {
-            --main-font: 'drafting mono';
+            --main-font: 'iosevka etoile';
             --line-length: 80ch;
             --accent: #656565;
             --bg: #ffeeee;
@@ -77,7 +77,7 @@ body.container.h-resume
                 | &middot; Phone number and address available upon request
 
     mixin date-range(start, end)
-        span(class="float:right font-weight:normal") 
+        span(class="float:right") 
             time.dt-start= start
             | &ndash;
             if end
@@ -93,6 +93,22 @@ body.container.h-resume
                 |, #[span.p-counry-name= organization.region]
             if organization.country_name
                 |, #[span.p-country-name= organization.country_name]
+
+    mixin activity-log(activities)
+        for exp in activities
+            article.p-experience.h-event.margin-block.padding-block
+                h3
+                    span.p-name= exp.position
+                    |, #[+org(exp.organization)]
+                    v-h &mdash;
+                    +date-range(exp.start, exp.end)
+                div.e-content
+                    ul(style="margin:0")
+                        for c of exp.content
+                            li!= c
+                    ul.tool-bar.margin-block(role="list" class="justify-content:end" style="margin:0")
+                        for c of exp.skills
+                            li(class="<small>")= c
 
     section#education
         h2 Education
@@ -110,20 +126,7 @@ body.container.h-resume
 
     section#experience
         h2 Experience
-        for exp of resume.experience
-            .p-experience.h-event.margin-block
-                h3
-                    span.p-name= exp.position
-                    |, #[+org(exp.organization)]
-                    v-h &mdash;
-                    +date-range(exp.start, exp.end)
-                div.e-content
-                    ul(style="margin:0")
-                        for c of exp.content
-                            li!= c
-                    ul.tool-bar.margin-block(role="list" class="justify-content:end" style="margin:0")
-                        for c of exp.skills
-                            li= c
+        +activity-log(resume.experience)
 
     section#skills
         h2 Skills
@@ -133,7 +136,11 @@ body.container.h-resume
                 ul.contents(role="list")
                     for skill of skills
                         li.p-skill= skill
-        p &dagger; No professional experience. &ddagger; Little experience.
+        p #[em Each category sorted by competence]
+
+    section#other
+        h2 Other activities
+        +activity-log(resume.other)
 
     section#references
         h2 References

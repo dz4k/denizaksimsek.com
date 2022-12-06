@@ -9,10 +9,14 @@ resume:
 
 
   skills:
-    Languages: [fluent English, native Turkish, learning German, 
-      fluent Toki Pona]
-    Software: [HTML, CSS, JavaScript & TypeScript, Java, Bash, Deno, Node.js,
-      C †, SQL †, PHP ‡]
+    Fields: [Web development, Programming languages, Accessibility]
+    Languages: 
+    - English (fluent)
+    - Turkish (native)
+    # - Afrikaans (beginner)
+    # - German (beginner)
+    - Toki Pona (fluent)
+    Software: [HTML, CSS, JavaScript & TypeScript, Deno, Node.js, Java, Bash, PowerShell, Selenium]
 
 
   education:
@@ -37,7 +41,7 @@ resume:
         country_name: South Africa
       start: 2022-09
       content:
-        - Worked on a scripting language for browser automation.
+        - Working on a scripting language for enterprise automation.
       skills: [Java, JavaScript, HTML/CSS]
 
     - position: Intern
@@ -63,6 +67,20 @@ resume:
           <a href="https://missing.style">missing.css</a>, currently used for
           rapid frontend development at Headspace Technologies.
       skills: [CSS, Deno, TypeScript]
+  
+
+  other:
+    - position: Designer
+      organization:
+        name: Progressive Victory 2022
+        url: https://progressivevictory.win
+        country_name: USA
+      start: 2022
+      content:
+        - Volunteer design work for a political organization.
+        - Designed pamphlets and business cards.
+        - Created templates for members to easily promote local events.
+      skills: [Graphic design]
 
 
   references:
