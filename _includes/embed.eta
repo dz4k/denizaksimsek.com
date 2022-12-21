@@ -10,6 +10,7 @@
     <% } %>
     <b class="list-of-links"><a href="<%= it.url %>" class="p-name u-url u-uid">
         <%= title ?? it.title ?? it.url %></a></b>
+    <span class="block <small>"><%= new URL(it.url).host %></span>
     <% if (description) { %>
         <p class="p-summary"><%= description %></p>
     <% } else if (content) { %>
