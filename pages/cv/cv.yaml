@@ -4,8 +4,9 @@ layout: ./_layout.pug
 
 resume:
   name: Deniz Akşimşek
-  email: deniz@denizaksimsek.com
-  url: https://denizaksimsek.com
+  
+  summary: I am a computer programmer, web developer and designer who cares
+    about accessibility. I've also helped make multiple programming languages.
 
 
   skills:
@@ -16,7 +17,7 @@ resume:
     # - Afrikaans (beginner)
     # - German (beginner)
     - Toki Pona (fluent)
-    Software: [HTML, CSS, JavaScript & TypeScript, Deno, Node.js, Java, Bash, PowerShell, Selenium]
+    Software: [HTML, CSS, JavaScript & TypeScript, Deno, Node.js, Java, Bash, PowerShell]
 
 
   education:
@@ -34,7 +35,7 @@ resume:
 
   experience:
 
-    - position: Developer (part-time)
+    - position: Developer, part-time
       organization: &headspacetech
         name: Headspace Technologies
         url: https://headspacetech.com
