@@ -665,7 +665,7 @@
     "https://esm.sh/markdown-it-directive@1.0.1": "5ea1ceac04ad99963f0414e054379b2e463c01701afc56467ab35d0f3f3f301b",
     "https://esm.sh/markdown-it-footnote@3.0.3": "4780095df2c04bad58474a06e551153bc5ce1f80d09301a94648c76cabbdab59",
     "https://esm.sh/markdown-it-table-captions@1.0.4": "a888ef675c9bd88dd29c8182b6eb92badfe4fc0b7ea2666a8b7738e562273dfa",
-    "https://esm.sh/prism-hyperscript@1.1.1": "843f6c52327aeba1ec7f64b816a9fc88476fc07e02f4543d62c5a684c32330b2",
+    "https://esm.sh/prism-hyperscript@1.1.1": "0af7dbb7e2f23e416426bd9419bfdaa6bb611b36f0132f5dd4ad3c5e21ab8fe6",
     "https://esm.sh/prismjs@1.29.0/": "c7caea7d0f236fcec2b2e71d3bded1cbed0a75e82b4306b7d653b42706c8a57f",
     "https://esm.sh/v96/@types/markdown-it@12.2.3/index.d.ts": "ee0af0f2b8d3b4d0baf669f2ff6fcef4a8816a473c894cc7c905029f7505fed0",
     "https://esm.sh/v96/@types/prismjs@1.26.0/index.d.ts": "6484309596f594ae824513336bd2a2e04a1902b06bb149fa904f5cae5fbe5c50",
@@ -683,10 +683,10 @@
     "https://esm.sh/v96/markdown-it@10.0.0/deno/lib/rules_inline/state_inline.js": "04d97907b443256a16d474b3d52bd6b29356dad7d3b29e7fc8c8068894081c7c",
     "https://esm.sh/v96/markdown-it@10.0.0/deno/lib/token.js": "49c08dc4b221aa4e1b0e2d4652b2e2cbfe5e287071dce14817f8dc950a026d25",
     "https://esm.sh/v96/mdurl@1.0.1/deno/mdurl.js": "4551377ffa4db943c51e4bf5f5c0c7f9287b3734b8ff6711b4a5b02849ac364a",
-    "https://esm.sh/v96/prism-hyperscript@1.1.1/deno/prism-hyperscript.js": "7c84d0f62976869382845a9eb4b8cce6c4d49239b0dbd731e4c82257bdf45803",
     "https://esm.sh/v96/prismjs@1.29.0/deno/prismjs.js": "75cecccfce771193bd395d42236eb50dc4377dcf98e8fec0a082b1b68f428f41",
     "https://esm.sh/v96/uc.micro@1.0.6/deno/categories/P/regex.js": "88dbe914cfdb88e3a980b238967ca0523db730a7e94194ecc6e70770ae29759f",
-    "https://esm.sh/v96/uc.micro@1.0.6/deno/uc.micro.js": "c5f75cf07a117d98a91c48ab9467517542b0b043fff6c6174466a415990ce286"
+    "https://esm.sh/v96/uc.micro@1.0.6/deno/uc.micro.js": "c5f75cf07a117d98a91c48ab9467517542b0b043fff6c6174466a415990ce286",
+    "https://esm.sh/v99/prism-hyperscript@1.1.1/deno/prism-hyperscript.js": "7c84d0f62976869382845a9eb4b8cce6c4d49239b0dbd731e4c82257bdf45803"
   },
   "npm": {
     "specifiers": {
@@ -707,7 +707,7 @@
         "integrity": "sha512-jqlIYJEa7YVEInkNUYssFTFtjKNV8zQmAUbMNemhS6iR5uwxL89PKCb1ekWBAGJy1YDnpHVxcBLlGt9Ru6tu/w==",
         "dependencies": {
           "@11ty/eleventy-utils": "@11ty/eleventy-utils@1.0.1",
-          "css-tree": "css-tree@2.2.1",
+          "css-tree": "css-tree@2.3.0",
           "dependency-graph": "dependency-graph@0.11.0",
           "entities": "entities@4.4.0",
           "fast-glob": "fast-glob@3.2.12",
@@ -795,10 +795,10 @@
           "@babel/types": "@babel/types@7.19.3"
         }
       },
-      "css-tree@2.2.1": {
-        "integrity": "sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==",
+      "css-tree@2.3.0": {
+        "integrity": "sha512-1rg0LiK2MFi4R3/lVvnRokEWTZb30ljSAe5x+0HHkZ+OqZaAeiP8g8Eh91VmkyCtQn9vMgQRiaTDYgLBt+2Qyw==",
         "dependencies": {
-          "mdn-data": "mdn-data@2.0.28",
+          "mdn-data": "mdn-data@2.0.30",
           "source-map-js": "source-map-js@1.0.2"
         }
       },
@@ -957,8 +957,8 @@
           "uc.micro": "uc.micro@1.0.6"
         }
       },
-      "mdn-data@2.0.28": {
-        "integrity": "sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==",
+      "mdn-data@2.0.30": {
+        "integrity": "sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==",
         "dependencies": {}
       },
       "mdurl@1.0.1": {

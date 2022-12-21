@@ -4,13 +4,11 @@ head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= resume.name
-    link(rel="stylesheet" href="https://the.missing.style/v1.0.3/missing.min.css")
+    link(rel="stylesheet" href="https://the.missing.style/v1.0.5/missing.min.css")
     style.
         :root {
-            --main-font: 'iosevka etoile';
-            --line-length: 80ch;
-            --accent: #656565;
-            --bg: #ffeeee;
+            --main-font: 'Merriweather Sans';
+            --line-length: 65ch;
 
             font-size: initial;
 
@@ -42,27 +40,17 @@ head
             margin: 0;
         }
 
-        h2 {
-            font-size: 1em;
-            line-height: var(--rhythm);
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 1ch;
-            border-bottom: 1px solid;
-        }
-
-        h3 {
-            font-size: 1em;
-        }
-
         time { font-family: var(--secondary-font); }
 
         ul {
             list-style: '\2013'; /* en dash, en space */
         }
 
+        v-h { display:inline-block }
+
         .font-weight\:bold   { font-weight:bold   }
         .font-weight\:normal { font-weight:normal }
+        .text-align\:end     { text-align:end     }
 
 body.container.h-resume
 
@@ -77,13 +65,26 @@ body.container.h-resume
                 | &middot; Phone number and address available upon request
 
     mixin date-range(start, end)
-        span(class="float:right") 
-            time.dt-start= start
+        -
+            function print_date(date) {
+                const 
+                [yyyy, mm] = date.toString().split("-"),
+                mmm = mm ? [
+                    "Jan.", "Febr.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."
+                ][mm - 1] : ""
+                return mmm + " " + yyyy
+            }
+        span(class="float:right font-weight:normal") 
+            if start
+                time.dt-start(datetime=start)= print_date(start)
             | &ndash;
             if end
-                time.dt-end= end
+                time.dt-end(datetime=end)= print_date(end)
             else
-                - const now = new Date, yyyy = date.getFullYear(), mm = (date.getMonth() + 1).toString().padStart(2, "0")
+                -
+                    const 
+                    now = new Date, yyyy = now.getFullYear(),
+                    mm = (now.getMonth() + 1).toString()
                 time.dt-end(datetime=yyyy+mm) Present
 
     mixin org(organization)
@@ -96,29 +97,32 @@ body.container.h-resume
 
     mixin activity-log(activities)
         for exp in activities
-            article.p-experience.h-event.margin-block.padding-block
+            article.p-experience.h-event.box
                 h3
+                    +date-range(exp.start, exp.end)
+                    v-h &mdash;
                     span.p-name= exp.position
                     |, #[+org(exp.organization)]
-                    v-h &mdash;
-                    +date-range(exp.start, exp.end)
                 div.e-content
                     ul(style="margin:0")
                         for c of exp.content
                             li!= c
-                    ul.tool-bar.margin-block(role="list" class="justify-content:end" style="margin:0")
+                    ul.tool-bar.margin-block(role="list")
                         for c of exp.skills
-                            li(class="<small>")= c
+                            li= c
+
+    section#summary
+        p!= summary
 
     section#education
         h2 Education
         for edu of resume.education
-            .p-education.h-event.packed
+            .p-education.h-event.box
                 h3
+                    +date-range(edu.start, edu.end)
+                    v-h &mdash;
                     | #[span.p-name= edu.degree],
                     |  #[+org(edu.organization)]
-                    v-h &mdash;
-                    +date-range(edu.start, edu.end)
                 .e-content
                     ul
                         for c in edu.content
@@ -131,7 +135,7 @@ body.container.h-resume
     section#skills
         h2 Skills
         for skills, skillCat in resume.skills 
-            div.tool-bar.margin-block(style="gap: 0 var(--gap);")
+            div.tool-bar.margin-block(style="gap: calc(.5 * var(--gap));")
                 h3.packed(class="<h5>")= skillCat
                 ul.contents(role="list")
                     for skill of skills
