@@ -131,6 +131,14 @@ body.container.h-resume
     section#experience
         h2 Experience
         +activity-log(resume.experience)
+    
+    section#portfolio
+        h2 Portfolio
+        for proj in resume.portfolio
+            article.box
+                h3
+                    a(href=proj.url)= proj.name
+                p!= proj.content
 
     section#skills
         h2 Skills
