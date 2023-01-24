@@ -51,7 +51,7 @@ url: /
     <p class="list-of-links tool-bar align-items:center">
 
         <a href="https://biber.denizaksimsek.com">
-            <img class="badge" src="/assets/badges/biber.png" alt="Biber"></a>
+            <img class="badge" src="/assets/badges/biber.png" alt="Biber" width="80" height="15"></a>
         <a href="/wiki/en/IndieWeb/">
             <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
         <a href="/wiki/en/Webmentions/">
