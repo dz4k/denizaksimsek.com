@@ -79,20 +79,21 @@ resume:
   portfolio:
     - name: _hyperscript
       content: >-
-        The scripting language HTML deserves. As a long-time maintainer
+        The scripting language HTML deserves. As a long-time co-maintainer
         of the project, I implemented many stand-out features and carried out
         codebase-wide refactorings. I also designed the landing page and docs.
       url: https://hyperscript.org
 
     - name: Hypermedia Systems
       content: >-
-        C. Gross, & A. Stepinski, & D. Akşimşek (2023), <cite>Hypermedia
-        Systems</cite>. "The revolutionary ideas that empowered the Web. A
-        simpler approach to building applications on the Web and beyond with
-        htmx and HyperView. Enhancing web applications without using SPA
-        frameworks." I wrote chapters 03 and 10 on effective HTML authorship &
-        hypermedia-friendly client-side scripting. I also designed the book
-        website & am working on producing a PDF release.
+        C. Gross, A. Stepinski and D. Akşimşek, <cite>Hypermedia
+        Systems</cite>, 2023. <q class=italic>The revolutionary ideas that
+        empowered the Web. A simpler approach to building applications on the
+        Web and beyond with htmx and HyperView. Enhancing web applications
+        without using SPA frameworks."</q> I wrote chapters 03 and 10 on
+        effective HTML authorship & hypermedia-friendly client-side scripting.
+        I also designed the book website & am working on producing a print
+        release.
       url: https://hypermedia.systems
     
     - name: Missing.css
