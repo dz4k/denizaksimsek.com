@@ -1,4 +1,4 @@
-import * as path from 'https://deno.land/std@0.159.0/path/mod.ts';
+import * as path from "https://deno.land/std@0.177.0/path/mod.ts";
 import type {
 	Data,
 	Engine,
@@ -8,10 +8,10 @@ import type {
 	Site,
 } from 'lume/core.ts';
 
-import 'https://deno.land/std@0.159.0/node/fs.ts';
-import 'https://deno.land/std@0.159.0/node/path.ts';
-import 'https://deno.land/std@0.159.0/node/crypto.ts';
-import 'https://deno.land/std@0.159.0/node/stream.ts';
+import 'https://deno.land/std@0.177.0/node/fs.ts';
+import 'https://deno.land/std@0.177.0/node/path.ts';
+import 'https://deno.land/std@0.177.0/node/crypto.ts';
+import 'https://deno.land/std@0.177.0/node/stream.ts';
 import { WebC } from 'npm:@11ty/webc@0.4.5';
 
 interface WebCEngineOptions {

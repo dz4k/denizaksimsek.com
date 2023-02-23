@@ -1,10 +1,10 @@
 import type { Page, Site } from 'lume/core.ts';
 import { Element, HTMLDocument } from 'lume/deps/dom.ts';
 // import figureWithPCaption from "https://jspm.dev/@peaceroad/markdown-it-figure-with-p-caption"
-import directive from 'https://esm.sh/markdown-it-directive';
-import footnote from 'https://esm.sh/markdown-it-footnote';
-import directiveWebComponents from 'https://esm.sh/markdown-it-directive-webcomponents';
-import tableCaptions from 'https://esm.sh/markdown-it-table-captions';
+import directive from 'npm:markdown-it-directive';
+import footnote from 'npm:markdown-it-footnote';
+import directiveWebComponents from 'npm:markdown-it-directive-webcomponents';
+import tableCaptions from 'npm:markdown-it-table-captions';
 
 /**
  * Options to pass to markdown-it.
