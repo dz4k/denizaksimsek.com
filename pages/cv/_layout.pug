@@ -5,12 +5,13 @@ head
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= resume.name
     link(rel="stylesheet" href="https://the.missing.style/v1.0.5/missing.min.css")
+    link(rel="stylesheet" href="https://fonts.bunny.net/css?family=literata:400,700,400i")
     style.
         :root {
-            --main-font: 'Merriweather Sans';
-            --line-length: 65ch;
+            --main-font: 'literata';
+            --line-length: 70ch;
 
-            font-size: initial;
+            font-size: 110%;
 
             hyphens: auto;
         }
@@ -35,11 +36,6 @@ head
             }
         }
 
-        header {
-            border: none;
-            margin: 0;
-        }
-
         time { font-family: var(--secondary-font); }
 
         ul {
@@ -52,9 +48,11 @@ head
         .font-weight\:normal { font-weight:normal }
         .text-align\:end     { text-align:end     }
 
+        .margin-block\:2 { margin-block: calc(2 * var(--gap)) }
+
 body.container.h-resume
 
-    header
+    header.contents
         h1.p-name(lang="tr")= resume.name
 
         p
@@ -74,7 +72,7 @@ body.container.h-resume
                 ][mm - 1] : ""
                 return mmm + " " + yyyy
             }
-        span(class="float:right font-weight:normal") 
+        span(class="font-weight:normal block") 
             if start
                 time.dt-start(datetime=start)= print_date(start)
             | &ndash;
@@ -97,36 +95,38 @@ body.container.h-resume
 
     mixin activity-log(activities)
         for exp in activities
-            article.p-experience.h-event.box
-                h3
-                    +date-range(exp.start, exp.end)
-                    v-h &mdash;
-                    span.p-name= exp.position
-                    |, #[+org(exp.organization)]
-                div.e-content
-                    ul(style="margin:0")
-                        for c of exp.content
-                            li!= c
-                    ul.tool-bar.margin-block(role="list")
-                        for c of exp.skills
-                            li= c
+            article.p-experience.h-event(class="margin-block:2")
+                .crowded
+                    h3
+                        v-h &mdash;
+                        span.p-name= exp.position
+                        |, #[+org(exp.organization)]
+                        +date-range(exp.start, exp.end)
+                    .e-content
+                        ul(style="margin:0")
+                            for c of exp.content
+                                li!= c
+                        ul.tool-bar.margin-block(role="list")
+                            for c of exp.skills
+                                li= c
 
     section#summary
-        p!= summary
+        p!= resume.summary
 
     section#education
         h2 Education
         for edu of resume.education
-            .p-education.h-event.box
-                h3
-                    +date-range(edu.start, edu.end)
-                    v-h &mdash;
-                    | #[span.p-name= edu.degree],
-                    |  #[+org(edu.organization)]
-                .e-content
-                    ul
-                        for c in edu.content
-                            li!= c
+            .p-education.h-event(class="margin-block:2")
+                .crowded
+                    h3
+                        v-h &mdash;
+                        | #[span.p-name= edu.degree],
+                        |  #[+org(edu.organization)]
+                        +date-range(edu.start, edu.end)
+                    .e-content
+                        ul
+                            for c in edu.content
+                                li!= c
 
     section#experience
         h2 Experience
@@ -135,10 +135,11 @@ body.container.h-resume
     section#portfolio
         h2 Portfolio
         for proj in resume.portfolio
-            article.box
-                h3
-                    a(href=proj.url)= proj.name
-                p!= proj.content
+            article(class="margin-block:2")
+                .crowded
+                    h3
+                        a(href=proj.url)= proj.name
+                    p!= proj.content
 
     section#skills
         h2 Skills
@@ -149,10 +150,6 @@ body.container.h-resume
                     for skill of skills
                         li.p-skill= skill
         p #[em Each category sorted by competence]
-
-    section#other
-        h2 Other activities
-        +activity-log(resume.other)
 
     section#references
         h2 References

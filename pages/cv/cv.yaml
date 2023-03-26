@@ -9,8 +9,9 @@ resume:
 
   url: https://denizaksimsek.com
   
-  summary: I am a computer programmer, web developer and designer who cares
-    about accessibility. I've also helped make multiple programming languages.
+  summary: I am a computer programmer, web developer and designer. 
+    I care about hypermedia, accessibility and architecture.
+    I've also helped make a few programming languages.
 
 
   skills:
@@ -33,8 +34,9 @@ resume:
       start: 2019
       content:
         - Data structures & algorithms, operating systems, relational databases,
-          programming in Java and C, digital logic design, computer networks.
-        - "GPA: 3.17."
+          Java and C, digital logic design, computer networks, image processing,
+          speech processing.
+        - "GPA 3.17."
         - "Secondary field: English Language Teaching."
 
 
@@ -90,10 +92,8 @@ resume:
         Systems</cite>, 2023. <q class=italic>The revolutionary ideas that
         empowered the Web. A simpler approach to building applications on the
         Web and beyond with htmx and HyperView. Enhancing web applications
-        without using SPA frameworks.</q> I wrote chapters 03 and 10 on
-        effective HTML authorship & hypermedia-friendly client-side scripting.
-        I also designed the book website & am working on producing a print
-        release.
+        without using SPA frameworks.</q> I wrote chapters 03 and 10, designed
+        the book website & am working on producing a print release.
       url: https://hypermedia.systems
     
     - name: Missing.css
@@ -102,20 +102,6 @@ resume:
         building quality UI quickly. It has a classless-CSS mode, a curated
         selection of components and utility classes, and a JavaScript library
         for polished, accessible widgets.
-
-
-  other:
-    - position: Designer
-      organization:
-        name: Progressive Victory 2022
-        url: https://progressivevictory.win
-        country_name: USA
-      start: 2022
-      content:
-        - Volunteer design work for a political organization.
-        - Designed pamphlets and business cards.
-        - Created templates for members to easily promote local events.
-      skills: [Graphic design]
 
 
   references:

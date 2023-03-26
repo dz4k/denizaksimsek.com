@@ -1,9 +1,9 @@
 ---
-title: The 
+title: Nice try 
 ---
 
 
-<%~ await includeFile("embed.eta", { url: "https://lobste.rs/s/22yudo/kindelia_kind_next_gen_functional" }) %>
+<%~ await includeFile("embed.eta", { filters, url: "https://lobste.rs/s/22yudo/kindelia_kind_next_gen_functional" }) %>
 
 
 this is a new programming language, right?
