@@ -46,29 +46,28 @@ url: /
                     <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
                 <% } %>
             </p>
+            <p class="list-of-links tool-bar align-items:center">
+                <a href="https://biber.denizaksimsek.com">
+                    <img class="badge" src="/assets/badges/biber.png" alt="Biber" width="80" height="15"></a>
+                <a href="/wiki/en/IndieWeb/">
+                    <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
+                <a href="/wiki/en/Webmentions/">
+                    <img class="badge" src="/assets/badges/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+                <a href="https://tokipona.org/">
+                    <img class="badge" src="/assets/badges/toki-pona.png" alt="toki pona" width="80" height="15"></a>
+                <a href="https://www.youtube.com/watch?v=u5sVqskmUqU" rel="noopener noreferrer">
+                    <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
+                <a href="https://progressivevictory.win">
+                    <img class="badge" src="/assets/badges/pv22.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
+                <a>
+                    <img class="badge" src="/assets/badges/html.png" alt="Always Bet On HTML" width="80" height="15"></a>
+                <a href="/feed.xml">
+                    <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
+                <a href="/feed.json">
+                    <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+            </p>
         </div>
     </div>
-    <p class="list-of-links tool-bar align-items:center">
-
-        <a href="https://biber.denizaksimsek.com">
-            <img class="badge" src="/assets/badges/biber.png" alt="Biber" width="80" height="15"></a>
-        <a href="/wiki/en/IndieWeb/">
-            <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
-        <a href="/wiki/en/Webmentions/">
-            <img class="badge" src="/assets/badges/webmention-button.png" alt="Webmention" width="80" height="15"></a>
-        <a href="https://tokipona.org/">
-            <img class="badge" src="/assets/badges/toki-pona.png" alt="toki pona" width="80" height="15"></a>
-        <a href="https://www.youtube.com/watch?v=u5sVqskmUqU" rel="noopener noreferrer">
-            <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
-        <a href="https://progressivevictory.win">
-            <img class="badge" src="/assets/badges/pv22.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
-        <a>
-            <img class="badge" src="/assets/badges/html.png" alt="Always Bet On HTML" width="80" height="15"></a>
-        <a href="/feed.xml">
-            <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
-        <a href="/feed.json">
-            <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
-    </p>
 </header>
 
 <main>    
