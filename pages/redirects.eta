@@ -16,3 +16,8 @@ http://dz4k.com/* https://denizaksimsek.com/:splat 301
 /20200826T1523/	/2020/road-to-indieweb/
 /wiki/en/HS%20Cheatsheet/ /2022/hyperscript-cheatsheet/
 /wiki/en/TextMate%20Grammars/ /2022/textmate-grammars/
+
+# Webfinger, https://guide.toot.as/guide/use-your-own-domain/?username=dz4k%40indieweb.social&alias=deniz%40denizaksimsek.com#netlify
+/.well-known/host-meta* https://indieweb.social/.well-known/host-meta:splat 301
+/.well-known/webfinger* https://indieweb.social/.well-known/webfinger:splat 301
+/.well-known/nodeinfo* https://indieweb.social/.well-known/nodeinfo:splat 301
