@@ -1,0 +1,7 @@
+---
+url: /prompt/
+---
+
+<script>
+  prompt(1)
+</script>
