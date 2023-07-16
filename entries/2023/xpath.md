@@ -39,10 +39,19 @@ Our non-existent CSS attribute could be written as follows:
 
 This post is not supposed to be an XPath tutorial, but I'll break this one down:
 
- - `//`: traverse the document (in CSS, this is the default)
- - `@*`: find any attribute (mnemonic: **at**-tribute)
- - `[ ... ]`: where...
- - `starts-with(name(), "hx-on:")` its name starts with `"hx-on:"`
+
+`//`
+: traverse the document (in CSS, this is the default)
+
+`@*`
+: find any attribute (mnemonic: **at**-tribute)
+
+`[ ... ]`
+: where...
+
+`starts-with(name(), "hx-on:")`
+: its name starts with `"hx-on:"`
+
 
 CSS selectors don't have these kinds of features,
 and it has good reasons not to.
