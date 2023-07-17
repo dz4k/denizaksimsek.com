@@ -7,7 +7,7 @@ In the latest release of [htmx],
 you can add event listeners to elements with `hx-on`:
 
 ```html
-<form hx-on::beforeRequest="addCsrfToken(event);">
+&lt;form hx-on::beforeRequest="addCsrfToken(event);">
 ```
 
 For all the other `hx-` attributes, we use CSS attribute selectors.
