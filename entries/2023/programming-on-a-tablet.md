@@ -82,14 +82,17 @@ and even then, ARM builds are available through a fork.
 ## Summary
 
 - Install Termux
+
 - Install PRoot-Distro
   ```
   pkg install proot-distro
   ```
+
 - Set up a container
   ```
   proot-distro create fedora
   ```
+
 - Enter your container
   ```
   proot-distro login fedora
