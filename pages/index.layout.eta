@@ -2,7 +2,7 @@
 layout: layouts/base.eta
 url: /
 ---
-
+<!--email_off-->
 <header class="h-card">
     <p class="list-of-links tool-bar justify-content:end">
         <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
