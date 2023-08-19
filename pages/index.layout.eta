@@ -16,7 +16,7 @@ url: /
         <% }) %>
     </p>
     
-    <link class="u-url u-uid" href="https://denizaksimsek.com">
+    <link class="u-url u-uid canonical" href="https://dz4k.com">
     
     <div class="f-row align-items:start" style="flex-wrap: wrap;">
         <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em; flex-basis: 0px" alt="Me @ Atakule" width="150" height="150">
