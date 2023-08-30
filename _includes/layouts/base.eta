@@ -10,6 +10,7 @@ lang: en
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 
 <link rel="icon" href="/assets/me.jpeg">
 
