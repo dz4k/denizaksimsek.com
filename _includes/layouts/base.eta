@@ -34,20 +34,6 @@ lang: en
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
-<style>
-.italic {
-    font-style: italic;
-}
-
-:lang(tok) {
-    --main-font: "linja pona", sans-serif;
-    font-family: var(--main-font);
-
-    letter-spacing: 0 !important;
-    text-transform: none !important;
-}
-</style>
-
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
 

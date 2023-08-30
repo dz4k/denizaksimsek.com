@@ -6,6 +6,14 @@ html {
     color-scheme: dark light;
 }
 
+:lang(en, tr) {
+    font-family: intelone mono, monospace, monospace;
+}
+
+:lang(tok) {
+    font-family: "linja pona", sans-serif;
+}
+
 p, ul, ol, dl, blockquote {
     margin-block: var(--lh);
 }
