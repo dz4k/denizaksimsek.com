@@ -1,6 +1,6 @@
 html {
     --lh: 1.8em;
-    font: 1em/var(--lh) intelone mono, monospace, monospace;
+    line-height: var(--lh);
     max-width: 80ch;
     margin: auto;
     color-scheme: dark light;
@@ -27,7 +27,8 @@ a {
     margin-block-start: calc(2*var(--lh));
 
     &::after {
-        content: " #";
+        content: "#";
+        margin-inline-start: 2ch;
         font-weight: normal;
     }
 }

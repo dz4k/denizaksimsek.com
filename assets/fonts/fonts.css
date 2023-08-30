@@ -2,4 +2,5 @@
 @font-face { font-family: IntelOne Mono; src: url(intelone-mono-font-family-bold.otf) format(opentype); font-weight: bold; }
 @font-face { font-family: IntelOne Mono; src: url(intelone-mono-font-family-italic.otf) format(opentype); font-style: italic; }
 @font-face { font-family: IntelOne Mono; src: url(intelone-mono-font-family-bolditalic.otf) format(opentype); font-weight: bold; font-style: italic; }
-@font-face { font-family: linja pona;    src: url(linja-pona-4.9.otf) format(opentype) }
+@font-face { font-family: linja pona;    src: url(linja-pona-4.9.otf) format(opentype);
+    font-size-adjust: 180%; }

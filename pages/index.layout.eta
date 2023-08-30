@@ -9,8 +9,9 @@ url: /
 
     <h1 style="all: unset; font-weight: bold; display: block;"><a href="/<%= lang %>">
         <%- if (lang === "tok") {
-            -%><span class="p-name" style="display: block;">jan [_ma_ante_telo_en_lawa_o]</span>
-            <span class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</span
+            -%>
+            <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span> /
+            <span class="p-name" lang="tr">Deniz Akşimşek</span
         ><%- } else {
             -%><span class="p-name" lang="tr">Deniz Akşimşek</span
         ><%- } -%></a>
@@ -28,20 +29,21 @@ url: /
                 rel="alternate"
                 <%~ language === lang ? "aria-current=page" : ""%>
                 ><%= intl[language][language] %></a>
+            <%= loop.sep("/") %>
         <% }) %>
     </p>
 
     <p class="p-summary" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
 
     <p class="list-of-links tool-bar">
-        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
-        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
-        <a rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a>
-        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
-        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
+        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a> /
+        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a> /
+        <a rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a> /
+        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a> /
+        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a> /
         <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
         <% if (lang === "en") { %>
-            <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
+            / <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
         <% } %>
     </p>
     <p class="list-of-links tool-bar align-items:center">
