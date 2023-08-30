@@ -2,8 +2,11 @@
 url: /_redirects
 ---
 
-https://dz4k.com/* https://denizaksimsek.com/:splat 301
-http://dz4k.com/* https://denizaksimsek.com/:splat 301
+/20200902T1254/	/2020/css-additional-box-shadow/
+/20200827T2005/	/2020/ardesen-rize-tr/
+/20200826T1523/	/2020/road-to-indieweb/
+/wiki/en/HS%20Cheatsheet/ /2022/hyperscript-cheatsheet/
+/wiki/en/TextMate%20Grammars/ /2022/textmate-grammars/
 
 / /en/
 
@@ -11,12 +14,6 @@ http://dz4k.com/* https://denizaksimsek.com/:splat 301
 
 /archive/ /
 /archive/* /
-/20200902T1254/	/2020/css-additional-box-shadow/
-/20200827T2005/	/2020/ardesen-rize-tr/
-/20200826T1523/	/2020/road-to-indieweb/
-/wiki/en/HS%20Cheatsheet/ /2022/hyperscript-cheatsheet/
-/wiki/en/TextMate%20Grammars/ /2022/textmate-grammars/
 
-# Webfinger, https://fed.brid.gy/docs#redirect+these+URL+paths
-/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 302
-/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 302
+https://dz4k.com/* https://denizaksimsek.com/:splat 301
+http://dz4k.com/* https://denizaksimsek.com/:splat 301

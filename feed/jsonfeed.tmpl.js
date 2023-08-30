@@ -19,8 +19,7 @@ export default ({ search, comp }, filters) => {
 		},
 		items: search.pages("page.src.path^=/entries", "date=desc").map((post) => ({
 			id: filters.url(post.data.url),
-			title: post.data.name ?? post.data.title ??
-				filters.peekHtml(filters.md(post.data.content)),
+			title: post.data.name ?? post.data.title,
 			content_html: filters.htmlUrl(post.content),
 			content_text: post.data.content,
 			url: new URL(post.url, homepage),

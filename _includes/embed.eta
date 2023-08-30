@@ -12,8 +12,6 @@
         <%= title ?? it.title ?? it.url %></a></b>
     <span class="block <small>"><%= new URL(it.url).host %></span>
     <% if (description) { %>
-        <p class="p-summary"><%= description %></p>
-    <% } else if (content) { %>
-        <blockquote class="p-summary"><%= filters.peekHtml(content, 256) %></blockquote>
+        <blockquote class="p-summary"><%= description %></blockquote>
     <% } %>
 </article>

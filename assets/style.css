@@ -1,0 +1,97 @@
+html {
+    --lh: 1.8em;
+    font: 1em/var(--lh) intelone mono, monospace, monospace;
+    max-width: 80ch;
+    margin: auto;
+    color-scheme: dark light;
+}
+
+p, ul, ol, dl, blockquote {
+    margin-block: var(--lh);
+}
+
+a {
+    color: inherit;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    font-size: inherit;
+    margin-block-start: calc(2*var(--lh));
+
+    &::after {
+        content: " #";
+        font-weight: normal;
+    }
+}
+
+blockquote {
+    padding-inline-start: var(--lh);
+    margin-inline: 0;
+    font-style: italic;
+
+    :is(em, i, dfn, cite, address) {
+        font-style: normal;
+    }
+}
+
+pre, code, samp {
+    font: inherit;
+}
+
+pre {
+    overflow-x: auto;
+    border-inline: 1px dashed;
+    padding-inline: 1em;
+}
+
+code:not(pre code, code code) {
+
+    &::before,
+    &::after {
+        content: "`";
+    }
+}
+
+samp {
+    color: green;
+}
+
+article article, footer {
+    border: 1px solid;
+    padding: var(--lh);
+    margin-block: var(--lh);
+    margin-trim: in-flow;
+}
+
+ul[role=list] {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+table {
+    border-spacing: 1em 0;
+    margin-inline: -1em;
+}
+
+:is(thead, tbody) > :first-child > * {
+    border-block-start: 1px solid black;
+}
+
+:is(tbody, tfoot) > :last-child > * {
+    border-block-end: 1px solid black;
+}
+
+caption,
+figcaption {
+    font-style: italic;
+}
+
+img {
+    max-width: 100%;
+    max-height: 80vh;
+    margin: auto;
+}
+
+.badge {
+    image-rendering: pixelated;
+}

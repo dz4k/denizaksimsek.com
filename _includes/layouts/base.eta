@@ -1,6 +1,5 @@
 ---
 lang: en
-templateEngine: [eta, webc]
 ---
 <!DOCTYPE html>
 <html lang="<%= it.lang %>">
@@ -10,11 +9,8 @@ templateEngine: [eta, webc]
 
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 
-<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="/assets/style.css">
 
-<link rel="stylesheet" webc:keep href="/assets/css/missing.css">
-<link rel="stylesheet" webc:keep href="/assets/css/missing-prism.css">
-<link rel="stylesheet" webc:keep href="/assets/css/linja-pona.css">
 <link rel="icon" href="/assets/me.jpeg">
 
 <!-- IndieAuth -->
@@ -26,8 +22,7 @@ templateEngine: [eta, webc]
 <link rel="pingback" href="https://webmention.io/www.denizaksimsek.com/xmlrpc">
 
 <% if (it.tags.length > 0) { %>
-    <meta property=og:title content="<%= it.name ?? it.title
-        ?? filters.peekHtml(filters.md(it.content)) %>">
+    <meta property=og:title content="<%= it.name ?? it.title %>">
     <meta property=og:url content="https://denizaksimsek.com<%= it.url %>">
     <meta property=og:type content=article>
     <% if (it.photo) { %>
@@ -38,95 +33,9 @@ templateEngine: [eta, webc]
     <meta name=twitter:creator content=@DenizAksimsek>
 <% } %>
 
-<style webc:keep>
-:root {
-    --line-length: 80ch;
-
-    --mono-font: "Drafting Mono", monospace;
-
-    --muted-accent: #ee8733;
-    --accent: rgb(169, 67, 9);
-    
-    --shadow: #000;
-
-    font-size: initial;
-    font-variant-numeric: oldstyle-nums;
-
-    background-color: var(--bg);
-    color: var(--fg);
-}
-
-/* move to missing.css core */
-button {
-    color: var(--fg);
-    font-weight: bold;
-}
-
-pre {
-    font-size: 1em;
-}
-
-a {
-    text-underline-offset: .22em;
-    text-decoration-skip-ink: 1em;
-}
-
-time {
-    white-space: nowrap;
-}
-
-/* override */
-.tool-bar { column-gap: 2ch; }
-
-/* TODO move to missing.css */
-.justify-content\:space-between {
-    justify-content: space-between;
-}
-
+<style>
 .italic {
     font-style: italic;
-}
-
-.p-category {
-    text-transform: uppercase;
-    font-size: .9em;
-    letter-spacing: .1em;
-}
-
-.badge {
-    all: initial;
-    image-rendering: pixelated;
-}
-
-@media screen and (max-width: 768px) {
-    .responsive-table {
-        display: block;
-    }
-    
-    .responsive-table thead {
-        display: none;
-    }
-
-    .responsive-table tr {
-        display: block;
-    }
-
-    .responsive-table tr + tr {
-        margin-top: var(--gap);
-    }
-
-    .responsive-table td {
-        display: block;
-    }
-
-    .responsive-table td::before {
-        content: attr(data-column) ": ";
-        font-weight: bold;
-    }
-}
-
-[aria-current] {
-    font-weight: bold;
 }
 
 :lang(tok) {
@@ -136,50 +45,12 @@ time {
     letter-spacing: 0 !important;
     text-transform: none !important;
 }
-
-[lang=en], [lang=tr] {
-    --main-font: sans-serif;
-    --secondary-font: sans-serif;
-}
-:where([lang=en], [lang=tr]) {
-    font-family: var(--main-font);
-}
-
-:where([lang=en], [lang=tr]) {
-    font-family: var(--main-font);
-}
-
-[aria-current="page"] {
-    background: var(--interactive-bg);
-    border-radius: .2em;
-    padding-inline: .2em;
-}
-
-.hover-state:hover {
-    outline: 1px solid var(--accent);
-    background: var(--bg) !important;
-}
 </style>
-
-<style @html="this.getCSS(this.page)"></style>
 
 <title><%= it.title ?? "Deniz Akşimşek" %></title>
 </head>
 
 <body>
-<template webc:is="!--" webc:raw>
     <%~ it.content %>
-</template>
-
-<footer>
-    <p>&copy; 2021&ndash;2022
-        <% if (it.lang === "tok") { %>
-            <span lang="tok">jan [_ma_ante_telo_en_lawa_o]</span></p>
-        <% } else { %>
-            <span lang="tr">Deniz Akşimşek</span></p>
-        <% } %>
-</footer>
-
-<script @html="this.getJS(this.page)"></script>
 </body>
 </html>

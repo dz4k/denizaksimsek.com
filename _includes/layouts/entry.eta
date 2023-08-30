@@ -2,23 +2,23 @@
 layout: ./base.eta
 ---
 
-<nav class="container">
-    <p><a href="/<%= lang %>">&larr; <%= intl["Home"][lang] %> </a></p>
-</nav>
 <article class="container h-entry">
     <header>
+        <nav class="container">
+            <b style="display: block;"><a href="/<%= lang %>">
+                <% if (lang === "tok") { %>
+                    <span class="p-name" style="display: block;">jan [_ma_ante_telo_en_lawa_o]</span>
+                    <span class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</span>
+                <% } else { %>
+                    <span class="p-name" lang="tr">Deniz Akşimşek</span>
+                <% } %>
+            </a></b>
+            <i><time class="dt-published" datetime="<%= comp.date({ date, iso: true }) %>">
+                    <%~ comp.date({ date, time: true, lang }) %></time></i>
+        </nav>
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
         <% } %>
-        <p class="list-of-links">
-            <% filters.repeat(tags, (tag, loop) => { %>
-                <a href="/<%= lang %>/-/<%= tag %>"><data class="p-category" value="<% tag %>">
-                    <%= intl[tag + " (tag)"]?.[lang] ?? tag %></data></a><%~ loop.sep(" &middot; ") %>
-            <% }) %>
-
-            <time class="dt-published" datetime="<%= comp.date({ date, iso: true }) %>">
-                <%~ comp.date({ date, time: true, lang }) %></time>
-        </p>
         <% if ("alt" in it) { %>
             <p>
                 🌐
@@ -104,7 +104,7 @@ layout: ./base.eta
                     <% }%>
 
                     <% if (wms = allWms.get("in-reply-to")) { %>
-                        <h3><%= intl["Replies"][lang] %></h3>
+                        <p><strong><%= intl["Replies"][lang] %>:</strong></p>
                         <% filters.repeat(wms, (wm, loop) => { %>
                             <article class="h-entry margin-block">
                                 <% if (wm.author) { %>

@@ -1,4 +1,5 @@
 ---
+title: A street sign in Ordu
 date: 2020-09-03 16:42:00
 photo:
   src: /assets/photos/IMG20200903164220.jpeg

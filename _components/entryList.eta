@@ -2,10 +2,10 @@
 <% if (entries.length === 0) { %>
     <p><i>No entries</i></p>
 <% } else { %>
-    <ul role="list" class="list-of-links" style="display: flex; flex-flow: column nowrap; gap: var(--gap)">
+    <ul role="list" class="list-of-links">
         <% for (const post of it.entries) { %>
             <% if (post.data.alt?.[lang] || post.data.hidden) continue %>
-            <li><%~ comp.miniEntry({ post, dates, lang: it.lang }) %></li>
+            <li><p><%~ comp.miniEntry({ post, dates, lang: it.lang }) %></li>
         <% } %>
     </ul>
 <% } %>

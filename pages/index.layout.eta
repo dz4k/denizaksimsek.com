@@ -3,8 +3,23 @@ layout: layouts/base.eta
 url: /
 ---
 <!--email_off-->
-<header class="h-card">
-    <p class="list-of-links tool-bar justify-content:end">
+<header class="h-card" style="border-block-end: 1px solid;">
+    <link class="u-url u-uid canonical" href="https://dz4k.com">
+    <link class="u-url" href="acct:dz4k@dz4k.com">
+
+    <h1 style="all: unset; font-weight: bold; display: block;"><a href="/<%= lang %>">
+        <%- if (lang === "tok") {
+            -%><span class="p-name" style="display: block;">jan [_ma_ante_telo_en_lawa_o]</span>
+            <span class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</span
+        ><%- } else {
+            -%><span class="p-name" lang="tr">Deniz Akşimşek</span
+        ><%- } -%></a>
+    </h1>
+    
+    <p><img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule" width="150" height="150" style="float: right;"></p>
+
+    <p>
+        🌐
         <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
             <a
                 href="/<%= language %>"
@@ -15,60 +30,40 @@ url: /
                 ><%= intl[language][language] %></a>
         <% }) %>
     </p>
-    
-    <link class="u-url u-uid canonical" href="https://dz4k.com">
-    <link class="u-url" href="acct:dz4k@dz4k.com">
-    
-    <div class="f-row align-items:start" style="flex-wrap: wrap;">
-        <img class="u-photo" src="/assets/me.jpeg" style="margin-top: .5em; flex-basis: 0px" alt="Me @ Atakule" width="150" height="150">
-    
-        <div class="padded" style="flex: 1 0 32ch">
-            <h1 class="p-name" style="margin-block: 0">
-                <% if (lang === "tok") { %>
-                    <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span> <v-h>&mdash;</v-h>
-                    <sub-title class="p-name" style="font-family: var(--secondary-font);" lang="tr">Deniz Akşimşek</sub-title>
-                <% } else { %>
-                    <span class="p-name" lang="tr" style="font:inherit">Deniz Akşimşek</span>
-                <% } %>
 
-            </h1>
-    
-            <p class="p-summary" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
-    
-            <p class="list-of-links tool-bar">
-                <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
-                <a rel="me noopener noreferrer" lang="en" href="https://buymeacoffee.com/dz4k">Buy Me A Coffee</a>
-                <% if (lang === "en") { %>
-                    <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
-                <% } %>
-            </p>
-            <p class="list-of-links tool-bar align-items:center">
-                <a href="https://biber.denizaksimsek.com">
-                    <img class="badge" src="/assets/badges/biber.png" alt="Biber" width="80" height="15"></a>
-                <a href="/wiki/en/IndieWeb/">
-                    <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
-                <a href="/wiki/en/Webmentions/">
-                    <img class="badge" src="/assets/badges/webmention-button.png" alt="Webmention" width="80" height="15"></a>
-                <a href="https://tokipona.org/">
-                    <img class="badge" src="/assets/badges/toki-pona.png" alt="toki pona" width="80" height="15"></a>
-                <a href="https://www.youtube.com/watch?v=u5sVqskmUqU" rel="noopener noreferrer">
-                    <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
-                <a href="https://progressivevictory.win">
-                    <img class="badge" src="/assets/badges/pv22.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
-                <a>
-                    <img class="badge" src="/assets/badges/html.png" alt="Always Bet On HTML" width="80" height="15"></a>
-                <a href="/feed.xml">
-                    <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
-                <a href="/feed.json">
-                    <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
-            </p>
-        </div>
-    </div>
+    <p class="p-summary" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
+
+    <p class="list-of-links tool-bar">
+        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
+        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
+        <a rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a>
+        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
+        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
+        <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
+        <% if (lang === "en") { %>
+            <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
+        <% } %>
+    </p>
+    <p class="list-of-links tool-bar align-items:center">
+        <a href="https://biber.denizaksimsek.com">
+            <img class="badge" src="/assets/badges/biber.png" alt="Biber" width="80" height="15"></a>
+        <a href="/wiki/en/IndieWeb/">
+            <img class="badge" src="/assets/badges/indiewebcamp-button.png" alt="IndieWeb" width="80" height="15"></a>
+        <a href="/wiki/en/Webmentions/">
+            <img class="badge" src="/assets/badges/webmention-button.png" alt="Webmention" width="80" height="15"></a>
+        <a href="https://tokipona.org/">
+            <img class="badge" src="/assets/badges/toki-pona.png" alt="toki pona" width="80" height="15"></a>
+        <a href="https://www.youtube.com/watch?v=u5sVqskmUqU" rel="noopener noreferrer">
+            <img class="badge" src="/assets/badges/placevoosh.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
+        <a href="https://progressivevictory.win">
+            <img class="badge" src="/assets/badges/pv22.png" alt="r/placevoosh Veterans Retirement Home" width="80" height="15"></a>
+        <a>
+            <img class="badge" src="/assets/badges/html.png" alt="Always Bet On HTML" width="80" height="15"></a>
+        <a href="/feed.xml">
+            <img class="badge" src="/assets/badges/atom.png" alt="Atom" width="80" height="15"></a>
+        <a href="/feed.json">
+            <img class="badge" src="/assets/badges/jsonfeed.png" alt="JSONFeed" width="80" height="15"></a>
+    </p>
 </header>
 
 <main>

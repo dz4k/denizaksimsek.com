@@ -2,21 +2,13 @@ import type { Site } from 'lume/core.ts';
 
 /**
  * Includes the filters:
- *   - `peekHtml` for generating a text extract from HTML
  *   - `repeat`, a loop with extra features
  */
 export default () => {
 	return (site: Site) => {
-		site.filter('peekHtml', peekHtml);
 		site.filter('repeat', repeat);
 	};
 };
-
-function peekHtml(html: string, n = 80) {
-	const text = html.replace(/<\/?[^>]+(>|$)/g, '').replace(/\s+/g, ' ');
-	if (text.length < n) return text;
-	else return text.slice(0, n - 1) + '…';
-}
 
 interface LoopContext {
 	i: number;
