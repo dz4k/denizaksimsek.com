@@ -1,7 +1,7 @@
 
 <span>
     <strong>
-        <a class="p-name u-url"
+        <a class="p-name u-url u-uid"
             lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
             href="<%= post.data.filetype ? post.data.content : post.data.url %>"
             ><%-= post.data.name ?? post.data.title -%><%-
