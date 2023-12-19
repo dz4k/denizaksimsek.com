@@ -2,9 +2,3 @@
     font-family: "Monaspace Krypton";
     src: url(/assets/fonts/MonaspaceKryptonVarVF[wght\,wdth\,slnt].woff2) format("woff2");
 }
-
-@font-face {
-    font-family: "linja pona";
-    src: url(/assets/fonts/linja-pona-4.9.otf) format("opentype");
-    font-size-adjust: 180%;
-}

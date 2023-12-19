@@ -1,11 +1,3 @@
-:lang(en, tr) {
-    font-family: var(--main);
-}
-
-:lang(tok) {
-    font-family: "linja pona", sans-serif;
-}
-
 .badge {
     image-rendering: pixelated;
 }
