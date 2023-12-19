@@ -10,7 +10,7 @@ layout: ./base.eta
                     style="height: 2em; width: auto; vertical-align: middle">
                 <strong>
                     <% if (lang === "tok") { %>
-                        <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span>
+                        <span class="p-name">jan Matelo</span>
                         <span class="p-name" lang="tr">Deniz Akşimşek</span>
                     <% } else { %>
                         <span class="p-name" lang="tr">Deniz Akşimşek</span>
