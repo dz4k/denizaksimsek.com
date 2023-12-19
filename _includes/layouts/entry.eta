@@ -5,16 +5,19 @@ layout: ./base.eta
 <article class="container h-entry">
     <header>
         <nav class="container">
-            <b style="display: block;"><a href="/<%= lang %>">
-                <% if (lang === "tok") { %>
-                    <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span>
-                    <span class="p-name" lang="tr">Deniz Akşimşek</span>
-                <% } else { %>
-                    <span class="p-name" lang="tr">Deniz Akşimşek</span>
-                <% } %>
-            </a></b>
-            <i><time class="dt-published" datetime="<%= comp.date({ date, iso: true }) %>">
-                    <%~ comp.date({ date, time: true, lang }) %></time></i>
+            <a href="/<%= lang %>" class="p-author big unlink">
+                <img class="u-photo" src="/assets/me.jpeg" alt="" width="150" height="150"
+                    style="height: 2em; width: auto; vertical-align: middle">
+                <strong>
+                    <% if (lang === "tok") { %>
+                        <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span>
+                        <span class="p-name" lang="tr">Deniz Akşimşek</span>
+                    <% } else { %>
+                        <span class="p-name" lang="tr">Deniz Akşimşek</span>
+                    <% } %>
+                </strong>
+                <span lang="tr" style="font-weight: normal">denizaksimsek.com</span>
+            </a>
         </nav>
         <% if ("title" in it) { %>
             <h1 class="p-name"><%= it.title %></h1>
@@ -66,6 +69,12 @@ layout: ./base.eta
         <%~ it.content %>
     </div>
 
+    <footer class="<small>">
+        <time class="dt-published" datetime="<%= comp.date({ date, iso: true }) %>">
+                <%~ comp.date({ date, time: true, lang }) %></time>
+
+    </footer>
+
     <% const backlinks = search.pages(`internalLinks*='${url}'`) %>
     <% if (backlinks.length > 0) { %>
         <footer class="box">
@@ -95,7 +104,7 @@ layout: ./base.eta
                     <% for (const prop of ["repost-of", "like-of"]) { %>
                         <% if (wms = allWms.get(prop)) { %>
                             <p class="list-of-links">
-                                <strong><%= intl[prop + " (reflexive)"][lang] %>:</strong>
+                                <strong class="tiny-header"><%= intl[prop + " (reflexive)"][lang] %>:</strong>
                                 <% filters.repeat(wms, (wm, loop) => { %>
                                     <a href="<%= wm.url %>"><%= wm.author.name %></a><%= loop.sep(", ") %>
                                 <% }) %>
@@ -104,7 +113,7 @@ layout: ./base.eta
                     <% }%>
 
                     <% if (wms = allWms.get("in-reply-to")) { %>
-                        <p><strong><%= intl["Replies"][lang] %>:</strong></p>
+                        <p><strong class="tiny-header"><%= intl["Replies"][lang] %>:</strong></p>
                         <% filters.repeat(wms, (wm, loop) => { %>
                             <article class="h-entry margin-block">
                                 <% if (wm.author) { %>
