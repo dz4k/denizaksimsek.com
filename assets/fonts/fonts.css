@@ -1,6 +1,10 @@
-@font-face { font-family: "IntelOne Mono"; src: url(/assets/fonts/IntelOneMono-Regular.woff2) format("woff2"); }
-@font-face { font-family: "IntelOne Mono"; src: url(/assets/fonts/IntelOneMono-Bold.woff2) format("woff2"); font-weight: bold; }
-@font-face { font-family: "IntelOne Mono"; src: url(/assets/fonts/IntelOneMono-Italic.woff2) format("woff2"); font-style: italic; }
-@font-face { font-family: "IntelOne Mono"; src: url(/assets/fonts/IntelOneMono-BoldItalic.woff2) format("woff2"); font-weight: bold; font-style: italic; }
-@font-face { font-family: "linja pona";    src: url(/assets/fonts/linja-pona-4.9.otf) format("opentype");
-    font-size-adjust: 180%; }
+@font-face {
+    font-family: "Monaspace Krypton";
+    src: url(/assets/fonts/MonaspaceKryptonVarVF[wght\,wdth\,slnt].woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "linja pona";
+    src: url(/assets/fonts/linja-pona-4.9.otf) format("opentype");
+    font-size-adjust: 180%;
+}

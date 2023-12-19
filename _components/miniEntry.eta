@@ -1,6 +1,6 @@
 
 <span>
-    <strong>
+    <strong class="big">
         <a class="p-name u-url u-uid"
             lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
             href="<%= post.data.filetype ? post.data.content : post.data.url %>"
@@ -12,7 +12,7 @@
 
     <% if (dates) { %>
 
-        <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
+        <time class="dt-published <small>" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
             <%-~ comp.date({ date: post.data.date, lang }) -%>
         </time>
     <% } %>

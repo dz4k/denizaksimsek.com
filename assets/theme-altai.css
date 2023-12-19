@@ -1,0 +1,177 @@
+:root {
+    --bg1: #353a42;
+    --bg2: #44484f;
+    --fg1: #e8cccc;
+    --fg2: #a99;
+    --accent1: #132;
+    --accent2: #88a098;
+    --text: monaspace krypton, sans-serif;
+    --display: monaspace krypton, monospace;
+    --code: monaspace krypton, monospace;
+}
+
+:root {
+    max-width: 70ch;
+    margin: auto;
+    padding-inline-start: 2em;
+    background: var(--bg1);
+    background-attachment: fixed;
+    color: var(--fg1);
+    font-family: var(--text);
+}
+
+header:has(+ main),
+main+footer {
+    margin: 3em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    line-height: 1.4;
+    margin-block-end: 0;
+}
+
+h1 {
+    font-stretch: expanded;
+    font-size: 2em;
+}
+
+/* TODO: create class for "main header" */
+body>header,
+body>article>header {
+    margin-inline-start: -2em;
+}
+
+header.h-card {
+    h1 {
+        font-family: var(--display);
+    }
+
+    .p-name.u-uid {
+        color: currentColor;
+        text-decoration: none;
+    }
+
+    /* .u-photo */
+    .big.face {
+        display: none;
+    }
+
+    .p-note {
+        font-family: var(--display);
+        font-stretch: expanded;
+        font-weight: 100;
+        font-size: 2em;
+        line-height: 1.4;
+        margin-block-start: 0;
+        color: var(--accent2);
+    }
+}
+
+.author-card {
+    font-family: var(--display);
+    font-stretch: expanded;
+}
+
+button,
+.\<button\>,
+input[type=button],
+input[type=submit],
+input[type=reset],
+::file-selector-button {
+    font: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: expanded;
+    text-decoration: none;
+
+    display: inline-block;
+    padding: 0 .4em;
+    vertical-align: middle;
+
+    border: none;
+    background: var(--accent1);
+    color: var(--accent2);
+
+    padding-inline: 1ch;
+    border-radius: 0;
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: none;
+        background-color: var(--accent2);
+        color: var(--bg1);
+    }
+
+    &:active {
+        background-color: var(--accent2);
+        color: var(--bg2);
+    }
+}
+
+a,
+.\<a\> {
+    color: currentColor;
+    text-decoration: 1px solid currentColor underline;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--accent2);
+        text-decoration: 2px solid var(--accent2) underline;
+    }
+}
+
+input:is(:not([type]),
+    [type="text"i],
+    [type="text"i],
+    [type="date"i],
+    [type="datetime-local"i],
+    [type="email"i],
+    [type="month"i],
+    [type="number"i],
+    [type="password"i],
+    [type="search"i],
+    [type="tel"i],
+    [type="time"i],
+    [type="url"i],
+    [type="week"i],
+),
+textarea,
+select {
+    background-color: var(--fg1);
+    color: var(--bg1);
+    font-weight: 600;
+    border-radius: 0;
+    border: none;
+}
+
+td,
+th {
+    border-block-end: 1px solid var(--bg2);
+}
+
+.\<small\> {
+    font-family: var(--display);
+    font-stretch: calc(100% / .8);
+    font-weight: 300;
+    font-size: .8em;
+    color: var(--accent2);
+}
+
+.big {
+    font-stretch: expanded;
+    font-weight: bold;
+}
+
+.lede {
+    font-family: var(--display);
+    font-stretch: expanded;
+    font-size: 2em;
+    font-style: normal;
+    color: var(--accent2);
+}

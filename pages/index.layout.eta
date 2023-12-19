@@ -3,11 +3,13 @@ layout: layouts/base.eta
 url: /
 ---
 <!--email_off-->
-<header class="h-card" style="border-block-end: 1px solid;">
+<header class="h-card">
     <link class="u-url u-uid canonical" href="https://dz4k.com">
     <link class="u-url" href="acct:dz4k@dz4k.com">
 
-    <h1 style="all: unset; font-weight: bold; display: block;"><a href="/<%= lang %>">
+    <p><img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule" width="150" height="150"></p>
+
+    <h1><a class="unlink" href="/<%= lang %>">
         <%- if (lang === "tok") {
             -%>
             <span class="p-name">jan [_ma_ante_telo_en_lawa_o]</span> /
@@ -16,34 +18,32 @@ url: /
             -%><span class="p-name" lang="tr">Deniz Akşimşek</span
         ><%- } -%></a>
     </h1>
-    
-    <p><img class="u-photo" src="/assets/me.jpeg" alt="Me @ Atakule" width="150" height="150" style="float: right;"></p>
+
+    <p class="p-note" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
 
     <p>
         🌐
         <% filters.repeat(["tr", "en", "tok"], (language, loop) => { %>
             <a
+                class="<button>"
                 href="/<%= language %>"
                 lang="<%= language %>"
                 hreflang="<%= language %>"
                 rel="alternate"
                 <%~ language === lang ? "aria-current=page" : ""%>
                 ><%= intl[language][language] %></a>
-            <%= loop.sep("/") %>
         <% }) %>
     </p>
 
-    <p class="p-summary" style="font-family: var(--main-font);"><%= intl["Bio"][lang] %></p>
-
-    <p class="list-of-links tool-bar">
-        <a rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a> /
-        <a rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a> /
-        <a rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a> /
-        <a rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a> /
-        <a rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a> /
-        <a rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
+    <p class="list-of-links tool-bar f-row">
+        <a class="<button>" rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
+        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
+        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a>
+        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
+        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
+        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
         <% if (lang === "en") { %>
-            / <a class="p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
+            <a class="<button> p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
         <% } %>
     </p>
     <p class="list-of-links tool-bar align-items:center">
