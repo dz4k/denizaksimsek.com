@@ -1,13 +1,13 @@
 :root {
-    --bg1: #353a42;
+    --bg1: #101114;
     --bg2: #44484f;
     --fg1: #e8cccc;
-    --fg2: #a99;
+    --fg2: #928484;
     --accent1: #132;
     --accent2: #88a098;
-    --text: monaspace krypton, sans-serif;
-    --display: monaspace krypton, monospace;
-    --code: monaspace krypton, monospace;
+    --text: U001, sans-serif;
+    --display: Monaspace Krypton Wide, monospace, monospace;
+    --code: monaspace krypton, monospace, monospace;
 }
 
 :root {
@@ -124,6 +124,11 @@ a,
         color: var(--accent2);
         text-decoration: 2px solid var(--accent2) underline;
     }
+}
+
+pre, code, kbd, samp {
+    font-family: var(--code);
+    font-size: 1em;
 }
 
 input:is(:not([type]),

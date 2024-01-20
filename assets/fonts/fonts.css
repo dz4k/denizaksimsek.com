@@ -2,3 +2,28 @@
     font-family: "Monaspace Krypton";
     src: url(/assets/fonts/MonaspaceKryptonVarVF[wght\,wdth\,slnt].woff2) format("woff2");
 }
+@font-face {
+    font-family: "Monaspace Krypton Wide";
+    src: url(/assets/fonts/MonaspaceKryptonVarVF[wght\,wdth\,slnt].woff2) format("woff2");
+    font-stretch: expanded;
+}
+@font-face {
+    font-family: "U001";
+    src: url(/assets/fonts/u001-reg.ttf) format("truetype");
+}
+@font-face {
+    font-family: "U001";
+    src: url(/assets/fonts/u001-bol.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "U001";
+    src: url(/assets/fonts/u001-ita.ttf) format("truetype");
+    font-style: italic;
+}
+@font-face {
+    font-family: "U001";
+    src: url(/assets/fonts/u001-bolita.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
