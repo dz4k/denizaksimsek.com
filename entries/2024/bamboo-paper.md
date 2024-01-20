@@ -2,7 +2,9 @@
 title: Why Bamboo Paper is my favorite note taking app that I never use
 ---
 
-Bamboo Paper is an app released by Wacom in 2014, presumably to promote their Bamboo series of capacitive pens. It features 6 pens, 3 of which need to be unlocked via in-app purchases. Notes are stored in the proprietary WILL format, and can only be synced to Wacom's own Inkspace cloud service. Otherwise, backing up notes involves exporting each notebook manually to PDF.
+[Bamboo Paper] is an app released by Wacom in 2014, presumably to promote their Bamboo series of capacitive pens. It features 6 pens, 3 of which need to be unlocked via in-app purchases. Notes are stored in the proprietary WILL format, and can only be synced to Wacom's own Inkspace cloud service. Otherwise, backing up notes involves exporting each notebook manually to PDF.
+
+[Bamboo Paper]: https://www.wacom.com/en-us/products/apps-services/bamboo-paper
 
 Due to these restrictions, I don't use it that often to actually take notes. However, I can't think of a single note taking app that I enjoy as much.
 
