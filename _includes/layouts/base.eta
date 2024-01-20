@@ -26,7 +26,7 @@ lang: en
 <link rel="alternate" type="application/atom+xml" href="/feed.xml">
 <link rel="alternate" type="application/feed+json" href="/feed.json">
 
-<% if (it.src.path.includes("entries")) { %>
+<% if (it.page.src.path.includes("entries")) { %>
     <meta property=og:title content="<%= it.name ?? it.title %>">
     <meta property=og:url content="https://denizaksimsek.com<%= it.url %>">
     <meta property=og:type content=article>
