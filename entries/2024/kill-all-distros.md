@@ -1,3 +1,6 @@
+---
+title: kill all distros
+---
 
 so insane to me that people advocate for distro packaging over flatpak
 
