@@ -1,4 +1,7 @@
 {
     "deno.enable": true,
-    "deno.unstable": true
+    "deno.unstable": true,
+    "markdown-image.local.path": "/assets/photos/",
+    "markdown-image.base.uploadMethod": "Local",
+    "markdown-image.local.referencePath": "/assets/photos/"
 }
