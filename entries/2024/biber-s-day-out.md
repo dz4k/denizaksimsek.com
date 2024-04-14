@@ -1,7 +1,8 @@
 ---
 title: Biber's day out
 photo:
-  src: 
+  src: /assets/photos/IMG_20240414_185856436.jpg
+  alt: biber and another cat that looks just like her
 ---
 
 We went on a walk in the woods today, and Biber came with us.
@@ -14,7 +15,7 @@ He was a male cat. Biber soon caught up and they started to interact:
 
 ![biber and other cat stood on staring at each other](/assets/photos/IMG_20240414_185856436.jpg)
 
-I'm not an animal behaviorist and couldn't tell you if they were flirting or getting ready to fight.
+I'm not an animal behaviorist and I couldn't tell you if they were flirting or getting ready to fight.
 
 ![the two cats started walking in a circle still not taking their eyes off each other](/assets/photos/IMG_20240414_190258381.jpg)
 
