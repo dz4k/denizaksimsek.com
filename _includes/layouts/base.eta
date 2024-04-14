@@ -31,7 +31,7 @@ lang: en
     <meta property=og:url content="https://denizaksimsek.com<%= it.url %>">
     <meta property=og:type content=article>
     <% if (it.photo) { %>
-    	<meta property=og:image content="<%= it.photo %>">
+    	<meta property=og:image content="<%= it.photo.src %>">
     <% } %>
     <meta name=twitter:card content="summary<%= it.photo ? "_large_image" : "" %>">
     <meta name=twitter:site content=@DenizAksimsek>
