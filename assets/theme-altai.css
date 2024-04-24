@@ -132,6 +132,13 @@ pre, code, kbd, samp {
     font-size: 1em;
 }
 
+img {
+    max-height: 80vh;
+    background: var(--bg2);
+    width: 100%;
+    object-fit: contain;
+}
+
 input:is(:not([type]),
     [type="text"i],
     [type="text"i],
