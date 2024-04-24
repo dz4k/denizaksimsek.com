@@ -1,5 +1,8 @@
 ---
 title: Making Kustom widgets that fit in with Nothing OS
+photo:
+  alt: A Nothing Phone home screen with weather, date, next event and pedometer widgets
+  src: /assets/photos/Screenshot_20240424-121527.png
 ---
 
 I've been using a Nothing Phone (2a) for a while now. I love the built in widgets, but there's not enough of them, and most third-party widgets stick out like a sore thumb. Not even any of the Nothing-themed KWGT packs on the Play Store match.
