@@ -132,7 +132,7 @@ pre, code, kbd, samp {
     font-size: 1em;
 }
 
-img {
+.e-content img {
     max-height: 80vh;
     background: var(--bg2);
     width: 100%;
