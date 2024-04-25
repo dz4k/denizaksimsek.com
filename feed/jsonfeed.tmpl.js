@@ -5,6 +5,8 @@ const version = new URL('https://jsonfeed.org/version/1'),
 
 export const url = '/feed.json';
 
+export const renderOrder = 1;
+
 export default ({ search, comp }, filters) => {
 	return JSON.stringify({
 		version,
@@ -22,10 +24,12 @@ export default ({ search, comp }, filters) => {
 			title: post.data.name ?? post.data.title,
 			content_html: filters.htmlUrl(post.content),
 			content_text: post.data.content,
-			url: new URL(post.url, homepage),
+			url: new URL(post.data.url, homepage),
 			summary: post.data.summary,
-			image: new URL(post.data.photo && post.data.photo.src, homepage),
-			date_published: comp.date({ date: post.date, iso: true }),
+			image: post.data.photo
+				? new URL(post.data.photo.src, homepage)
+				: undefined,
+			date_published: comp.date({ date: post.data.date, iso: true }),
 		})),
 	});
 };
