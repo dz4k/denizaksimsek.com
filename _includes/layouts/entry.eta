@@ -5,7 +5,7 @@ layout: ./base.eta
 <article class="container h-entry">
     <header>
         <nav class="container">
-            <a href="/<%= lang %>" class="p-author big unlink">
+            <a href="/<%= lang %>" class="p-author h-card big unlink">
                 <img class="u-photo" src="/assets/me.jpeg" alt="" width="150" height="150"
                     style="height: 2em; width: auto; vertical-align: middle">
                 <strong>
