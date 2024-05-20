@@ -37,11 +37,8 @@ url: /
 
     <p class="list-of-links tool-bar f-row">
         <a class="<button>" rel="me" class="u-email" lang="en" href="mailto:deniz_website@denizaksimsek.com">Email</a>
-        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://twitter.com/DenizAksimsek">Twitter</a>
         <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://indieweb.social/@dz4k">Mastodon</a>
         <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://github.com/dz4k">GitHub</a>
-        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://dev.to/dz4k">DEV</a>
-        <a class="<button>" rel="me noopener noreferrer" lang="en" href="https://linkedin.com/in/deniz-akşimşek-044651211/">LinkedIn</a>
         <% if (lang === "en") { %>
             <a class="<button> p-x-pronoun-nominative u-pronoun" href="https://pronoun.is/he">he</a>
         <% } %>
