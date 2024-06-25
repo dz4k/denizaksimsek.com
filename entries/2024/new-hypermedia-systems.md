@@ -2,7 +2,7 @@
 title: Building the new Hypermedia Systems
 ---
 
-A shiny new edition of <cite>Hypermedia Systems</cite> is out! Apart from incorporating typo and grammar fixes sent in by readers, the book was completely redesigned inside with new a layout. To achieve a much higher fidelity of design, we ported the book to Typst --- the hot new LaTeX replacement.
+A shiny new edition of <cite>Hypermedia Systems</cite> is out! Apart from incorporating typo and grammar fixes sent in by readers, the book was completely redesigned inside with a new layout. To achieve a much higher fidelity of design, we ported the book to Typst --- the hot new LaTeX replacement.
 
 
 ## Why change what works?
@@ -22,7 +22,7 @@ Your best option for producing a printable PDF, if you care at all about typeset
  - AsciiDoc has facilities for indexing, but doesn't support outputting them in HTML in any way. Worse, the mechanism I could have used to do it myself was deprecated _and removed_ before the replacement was implemented. Our editor ended up creating an index _by hand_, which was appended to the PDF.
  - You go through all this effort only to be rewarded with very mediocre typesetting, since browsers use greedy algorithms for laying out text for performance reasons, yielding far worse line breaking compared to the dynamic programming algorithms of TeX.
 
-Despite all this, we somehow produced a usable PDF. Most readers report being satisfied with the book's design (Amazon's failure to print a PDF consistently notwithstanding). The code that generated this PDF is not open source --- initially, it was because we thought it might eat into print sales, but these days the real reason for me is that it might help someone else that tries to do this, and nobody should try to do this.
+Despite all this, we somehow produced a usable PDF. Most readers report being satisfied with the book's design (Amazon's failure to print a PDF consistently notwithstanding). The code that generated this PDF is not open source --- initially, it was because we thought it might eat into print sales, but these days the real reason is that it might help someone else that tries to do this, and nobody should try to do this.
 
 If you have any "why didn't you just" recommendations, feel free to post them in the comments on link aggregators, they might help someone else, but don't send them directly to me. I assure you, I've evaluated all options available even if I didn't mention them here.
 
