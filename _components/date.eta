@@ -3,5 +3,5 @@
         it.iso ? "ATOM"
         : it.lang === "tok"
             ? "'&nbsp;sike' yy 'mun' MM 'suno' dd" + (it.time ? " 'tenpo' HHmm" : "")
-            : "dd MMM \u2018yy" + (it.time ? " HH:mm" : "") _%>
+            : "dd MMM ,yy" + (it.time ? " HH:mm" : "") _%>
 <%_~ filters.date(date, fmt, lang) _%>
