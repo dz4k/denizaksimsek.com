@@ -3,7 +3,7 @@ title: Event Delegation in _hyperscript
 date: 2021-05-20 12:43:49
 ---
 
-This is how you do it:
+TL;DR This is how you do it:
 
 ```hyperscript
 on click
@@ -17,11 +17,6 @@ Or more concisely:
 
 ```hyperscript
 on click tell closest <li/> to target
-	remove yourself
-```
-
-```hyperscript
-on click tell closest &lt;li/> to target
 	remove yourself
 ```
 
@@ -40,9 +35,9 @@ I've seen some people use a pattern like this:
 This is convenient to write if you have a server-side templating system, but
 has a few issues:
 
- * The code needs to be parsed N times where N is the number of items.
+ * The code needs to be parsed as many times as there are items.
  * The resulting HTML is bloated.
- * If you add more items client-side, you need to repeat the code there.
+ * If you add more items to the list dynamically on the client, you need to repeat the code there.
 
 The pattern for resolving this is called <dfn>event delegation</dfn>. Here's
 how you might do it in JavaScript:
@@ -62,4 +57,3 @@ In _hyperscript, the <code>tell</code> command allows us to manipulate an
 element other  than <code>me</code> conveniently, by changing the implicit
 target from <code>me</code> to <code>you</code>,  which refers to the "element
 being told".
-
