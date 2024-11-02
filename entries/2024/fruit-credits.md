@@ -1,5 +1,5 @@
 ---
-title: Fruit Credits: a personal accounting app based on hledger
+title: 'Fruit Credits: a personal accounting app based on hledger'
 ---
 
 I recently published the first pre-release version of [Fruit Credits] on Flathub.
