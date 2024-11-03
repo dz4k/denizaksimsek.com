@@ -158,8 +158,10 @@ Upon submitting my app to Flathub, I found out I was something of a pioneer:
 >   and the article [How to Flatpak a Haskell App into Flathub](https://medium.com/@lettier/how-to-flatpak-a-haskell-app-into-flathub-86ef6d69e94d).
 >   Are there more up-to-date resources for bundling Haskell programs?
 > - **bbhtt:** <mark>No, we don't have haskell apps. This is probably the second or third one ever.</mark>
+> {role="list"}
 
 -- [Add com.dz4k.FruitCredits by dz4k · Pull Request #5731 · flathub/flathub](https://github.com/flathub/flathub/pull/5731#discussion_r1805683874)
+{.quote-attribution}
 
 fun.
 

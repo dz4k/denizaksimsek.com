@@ -21,7 +21,7 @@
 }
 
 header:has(+ main),
-main+footer {
+main + footer {
     margin: 3em 0;
 }
 
@@ -43,8 +43,8 @@ h1 {
 }
 
 /* TODO: create class for "main header" */
-body>header,
-body>article>header {
+body > header,
+body > article > header {
     margin-inline-start: -2em;
 }
 
@@ -81,9 +81,9 @@ header.h-card {
 
 button,
 .\<button\>,
-input[type=button],
-input[type=submit],
-input[type=reset],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
 ::file-selector-button {
     font: inherit;
     font-size: 1rem;
@@ -92,7 +92,7 @@ input[type=reset],
     text-decoration: none;
 
     display: inline-block;
-    padding: 0 .4em;
+    padding: 0 0.4em;
     vertical-align: middle;
 
     border: none;
@@ -127,7 +127,10 @@ a,
     }
 }
 
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
     font-family: var(--code);
     font-size: 1em;
 }
@@ -139,21 +142,23 @@ pre, code, kbd, samp {
     object-fit: contain;
 }
 
-input:is(:not([type]),
-    [type="text"i],
-    [type="text"i],
-    [type="date"i],
-    [type="datetime-local"i],
-    [type="email"i],
-    [type="month"i],
-    [type="number"i],
-    [type="password"i],
-    [type="search"i],
-    [type="tel"i],
-    [type="time"i],
-    [type="url"i],
-    [type="week"i],
-),
+input:is(
+        :not([type]),
+        [type="text"i],
+        [type="text"i],
+        [type="date"i],
+        [type="datetime-local"i],
+        [type="email"i],
+        [type="month"i],
+        [type="number"i],
+        [type="password"i],
+        [type="search"i],
+        [type="tel"i],
+        [type="time"i],
+        [type="url"i],
+        [type="week"i],
+
+    ),
 textarea,
 select {
     background-color: var(--fg1);
@@ -170,9 +175,9 @@ th {
 
 .\<small\> {
     font-family: var(--display);
-    font-stretch: calc(100% / .8);
+    font-stretch: calc(100% / 0.8);
     font-weight: 300;
-    font-size: .8em;
+    font-size: 0.8em;
     color: var(--accent2);
 }
 
@@ -187,4 +192,10 @@ th {
     font-size: 2em;
     font-style: normal;
     color: var(--accent2);
+}
+
+.quote-attribution {
+    padding-inline: 2.5em;
+    text-align: end;
+    font-style: italic;
 }
