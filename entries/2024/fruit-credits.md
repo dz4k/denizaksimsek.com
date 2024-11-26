@@ -64,7 +64,7 @@ This vision would eventually feature-creep itself into a GUI version of hledger.
 I'd heard [Tauri] was Electron but good,
 which was an attractive proposition to a web developer.
 It took me about a week to give up --
-it turns out making a web app look good as a desktop app is harder Discord makes it look.
+it turns out making a web app look good as a desktop app is harder than Discord makes it look.
 
 [Tauri]: https://tauri.app/
 
