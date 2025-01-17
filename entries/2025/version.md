@@ -57,6 +57,7 @@ METADATA is build metadata as defined in SemVer.
 
 ## Example
 
+| Version         | Description    |
 |-----------------|----------------|
 | `0.0.0-alpha.0` | starting a new project |
 | `0.0.0-alpha.1` | still working on it |
