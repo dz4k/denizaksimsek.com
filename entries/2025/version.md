@@ -22,7 +22,7 @@ I was thinking of using a single increasing version number, but it didn't sit ri
 
 A software package under CoolVer has three kinds of published version: release, pre-release and hotfix.
 
-- Releases add, remove or alter features. They may or may not break your workflow based on your use case, environment, personality and vibes. 
+- Releases add, remove or alter features. They may or may not break your workflow based on your use case, environment, personality and vibes.
 
 - Hotfixes fix bugs in previous regular releases (and do nothing else). The existence of a hotfix declares that the preceding version is broken and this one should be used instead. Hotfixes "shouldn't" break your workflow, if they do, it's because they had to.
 
@@ -77,3 +77,5 @@ METADATA is build metadata as defined in SemVer.
 CoolVer is syntactically compatible with SemVer and matches its sorting order. This means it can be used with most tools that expect SemVer.
 
 Using the SemVer patch field for hotfixes, but tags for prereleases ensures that releases are sorted sensibly, and is arguably more SemVer than the `-hotfix.1` convention many projects use.
+
+[spacebar heating]: https://xkcd.com/1172/
