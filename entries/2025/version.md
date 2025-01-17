@@ -57,19 +57,19 @@ METADATA is build metadata as defined in SemVer.
 
 ## Example
 
-- `0.0.0-alpha.0` starting a new project
-- `0.0.0-alpha.1` still working on it
-- `0.0.0-beta.0` anyone want to try it out?
-- `0.1.0` it's stable
-- `1.0.0-rc.1` i think i'm ready to start promoting this, let me know if you spot any bugs
-- `1.0.0` hey everyone look at my production-ready, blazing-fast, webscale project!
-- `1.0.1` oops, i broke the build
-- `1.1.0` added frobinator
-- `1.1.2` the frobinator had a bug
-- `1.2.0-rc.1` sneak preview of barbinator
-- `1.2.0` add barbinator
-- `1.2.3` another frobinator bug we didn't catch until now
-- `1.1.3` backport the frobinator fix for the people who hate the barbinator
+| `0.0.0-alpha.0` | starting a new project |
+| `0.0.0-alpha.1` | still working on it |
+| `0.0.0-beta.0`  | anyone want to try it out? |
+| `0.1.0`         | it's stable |
+| `1.0.0-rc.1`    | i think i'm ready to start promoting this, let me know if you spot any bugs |
+| `1.0.0`         | hey everyone look at my production-ready, blazing-fast, webscale project! |
+| `1.0.1`         | oops, i broke the build |
+| `1.1.0`         | added frobinator |
+| `1.1.2`         | the frobinator had a bug |
+| `1.2.0-rc.1`    | sneak preview of barbinator |
+| `1.2.0`         | add barbinator |
+| `1.2.3`         | another frobinator bug we didn't catch until now |
+| `1.1.3`         | backport the frobinator fix for the people who hate the barbinator |
 
 
 ## Rationale
