@@ -2,7 +2,7 @@
 <span>
     <strong class="big">
         <a class="p-name u-url u-uid"
-            lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>" 
+            lang="<%= post.data.lang %>" hreflang="<%= post.data.lang %>"
             href="<%= post.data.filetype ? post.data.content : post.data.url %>"
             ><%-= post.data.name ?? post.data.title -%><%-
                 if (post.data.filetype) { -%>
@@ -12,11 +12,11 @@
 
     <% if (dates) { %>
 
-        <time class="dt-published <small>" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
+        <time class="dt-published" datetime="<%= comp.date({ date: post.data.date, iso: true }) %>">
             <%-~ comp.date({ date: post.data.date, lang }) -%>
         </time>
     <% } %>
-    
+
     <% if (post.data.summary) { %>
         &mdash; <span class="p-summary" lang="<%= post.data.lang %>"><%= post.data.summary %></span>
     <% } %>

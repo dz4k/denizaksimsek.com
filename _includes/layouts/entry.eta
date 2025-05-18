@@ -16,7 +16,7 @@ layout: ./base.eta
                         <span class="p-name" lang="tr">Deniz Akşimşek</span>
                     <% } %>
                 </strong>
-                <span lang="tr" style="font-weight: normal">denizaksimsek.com</span>
+                <span lang="tr" style="font-weight: normal">deniz.aksimsek.tr</span>
             </a>
         </nav>
         <% if ("title" in it) { %>
@@ -26,7 +26,7 @@ layout: ./base.eta
             <p>
                 🌐
                 <% filters.repeat(Object.entries(it.alt), ([language, href], loop) => { %>
-                    <a 
+                    <a
                         rel="alternate"
                         lang="<%= language %>"
                         hreflang="<%= language %>"
@@ -49,7 +49,7 @@ layout: ./base.eta
             <% } %>
         <% } %>
 
-        </dl>        
+        </dl>
         <% if ("..." in it) { %>
             <p class="italic"><%~ it["..."] %></p>
         <% } %>
@@ -64,7 +64,7 @@ layout: ./base.eta
             lang: it["bookmark of"].lang
         }) %>
     <% } %>
-    
+
     <div class="e-content">
         <%~ it.content %>
     </div>
@@ -86,12 +86,12 @@ layout: ./base.eta
             }) %>
         </footer>
     <% } %>
-    
+
     <% if (webmentions.has(url) || "syndication" in it) { %>
         <footer class="box">
             <% if ("syndication" in it) { %>
                 <p>
-                    <strong><%= intl["Elsewhere"][lang] %>:</strong> 
+                    <strong><%= intl["Elsewhere"][lang] %>:</strong>
                     <% filters.repeat(Object.keys(it.syndication), (syn, loop) => { %>
                         <a rel="syndication" href="<%= it.syndication[syn] %>">
                             <%= syn %></a><%= loop.sep(", ") %>

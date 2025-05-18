@@ -5,24 +5,41 @@
     --fg2: #928484;
     --accent1: #132;
     --accent2: #88a098;
-    --text: U001, sans-serif;
-    --display: Monaspace Krypton Wide, monospace, monospace;
-    --code: monaspace krypton, monospace, monospace;
+    --complement1: #321;
+    --complement2: #ffbf6d;
+    --text: DINish, sans-serif;
+    --display: "Jacquarda Bastarda 9", monospace, monospace;
+    --code: "Departure Mono", monospace, monospace;
+    --page-width: 35em;
+    --page-padding: 2em;
+
+    font-synthesis: none;
 }
 
 :root {
-    max-width: 70ch;
+    max-width: var(--page-width);
+    font-weight: 500;
+    font-size: 1.2em;
     margin: auto;
-    padding-inline-start: 2em;
+    padding-inline-start: var(--page-padding);
     background: var(--bg1);
     background-attachment: fixed;
     color: var(--fg1);
     font-family: var(--text);
+    scrollbar-gutter: stable;
 }
 
 header:has(+ main),
 main + footer {
     margin: 3em 0;
+}
+
+p, ul, ol, dl, blockquote, pre, figure {
+  margin-block: 1rlh;
+}
+
+li::marker {
+  color: var(--accent2);
 }
 
 h1,
@@ -33,20 +50,19 @@ h5,
 h6 {
     font-family: var(--display);
     font-weight: 900;
-    line-height: 1.4;
+    line-height: 1;
     margin-block-end: 0;
 }
 
 h1 {
     font-stretch: expanded;
-    font-size: 2em;
+    font-size: 3.6em;
+    text-shadow: 0 calc(1em / 13) var(--accent2);
 }
-
-/* TODO: create class for "main header" */
-body > header,
-body > article > header {
-    margin-inline-start: -2em;
-}
+h2 { font-size: 3em; }
+h3 { font-size: 2.4em; }
+h4 { font-size: 1.8em; }
+h5, h6 { font-size: 1.5em; }
 
 header.h-card {
     h1 {
@@ -72,6 +88,18 @@ header.h-card {
         margin-block-start: 0;
         color: var(--accent2);
     }
+}
+
+li.h-entry {
+  .p-name {
+    font-family: var(--display);
+    font-size: 1.4em;
+    text-decoration: none;
+  }
+  .dt-published {
+    color: var(--accent2);
+    white-space: nowrap;
+  }
 }
 
 .author-card {
@@ -135,6 +163,31 @@ samp {
     font-size: 1em;
 }
 
+pre {
+  overflow-x: auto;
+  max-width: calc(
+    var(--page-width)
+    + (100vw - var(--page-width)) / 2
+    - var(--page-padding));
+  width: max-content;
+}
+
+code,
+kbd,
+samp {
+  &, pre:not(:has(&)) {
+    font-size: .9em;
+  }
+}
+
+code {
+    color: var(--complement2);
+    background: var(--complement1);
+    pre:has(&) {
+      background: var(--complement1);
+    }
+}
+
 .e-content img {
     max-height: 80vh;
     background: var(--bg2);
@@ -174,8 +227,6 @@ th {
 }
 
 .\<small\> {
-    font-family: var(--display);
-    font-stretch: calc(100% / 0.8);
     font-weight: 300;
     font-size: 0.8em;
     color: var(--accent2);
