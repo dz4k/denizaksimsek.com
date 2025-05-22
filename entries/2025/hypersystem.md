@@ -1,6 +1,7 @@
 ---
 title: "Hypersystem: a pixel display font for Hypermedia Systems"
-photo: hypersystem-preview.png
+photo:
+  src: hypersystem-preview.png
 ---
 
 <style>
@@ -33,12 +34,12 @@ absolutely fantastic job, but we decided to roll our own for the lettering.
 
 [paperback edition]: <https://www.lulu.com/shop/deniz-ak%C5%9Fim%C5%9Fek-and-adam-stepinski-and-carson-gross-and-mike-amundsen/hypermedia-systems/paperback/product-jen2vm2.html>
 
-<figure style="display: flex; flex-flow: row nowrap; gap: 1em;">
-
-<figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-1.png><img src=/assets/photos/hypersys-lettering-1.png></a></figure>
-<figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-2.png><img src=/assets/photos/hypersys-lettering-2.png></a></figure>
-<figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-3.png><img src=/assets/photos/hypersys-lettering-3.png></a></figure>
-
+<figure>
+  <div style="display: flex; flex-flow: row nowrap; gap: 1em;">
+    <figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-1.png><img src=/assets/photos/hypersys-lettering-1.png></a></figure>
+    <figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-2.png><img src=/assets/photos/hypersys-lettering-2.png></a></figure>
+    <figure style="margin: 0; flex: 1 1 auto;"><a href=/assets/photos/hypersys-lettering-3.png><img src=/assets/photos/hypersys-lettering-3.png></a></figure>
+  </div>
 <figcaption>My early attempts at Hypermedia Systems cover lettering.</figcaption>
 </figure>
 
@@ -46,7 +47,7 @@ After trying to make off-the-shelf fonts work for a while, we eventually asked
 the artist for the original PSDs and I lettered in a custom title. Making it go
 behind the car was Carson's idea.
 
-<figure style="display: flex; flex-flow: row wrap; flex: 1 1 12em">
+<figure>
 <a href=/assets/photos/hypersys-lettering-final.png><img src=/assets/photos/hypersys-lettering-final.png></a>
 <figcaption>The published cover.</figcaption>
 </figure>
