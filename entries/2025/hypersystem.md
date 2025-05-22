@@ -1,5 +1,6 @@
 ---
 title: "Hypersystem: a pixel display font for Hypermedia Systems"
+photo: hypersystem-preview.png
 ---
 
 <style>
