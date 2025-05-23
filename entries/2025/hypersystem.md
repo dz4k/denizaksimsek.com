@@ -44,7 +44,7 @@ absolutely fantastic job, but we decided to roll our own for the lettering.
 </figure>
 
 After trying to make off-the-shelf fonts work for a while, we eventually asked
-the artist for the original PSDs and I lettered in a custom title. Making it go
+the artist for the original PSD and I lettered in a custom title. Making it go
 behind the car was Carson's idea.
 
 <figure>
