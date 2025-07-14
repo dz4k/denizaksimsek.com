@@ -57,7 +57,6 @@ h6 {
 h1 {
     font-stretch: expanded;
     font-size: 3.6em;
-    text-shadow: 0 calc(1em / 13) var(--accent2);
 }
 h2 { font-size: 3em; }
 h3 { font-size: 2.4em; }
