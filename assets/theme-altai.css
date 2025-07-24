@@ -119,12 +119,15 @@ input[type="reset"],
     text-decoration: none;
 
     display: inline-block;
-    padding: 0 0.4em;
+    padding: 0;
     vertical-align: middle;
 
     border: none;
-    background: var(--accent1);
     color: var(--accent2);
+
+    &+& {
+      margin-inline-start: 1em;
+    }
 
     padding-inline: 1ch;
     border-radius: 0;
