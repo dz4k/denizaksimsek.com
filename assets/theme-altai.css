@@ -125,11 +125,6 @@ input[type="reset"],
     border: none;
     color: var(--accent2);
 
-    &+& {
-      margin-inline-start: 1em;
-    }
-
-    padding-inline: 1ch;
     border-radius: 0;
 
     &:hover,
