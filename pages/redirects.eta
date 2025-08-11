@@ -15,7 +15,7 @@ url: /_redirects
 /archive/ /
 /archive/* /
 
-https://dz4k.com/* https://deniz.aksimsek.tr/:splat 301
-http://dz4k.com/* https://deniz.aksimsek.tr/:splat 301
-https://denizaksimsek.com/* https://deniz.aksimsek.tr/:splat 301
-http://denizaksimsek.com/* https://deniz.aksimsek.tr/:splat 301
+# https://dz4k.com/* https://deniz.aksimsek.tr/:splat 301
+# http://dz4k.com/* https://deniz.aksimsek.tr/:splat 301
+# https://denizaksimsek.com/* https://deniz.aksimsek.tr/:splat 301
+# http://denizaksimsek.com/* https://deniz.aksimsek.tr/:splat 301
